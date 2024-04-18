@@ -9,6 +9,8 @@ The architecture of polyUAnalog centers around a simple design: a *conductor boa
 - **Monophonic with Unison and Spread Mode**: For those moments when a single, powerful voice is needed, enhanced with unison and spread capabilities for added depth.
 - **Multi-timbral Mode** (Under development as of April 2024): Expanding the synth's versatility by allowing multiple timbres to be played simultaneously.
 
+![PolyUAnalog Synth](resources/synth_archi.png)
+
 ## Repository Structure
 
 The `polyUAnalog` repository is organized into two main directories, `firmware` and `hardware`, each containing subdirectories dedicated to different components of the synth:
@@ -38,6 +40,16 @@ polyUAnalog thrives on community input and collaboration. Whether you're a seaso
 We have documented our journey and findings in a comprehensive academic paper. This paper delves into the theoretical underpinnings, design choices, and technical challenges encountered during the development of polyUAnalog. While the paper is currently in draft form and distributed as-is, we believe it provides valuable insights into the project's scientific and engineering aspects.
 
 A DOI and access to the official publication will be provided upon acceptance. Additionally, a pre-print version of the paper will be made available to ensure our findings are accessible to the community, fostering further research and development in the field of analog synthesis.
+
+
+
+## Sound Examples
+
+We are currently compiling a diverse range of audio samples to showcase the versatility and musicality of polyUAnalog. This is a work in progress, and we appreciate your patience as we curate a collection that truly represents the essence of this project.
+
+Stay tuned for a SoundCloud link, which will be shared here soon. 
+
+
 
 
 ## License
