@@ -1,0 +1,43 @@
+#ifndef DSO_H
+#define DSO_H
+#include <stdint.h>
+#include <Arduino.h>
+#include <math.h>
+#include "wave.h"
+
+const uint64_t srateFactor2 = 4294967296;
+
+#define WAVE_BITS 16
+/*const int32_t S = 1024;
+const int32_t HS = S/2;
+const int32_t QS = S/4;
+const int32_t QS3 = QS*3;
+const int32_t modulo = 65536/S;*/
+
+#define MAXI 32767
+#define HALF 32768
+
+class DSO {
+public:
+  int32_t vdso;
+  DSO(uint32_t srate);
+  void setWaveform(uint8_t wave);
+  void setFrequency(float frequency);
+  void setAmplitude(uint8_t a);
+  void setPw(int32_t Pw);
+  void update();
+
+private:
+  uint32_t PhaseAcc;
+  uint32_t PhaseInc;
+  int32_t waveform;
+  int32_t pwm;
+  float freq;
+  uint8_t amplitude;
+  int32_t wave;
+  const int16_t* data = wave1;
+  uint32_t dsosrate;
+};
+
+
+#endif
