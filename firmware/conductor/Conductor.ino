@@ -1,14 +1,52 @@
-// USB MIDI receive example, Note on/off -> LED on/off
-// contributed by Alessandro Fasan
+/*
+
+                           ,--,                                  ,---,                                     ,--,
+   ,-.----.              ,--.'|                         ,--,    '  .' \                                  ,--.'|
+   \    /  \     ,---.   |  | :                       ,'_ /|   /  ;    '.           ,---,                |  | :       ,---.
+   |   :    |   '   ,'\  :  : '                  .--. |  | :  :  :       \      ,-+-. /  |               :  : '      '   ,'\    ,----._,.
+   |   | .\ :  /   /   | |  ' |          .--,  ,'_ /| :  . |  :  |   /\   \    ,--.'|'   |    ,--.--.    |  ' |     /   /   |  /   /  ' /
+   .   : |: | .   ; ,. : '  | |        /_ ./|  |  ' | |  . .  |  :  ' ;.   :  |   |  ,"' |   /       \   '  | |    .   ; ,. : |   :     |
+   |   |  \ : '   | |: : |  | :     , ' , ' :  |  | ' |  | |  |  |  ;/  \   \ |   | /  | |  .--.  .-. |  |  | :    '   | |: : |   | .\  .
+   |   : .  | '   | .; : '  : |__  /___/ \: |  :  | | :  ' ;  '  :  | \  \ ,' |   | |  | |   \__\/: . .  '  : |__  '   | .; : .   ; ';  |
+   :     |`-' |   :    | |  | '.'|  .  \  ' |  |  ; ' |  | '  |  |  '  '--'   |   | |  |/    ," .--.; |  |  | '.'| |   :    | '   .   . |
+   :   : :     \   \  /  ;  :    ;   \  ;   :  :  | : ;  ; |  |  :  :         |   | |--'    /  /  ,.  |  ;  :    ;  \   \  /   `---`-'| |
+   |   | :      `----'   |  ,   /     \  \  ;  '  :  `--'   \ |  | ,'         |   |/       ;  :   .'   \ |  ,   /    `----'    .'__/\_: |
+   `---'.|                ---`-'       :  \  \ :  ,      .-./ `--''           '---'        |  ,     .-./  ---`-'               |   :    :
+     `---`                              \  ' ;  `--`----'                                   `--`---'                            \   \  /
+                                         `--`                                                                                    `--`-'
+  
+    A Polyphonic Analogic and Open Source Synthesizer
+
+    https://github.com/PhysicsDptAngers/polyUAnalog
+
+    M. Loumaigne 
+    D. Guichaoua
+
+    2023 - 2024 - Université d'Angers
+
+    Orchestra conductor card
+
+    v2.1
+    - Multicast I2C transfert only
+    - Optimize I2C preset transfert
+    - Adding multitimbral function
+    - One byte control change possibility
+    - Adding preset function
+
+    To do
+    - Adding preset transfert by SysEx
+    - Adding second I2C interface control
+
+*/
 #include <Wire.h>
 #include <MIDI.h>
+#include "preset.h"
 
 #define I2CclockFreq 400000
 #define I2CAddress 0x10
 
 MIDI_CREATE_INSTANCE(HardwareSerial, Serial1, MIDI);
 
-#define MULTICAST 1
 
 #define NoteOff 0x80
 #define NoteOn 0x90
@@ -36,17 +74,6 @@ enum ADSRState { ATTACK,
                  RELEASE,
                  NOTEOFF };
 
-const uint8_t Preset[] = { 9, 1, 10, 64, 11, 64, 18, 64,
-                           12, 1, 13, 64, 14, 64, 15, 64,
-                           16, 0,
-                           38, 0, 39, 64, 40, 64, 41, 64, 42, 0, 44, 0,
-                           19, 1, 20, 127, 21, 127, 22, 1,
-                           23, 1, 24, 127, 25, 127, 26, 1, 51, 0,
-                           75, 63, 74, 31, 27, 63, 28, 0, 29, 0, 37, 0,
-                           30, 0, 31, 16, 35, 0, 36, 0, 85, 0, 86, 0, 43, 0, 45, 0,
-                           46, 127, 47, 0,
-                           48, 0, 49, 0, 50, 0, 104, 64, 105, 64, 106, 127, 7, 32, 5, 0, 32, 64,
-                           120, 1, 123, 0 };
 
 struct listvoices {
   byte adr = ADR;
@@ -67,21 +94,56 @@ bool blink = false;
 
 bool MonoMode = false;
 
+byte controlValue[256];
+
+void loadPreset(byte presetNumber) {
+  // Vérifie si le numéro de préréglage est valide
+  if (presetNumber >= sizeof(Presets) / sizeof(Presets[0])) {
+    //Vérifie si le numéro de préréglage est hors limites
+    return;
+  }
+
+  const uint8_t* preset = Presets[presetNumber];
+  Wire.beginTransmission(0);
+  for (uint j = 0; j < NBPARAM; j += 2) {
+    controlValue[preset[j]] = preset[j + 1];
+    //Serial.printf("%d, %d,", preset[j], preset[j + 1]);
+    //sendI2c(0, CtrChange, preset[j], preset[j + 1]);
+    Wire.write(CtrChange);
+    Wire.write(preset[j]);
+    Wire.write(preset[j + 1]);
+    blink = true;
+  }
+  Wire.endTransmission();
+}
+
+// Fonction pour obtenir le nom du contrôleur à partir de son numéro
+const char* obtenirNomDuControleur(byte numero) {
+  for (byte i = 0; i < sizeof(controlleurNum); i++) {
+    if (controlleurNum[i] == numero) return controlleurNom[i];
+  }
+  return "";
+}
+
+//Fonction pour afficher le presets en mémoire
+void printPreset(void) {
+  byte i;
+  Serial.print("const uint8_t Preset1[] = { ");
+  for (i = 0; i < (sizeof(controlleurNum) - 1); i++) {
+    if (i % 4 == 0) Serial.println("  ");
+    Serial.printf("%s, %d, ", controlleurNom[i], controlValue[controlleurNum[i]]);
+  }
+  Serial.printf("%s, %d\n", controlleurNom[i], controlValue[controlleurNum[i]]);
+  Serial.println("};");
+}
+
 void OnNoteOn(byte channel, byte note, byte velocity) {
   uint32_t idx;
   byte voicefree = 255;
 
-
   if (MonoMode) {
-#if MULTICAST == 0
-    for (int i = 0; i < nVoices; i++) {
-      sendI2c(voices[i].adr, NoteOn, note, velocity);
-      blink = true;
-    }
-#else
-    sendI2c(0, NoteOn, note, velocity);
+    sendI2c(0, NoteOn, note + channel, velocity);
     blink = true;
-#endif
   } else {
     //Vérifie si une voie joue déjà la note
     for (int i = 0; i < nVoices; i++) {
@@ -100,7 +162,7 @@ void OnNoteOn(byte channel, byte note, byte velocity) {
         voices[i].note = note;
         counter++;
         voices[i].count = counter;
-        sendI2c(voices[i].adr, NoteOn, note, velocity);
+        sendI2c(voices[i].adr, NoteOn + channel, note, velocity);
         blink = true;
         return;
       }
@@ -127,7 +189,7 @@ void OnNoteOn(byte channel, byte note, byte velocity) {
       voices[voicefree].note = note;
       counter++;
       voices[voicefree].count = counter;
-      sendI2c(voices[voicefree].adr, NoteOn, note, velocity);
+      sendI2c(voices[voicefree].adr, NoteOn + channel, note, velocity);
       blink = true;
     }
   }
@@ -135,15 +197,8 @@ void OnNoteOn(byte channel, byte note, byte velocity) {
 
 void OnNoteOff(byte channel, byte note, byte velocity) {
   if (MonoMode) {
-#if MULTICAST == 0
-    for (int i = 0; i < nVoices; i++) {
-      sendI2c(voices[i].adr, NoteOff, note, velocity);
-      blink = true;
-    }
-#else
-    sendI2c(0, NoteOff, note, velocity);
+    sendI2c(0, NoteOff + channel, note, velocity);
     blink = true;
-#endif
   } else {
     for (int i = 0; i < nVoices; i++) {
       Wire.requestFrom((int)voices[i].adr, 1);
@@ -156,7 +211,7 @@ void OnNoteOff(byte channel, byte note, byte velocity) {
           voices[i].state = RELEASE;
           counter++;
           voices[i].count = counter;
-          sendI2c(voices[i].adr, NoteOff, note, velocity);
+          sendI2c(voices[i].adr, NoteOff + channel, note, velocity);
           blink = true;
         }
       }
@@ -165,68 +220,44 @@ void OnNoteOff(byte channel, byte note, byte velocity) {
 }
 
 void OnControlChange(byte channel, byte controler, byte value) {
+  controlValue[controler] = value;
   if (controler == GLBDETUNE) {
     for (int i = 0; i < nVoices; i++) {
-      if (value) sendI2c(voices[i].adr, CtrChange, GLBDETUNE, (rand() % value) / 2);
-      else sendI2c(voices[i].adr, CtrChange, GLBDETUNE, 0);
+      if (value) sendI2c(voices[i].adr, CtrChange + channel, GLBDETUNE, (rand() % value) / 2);
+      else sendI2c(voices[i].adr, CtrChange + channel, GLBDETUNE, 0);
       blink = true;
     }
   } else if (controler == WHEEL) {
     int Cutoff = value * 32;
-#if MULTICAST == 0
-    for (int i = 0; i < nVoices; i++) {
-      sendI2c(voices[i].adr, CtrChange, FILTERFCLOW, Cutoff & 0x7F);
-      sendI2c(voices[i].adr, CtrChange, FILTERFC, Cutoff >> 7);
-      blink = true;
-    }
-#else
-    sendI2c(0, CtrChange, FILTERFCLOW, Cutoff & 0x7F);
-    sendI2c(0, CtrChange, FILTERFC, Cutoff >> 7);
+
+    sendI2c(0, CtrChange + channel, FILTERFCLOW, Cutoff & 0x7F);
+    sendI2c(0, CtrChange + channel, FILTERFC, Cutoff >> 7);
     blink = true;
 
-#endif
   } else if (controler == DEFAULTCONF) {
-#if MULTICAST == 0
-    for (int i = 0; i < nVoices; i++) {
-      for (int j = 0; j < sizeof(Preset); j += 2)
-        sendI2c(voices[i].adr, CtrChange, Preset[j], Preset[j + 1]);
-      blink = true;
-    }
-#else
-    for (uint j = 0; j < sizeof(Preset); j += 2) {
-      sendI2c(0, CtrChange, Preset[j], Preset[j + 1]);
-      blink = true;
-      delay(20);
-    }
-#endif
+    loadPreset(value);
   } else if (controler <= 124) {
-#if MULTICAST == 0
-    for (int i = 0; i < nVoices; i++) {
-      sendI2c(voices[i].adr, CtrChange, controler, value);
-      blink = true;
-    }
-#else
-    sendI2c(0, CtrChange, controler, value);
+
+    sendI2c(0, CtrChange + channel, controler, value);
     blink = true;
 
-#endif
   } else if (controler == 126) {
     //Monophonic Operation
     MonoMode = true;
     //All sounds Off
-    OnControlChange(0, 120, 0);
+    OnControlChange(channel, 120, 0);
   } else if (controler == 127) {
     //Polyphonic Operation
     MonoMode = false;
     //All sounds Off
-    OnControlChange(0, 120, 0);
+    OnControlChange(channel, 120, 0);
   }
 }
 
 void OnPitchChange(byte channel, int pitch) {
   for (int i = 0; i < nVoices; i++) {
-    //pitch = pitch + 8192;
-    sendI2c(voices[i].adr, PitchBend, pitch >> 8, pitch & 0xFF);
+    //Serial.println(pitch);
+    sendI2c(voices[i].adr, PitchBend + channel, pitch >> 7, pitch & 0x7F);
     blink = true;
   }
 }
@@ -444,6 +475,16 @@ void blinkLED() {
     digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
     blink = false;
   } else digitalWrite(LED_BUILTIN, LOW);  // turn the LED off by making the voltage LOW
+}
+
+void serialEvent() {
+  String a;
+  if (Serial.available() > 0) {
+    a = Serial.readString();
+    if (a.startsWith("p")) {
+      printPreset();
+    }
+  }
 }
 
 void loop() {

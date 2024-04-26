@@ -10,14 +10,15 @@
 
 
 const uint64_t srateFactor = 4294967296;
+const int64_t SCALE_FACTOR = 65536;
 
 
 struct CallbackData {
   uint8_t WaveshapeFactor = 1;
-  long SetPoint = WaveshapeFactor * 2.5 / convFactor;  // Initialise la consigne de l'asservissement à une amplitude de 2.5V
-  long error = 0, errorSum = 0, output = 0;            //Variables de la commande PI
-  float _Kp = 440 * Kp;
-  float _Ki = Ki / 440;
+  int64_t SetPoint = WaveshapeFactor * 2.5 / convFactor;  // Initialise la consigne de l'asservissement à une amplitude de 2.5V
+  int64_t error = 0, errorSum = 0, output = 0;            //Variables de la commande PI
+  int64_t _Kp = 440 * Kp * SCALE_FACTOR;
+  int64_t _Ki = (Ki / 440) * SCALE_FACTOR;
   int32_t noteFreq = 440;
   int64_t delay_us;
   uint32_t sliceH;

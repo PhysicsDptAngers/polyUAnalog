@@ -1,92 +1,58 @@
+/*
+
+                           ,--,                                  ,---,                                     ,--,
+   ,-.----.              ,--.'|                         ,--,    '  .' \                                  ,--.'|
+   \    /  \     ,---.   |  | :                       ,'_ /|   /  ;    '.           ,---,                |  | :       ,---.
+   |   :    |   '   ,'\  :  : '                  .--. |  | :  :  :       \      ,-+-. /  |               :  : '      '   ,'\    ,----._,.
+   |   | .\ :  /   /   | |  ' |          .--,  ,'_ /| :  . |  :  |   /\   \    ,--.'|'   |    ,--.--.    |  ' |     /   /   |  /   /  ' /
+   .   : |: | .   ; ,. : '  | |        /_ ./|  |  ' | |  . .  |  :  ' ;.   :  |   |  ,"' |   /       \   '  | |    .   ; ,. : |   :     |
+   |   |  \ : '   | |: : |  | :     , ' , ' :  |  | ' |  | |  |  |  ;/  \   \ |   | /  | |  .--.  .-. |  |  | :    '   | |: : |   | .\  .
+   |   : .  | '   | .; : '  : |__  /___/ \: |  :  | | :  ' ;  '  :  | \  \ ,' |   | |  | |   \__\/: . .  '  : |__  '   | .; : .   ; ';  |
+   :     |`-' |   :    | |  | '.'|  .  \  ' |  |  ; ' |  | '  |  |  '  '--'   |   | |  |/    ," .--.; |  |  | '.'| |   :    | '   .   . |
+   :   : :     \   \  /  ;  :    ;   \  ;   :  :  | : ;  ; |  |  :  :         |   | |--'    /  /  ,.  |  ;  :    ;  \   \  /   `---`-'| |
+   |   | :      `----'   |  ,   /     \  \  ;  '  :  `--'   \ |  | ,'         |   |/       ;  :   .'   \ |  ,   /    `----'    .'__/\_: |
+   `---'.|                ---`-'       :  \  \ :  ,      .-./ `--''           '---'        |  ,     .-./  ---`-'               |   :    :
+     `---`                              \  ' ;  `--`----'                                   `--`---'                            \   \  /
+                                         `--`                                                                                    `--`-'
+  
+    A Polyphonic Analogic and Open Source Synthesizer
+
+    https://github.com/PhysicsDptAngers/polyUAnalog
+
+    M. Loumaigne 
+    D. Guichaoua
+
+    2023 - 2024 - Université d'Angers
+
+    Monophonic voices synthesizer
+
+    v4.5
+    - Adding multitimbral function
+    - One byte control change possibility
+    - Optimize PI calculation
+
+    To do
+    - Fixe ADSR sustain bug
+    - Adding preset transfert by SysEx
+
+*/
+
 #include "midicontrol.h"
 #include <Wire.h>
-#include "as3397.h"
-#include "LFO.h"
-#include "ADSR.h"
-#include "DSO.h"
+#include "Synth.h"
 #include "RPi_Pico_TimerInterrupt.h"
 
 #define I2CclockFreq 400000
-#define I2CAddressBase 0x19
+#define I2CAddressBase 0x10
+#define I2CVoie 0
 #define BUFFER_SIZE 1024  // Taille du tampon I2C, ajustez-la en fonction de vos besoins
 byte buffer[BUFFER_SIZE];
 int bufferWriteIndex = 0;  // Index d'écriture dans le tampon
 int bufferReadIndex = 0;   // Index de lecture dans le tampon
-
-// use #define for CONTROL_RATE, not a constant
-#define CONTROL_RATE 500  // Hz, powers of 2 are most reliable
-// use #define for AUDIO_RATE, not a constant
-#define AUDIO_RATE 31250  // Hz, powers of 2 are most reliable
-
-#define BENDRANGE 12
+uint8_t I2CAddress;
 
 RPI_PICO_Timer ITimer3(2);
 RPI_PICO_Timer ITimer4(3);
-
-As3397 as(AUDIO_RATE);
-LFO lfo1(CONTROL_RATE);
-ADSR eg1(CONTROL_RATE);
-ADSR eg2(CONTROL_RATE);
-DSO dso(AUDIO_RATE);
-
-uint8_t waveformA;
-int8_t pwmA;
-int8_t transposeA;
-int8_t detuneA;
-uint8_t waveformB;
-int8_t pwmB;
-int8_t transposeB;
-int8_t detuneB;
-int8_t transposeDSO;
-int8_t detuneDSO;
-int8_t PwDSO;
-int16_t balance;
-int8_t noisemix = 0;
-int32_t Filter_freq = 4095;
-int8_t Filter_freqLow = 0;
-int32_t Filter_res;
-int32_t Filter_key = 0;
-int32_t Filter_env = 0;
-int8_t mod_amount;
-int32_t Pan;
-
-uint8_t key;
-int32_t freqA;
-int32_t freqB;
-int32_t freqDSO;
-int32_t velocity;
-int32_t volume = 64;
-int8_t GlbTranspose = 0;
-int8_t GlbDetune = 0;
-int16_t Glide = 0;
-const float bendfactor = ((BENDRANGE * 100.0) / 8190.0);
-int32_t bend = 0;
-
-int32_t Lfo1ToPwmA = 0;
-int32_t Lfo1ToPwmB = 0;
-int32_t Lfo1ToPwmDso = 0;
-int32_t Lfo1ToFreq = 0;
-int32_t Lfo1ToFilter = 0;
-int32_t Lfo1ToRes = 0;
-int32_t Lfo1ToPan = 32;
-
-int32_t VelToVca = 127;
-int32_t VelToFilter = 0;
-
-int32_t AFTToVca = 0;
-int32_t AFTToFilter = 0;
-
-int32_t keyToPan = 64;
-
-int32_t Eg2ToFreq;
-
-uint16_t rampe = 0;
-
-uint8_t I2CAddress;
-
-bool RAZPid = true;
-
-
 
 // DECLARATION POUR HANDLER MIDI
 //------------------------------------------------
@@ -98,13 +64,13 @@ enum { MIDI_OTHER,
        MIDI_PITCH_BEND
 };
 
-int32_t midiToFreq(uint8_t midikey, int8_t transpose, int8_t detune) {
+int32_t midiToFreq(uint8_t midikey, int8_t transpose, int8_t detune, int8_t GlbTranspose) {
   int32_t freq = 8.1757989156 * pow(2.0, ((midikey + transpose + GlbTranspose) / 12.0) + ((detune) / 1200.0));
   return freq;
 }
 
 //---------------------
-// GESTIONN MIDI IN
+// GESTION MIDI IN
 //---------------------
 void OnMidi(uint8_t Midibyte) {
   static uint8_t midimode = MIDI_OTHER;
@@ -156,6 +122,8 @@ void OnMidi(uint8_t Midibyte) {
       midibuffer[0] = midibuffer[1];  // Oui, swap des octets
       midibuffer[1] = Midibyte;       // stockage octet courant
       midibytesleft--;                // un octet de moins a lire
+    } else if (midibytesleft < 0) {
+      if (midimode == MIDI_CONTROL_CHANGE) handleControlChange(MidiChannel, midibuffer[0], Midibyte);
     }
     // Traitement du message
     if (midibytesleft == 0) {
@@ -188,12 +156,20 @@ void OnMidi(uint8_t Midibyte) {
 
 // Gestionnaire d'événements pour les messages MIDI Note On
 void handleNoteOn(byte channel, byte pitch, byte vel) {
-  key = pitch;
-  velocity = vel;
-  freqA = midiToFreq(key, transposeA, detuneA);
-  freqB = midiToFreq(key, transposeB, detuneB);
-  freqDSO = midiToFreq(key, transposeDSO, detuneDSO);
-  RAZPid = true;
+
+  synth[channel].key = pitch;
+  synth[channel].velocity = vel;
+  synth[channel].freqA = midiToFreq(synth[channel].key, synth[channel].transposeA, synth[channel].detuneA, synth[channel].GlbTranspose);
+  synth[channel].freqB = midiToFreq(synth[channel].key, synth[channel].transposeB, synth[channel].detuneB, synth[channel].GlbTranspose);
+  synth[channel].freqDSO = midiToFreq(synth[channel].key, synth[channel].transposeDSO, synth[channel].detuneDSO, synth[channel].GlbTranspose);
+  synth[channel].RAZPid = true;
+
+  if (channel != CurMidiChannel) {
+    CurMidiChannel = channel;
+    eg1.soundOff();
+    eg2.soundOff();
+    updateSynth(channel);
+  }
   eg1.gateOn();
   eg2.gateOn();
 }
@@ -206,204 +182,201 @@ void handleNoteOff(byte channel, byte pitch, byte velocity) {
 
 // Gestionnaire d'événements pour les messages MIDI CC
 void handleControlChange(byte channel, byte controller, byte value) {
+  bool up = false;
+  if (channel == CurMidiChannel) up = true;
+
   switch (controller) {
     case OSC1WAVE:
       switch (value) {
         case 0:
-          waveformA = WAVE_NONE;
-          as.set_WaveshapeFactorDcoA(1);
+          synth[channel].waveformA = WAVE_NONE;
+          synth[channel].waveshapeFactorA = 1;
           break;
         case 1:
-          waveformA = WAVE_A;
-          as.set_WaveshapeFactorDcoA(1);
+          synth[channel].waveformA = WAVE_A;
+          synth[channel].waveshapeFactorA = 1;
           break;
         case 2:
-          waveformA = WAVE_A;
-          as.set_WaveshapeFactorDcoA(2);
+          synth[channel].waveformA = WAVE_A;
+          synth[channel].waveshapeFactorA = 2;
           break;
         case 3:
-          waveformA = WAVE_A;
-          as.set_WaveshapeFactorDcoA(3);
+          synth[channel].waveformA = WAVE_A;
+          synth[channel].waveshapeFactorA = 3;
           break;
         case 4:
-          waveformA = WAVE_A;
-          as.set_WaveshapeFactorDcoA(4);
+          synth[channel].waveformA = WAVE_A;
+          synth[channel].waveshapeFactorA = 4;
           break;
       }
-      as.set_Wave_Select(waveformA + waveformB);
       break;
     case OSC2WAVE:
       switch (value) {
         case 0:
-          waveformB = WAVE_NONE;
-          as.set_WaveshapeFactorDcoB(1);
+          synth[channel].waveformB = WAVE_NONE;
+          synth[channel].waveshapeFactorB = 1;
           break;
         case 1:
-          waveformB = WAVE_B;
-          as.set_WaveshapeFactorDcoB(1);
+          synth[channel].waveformB = WAVE_B;
+          synth[channel].waveshapeFactorB = 1;
           break;
         case 2:
-          waveformB = WAVE_B;
-          as.set_WaveshapeFactorDcoB(2);
+          synth[channel].waveformB = WAVE_B;
+          synth[channel].waveshapeFactorB = 2;
           break;
         case 3:
-          waveformB = WAVE_B;
-          as.set_WaveshapeFactorDcoB(3);
+          synth[channel].waveformB = WAVE_B;
+          synth[channel].waveshapeFactorB = 3;
           break;
         case 4:
-          waveformB = WAVE_B;
-          as.set_WaveshapeFactorDcoB(4);
+          synth[channel].waveformB = WAVE_B;
+          synth[channel].waveshapeFactorB = 4;
           break;
       }
-      as.set_Wave_Select(waveformA + waveformB);
       break;
     case OSC1DETUNE:
-      detuneA = value - 64;
-      freqA = midiToFreq(key, transposeA, detuneA);
+      synth[channel].detuneA = value - 64;
+      synth[channel].freqA = midiToFreq(synth[channel].key, synth[channel].transposeA, synth[channel].detuneA, synth[channel].GlbTranspose);
       break;
     case OSC2DETUNE:
-      detuneB = value - 64;
-      freqB = midiToFreq(key, transposeB, detuneB);
+      synth[channel].detuneB = value - 64;
+      synth[channel].freqB = midiToFreq(synth[channel].key, synth[channel].transposeB, synth[channel].detuneB, synth[channel].GlbTranspose);
       break;
     case OSC1TRANSPOSE:
-      transposeA = value - 64;
-      freqA = midiToFreq(key, transposeA, detuneA);
+      synth[channel].transposeA = value - 64;
+      synth[channel].freqA = midiToFreq(synth[channel].key, synth[channel].transposeA, synth[channel].detuneA, synth[channel].GlbTranspose);
       break;
     case OSC2TRANSPOSE:
-      transposeB = value - 64;
-      freqB = midiToFreq(key, transposeB, detuneB);
+      synth[channel].transposeB = value - 64;
+      synth[channel].freqB = midiToFreq(synth[channel].key, synth[channel].transposeB, synth[channel].detuneB, synth[channel].GlbTranspose);
       break;
     case OSC1PWM:
-      pwmA = value;
+      synth[channel].pwmA = value;
       break;
     case OSC2PWM:
-      pwmB = value;
+      synth[channel].pwmB = value;
       break;
     case BALANCE:
-      as.set_Balance_cv(value << 1);
+      synth[channel].balance = value << 1;
       break;
     case MIXNOISE:
-      noisemix = value;
+      synth[channel].noisemix = value;
       break;
     case DSOWAVE:
-      dso.setWaveform(value);
+      synth[channel].waveformDSO = value;
       break;
-      uint16_t srate;
     case DSOTRANSPOSE:
-      transposeDSO = value - 64;
-      freqDSO = midiToFreq(key, transposeDSO, detuneDSO);
-      dso.setFrequency(freqDSO);
+      synth[channel].transposeDSO = value - 64;
+      synth[channel].freqDSO = midiToFreq(synth[channel].key, synth[channel].transposeDSO, synth[channel].detuneDSO, synth[channel].GlbTranspose);
       break;
     case DSODETUNE:
-      detuneDSO = value - 64;
-      freqDSO = midiToFreq(key, transposeDSO, detuneDSO);
-      dso.setFrequency(freqDSO);
+      synth[channel].detuneDSO = value - 64;
+      synth[channel].freqDSO = midiToFreq(synth[channel].key, synth[channel].transposeDSO, synth[channel].detuneDSO, synth[channel].GlbTranspose);
       break;
     case DSOMIX:
-      dso.setAmplitude(value);
+      synth[channel].AmplitudeDSO = value;
       break;
     case DSOPW:
-      PwDSO = value - 64;
+      synth[channel].PwDSO = value - 64;
       break;
     case FILTERFC:
-      Filter_freq = (value << 7) + Filter_freqLow;
+      synth[channel].Filter_freq = (value << 7) + synth[channel].Filter_freqLow;
       break;
     case FILTERFCLOW:
-      Filter_freqLow = value;
+      synth[channel].Filter_freqLow = value;
       break;
     case FILTERRES:
-      Filter_res = value << 5;
+      synth[channel].Filter_res = value << 5;
       break;
     case FILTERKEY:
-      Filter_key = value;
+      synth[channel].Filter_key = value;
       break;
     case FILTERENV:
-      Filter_env = value - 64;
+      synth[channel].Filter_env = value - 64;
       break;
     case MODAMOUNT:
-      as.set_Mod_amount_cv(value << 1);
+      synth[channel].mod_amount = value << 1;
       break;
     case PAN:
-      Pan = value << 1;
-      //as.set_Pan_cv(Pan);
+      synth[channel].Pan = value << 5;
       break;
     case LFO1WAVE:
-      lfo1.setWaveform(value);
+      synth[channel].Lfo1Wave = value;
       break;
     case LFO1FREQ:
-      lfo1.setFrequency(value / 10.0);
+      synth[channel].Lfo1Freq = value / 10.0;
       break;
     case LFO12PWA:
-      Lfo1ToPwmA = value;
+      synth[channel].Lfo1ToPwmA = value;
       break;
     case LFO12PWB:
-      Lfo1ToPwmB = value;
+      synth[channel].Lfo1ToPwmB = value;
       break;
     case LFO12FREQ:
-      Lfo1ToFreq = value;
+      synth[channel].Lfo1ToFreq = value;
       break;
     case LFO12FILTER:
-      Lfo1ToFilter = value;
+      synth[channel].Lfo1ToFilter = value;
       break;
     case LFO12PWDSO:
-      Lfo1ToPwmDso = value;
+      synth[channel].Lfo1ToPwmDso = value;
       break;
     case LFO12PAN:
-      Lfo1ToPan = value;
+      synth[channel].Lfo1ToPan = value;
       break;
     case EG1ATTACK:
-      eg1.setAttack(value);
+      synth[channel].eg1Attack = value;
       break;
     case EG1DECAY:
-      eg1.setDecay(value);
+      synth[channel].eg1Decay = value;
       break;
     case EG1SUSTAIN:
-      eg1.setSustain(value);
+      synth[channel].eg1Sustain = value;
       break;
     case EG1RELEASE:
-      eg1.setRelease(value);
+      synth[channel].eg1Release = value;
       break;
     case EG2ATTACK:
-      eg2.setAttack(value);
+      synth[channel].eg2Attack = value;
       break;
     case EG2DECAY:
-      eg2.setDecay(value);
+      synth[channel].eg2Decay = value;
       break;
     case EG2SUSTAIN:
-      eg2.setSustain(value);
+      synth[channel].eg2Sustain = value;
       break;
     case EG2RELEASE:
-      eg2.setRelease(value);
+      synth[channel].eg2Release = value;
       break;
     case EG22FREQ:
-      Eg2ToFreq = value;
+      synth[channel].Eg2ToFreq = value;
       break;
     case VEL2VCA:
-      VelToVca = value;
+      synth[channel].VelToVca = value;
       break;
     case VEL2FILTER:
-      VelToFilter = value;
+      synth[channel].VelToFilter = value;
       break;
     case AFT2VCA:
-      AFTToVca = value;
+      synth[channel].AFTToVca = value;
       break;
     case AFT2FILTER:
-      AFTToFilter = value;
+      synth[channel].AFTToFilter = value;
       break;
     case KEY2PAN:
-      keyToPan = value;
+      synth[channel].keyToPan = value;
       break;
     case GLBDETUNE:
-      GlbDetune = value - 64;
+      synth[channel].GlbDetune = value - 64;
       break;
     case GLBTRANSPOSE:
-      GlbTranspose = value - 64;
+      synth[channel].GlbTranspose = value - 64;
       break;
     case GLBVOLUME:
-      volume = value;
+      synth[channel].volume = value;
       break;
     case GLBGLIDE:
-      Glide = value;
+      synth[channel].Glide = value;
       break;
     case ALLSOUNDOFF:
       eg1.soundOff();
@@ -414,12 +387,13 @@ void handleControlChange(byte channel, byte controller, byte value) {
       eg2.gateOff();
       break;
   }
+  if (up) updateSynth(channel);
 }
 
 // Gestionnaire d'événements pour les messages pitch Bend
 void handlePitchBend(byte channel, byte value1, byte value2) {
-  int bender = (value1 << 8) + value2 - 8192;
-  bend = bender * bendfactor;
+  int bender = (value1 << 7) + value2;
+  synth[channel].bend = bender * bendfactor;
 }
 
 
@@ -442,63 +416,7 @@ void i2cRequest() {
   Wire.write(eg1.getADSRState());
 }
 
-bool updateCtrl(struct repeating_timer *t) {
-  //rampe += 64;
-  int32_t tmp;
-  float FMmod;
-  static float yA = 0;
-  static float yB = 0;
-  static float yD = 0;
 
-  lfo1.update();
-  eg1.update();
-  eg2.update();
-
-  as.set_Vca_cv(velocity * VelToVca * volume * eg1.veg / (128 * 128 * 128));
-
-  as.set_Filter_freq_cv(Filter_freq + (eg2.veg * Filter_env / 32) + ((key - 64) * Filter_key / 2)
-                        + ((lfo1.vlfo * Lfo1ToFilter) / 16) + (velocity * VelToFilter / 32));
-  as.set_Filter_res_cv(Filter_res + ((lfo1.vlfo * Lfo1ToRes) / 16));
-
-  as.set_DcoA_pw_cv(pwmA + (lfo1.vlfo * Lfo1ToPwmA / 128));
-  as.set_DcoB_pw_cv(pwmB + (lfo1.vlfo * Lfo1ToPwmB / 128));
-  as.set_DcoB_pw_cv(PwDSO + (lfo1.vlfo * Lfo1ToPwmDso / 128));
-  
-  tmp = bend + (lfo1.vlfo * Lfo1ToFreq / 128) + (eg2.veg * Eg2ToFreq / 128) + GlbDetune;
-  FMmod = pow(2, tmp / 1200.0);
-
-  //Glide
-  if (Glide) {
-    yA += (freqA - yA) / Glide;
-    yB += (freqB - yB) / Glide;
-    yD += (freqDSO - yD) / Glide;
-  }
-  else {
-    yA = freqA;
-    yB = freqB;
-    yD = freqDSO;
-  }
-
-  as.set_DcoA_freq(yA * FMmod, RAZPid);
-  as.set_DcoB_freq(yB * FMmod, RAZPid);
-  dso.setFrequency(yD * FMmod);
-
-  as.set_Pan_cv(Pan + (lfo1.vlfo * Lfo1ToPan / 128) + ((key - 64) * keyToPan / 128));
-
-  RAZPid = false;
-  return true;
-}
-
-bool updateAudio(struct repeating_timer *t) {
-  int value;
-  as.updateDcoA();
-  as.updateDcoB();
-  dso.update();
-  value = (rand() % 32767) * noisemix / 128;  // Générer une valeur aléatoire entre 0 et 255
-  value += dso.vdso;
-  as.DSO(value);
-  return true;
-}
 
 
 void setup() {
@@ -510,9 +428,9 @@ void setup() {
   // Make sure GPIO is high-impedance, no pullups etc
   adc_gpio_init(I2C_ADR_READ + 26);
   adc_select_input(I2C_ADR_READ);
-  uint16_t adcval = adc_read();            // Lecture de l'adresse I2C
-  
-  I2CAddress = I2CAddressBase + 0;
+  uint16_t adcval = adc_read();  // Lecture de l'adresse I2C
+
+  I2CAddress = I2CAddressBase + I2CVoie;
 
   Wire.setSDA(20);
   Wire.setSCL(21);
@@ -521,44 +439,12 @@ void setup() {
   Wire.onReceive(i2cReceive);
   Wire.onRequest(i2cRequest);
 
-  for (int i = 0; i < (I2CAddress - /*I2CAddressBase*/ 0x10 + 1); i++) {
+  for (int i = 0; i < (I2CAddress - I2CAddressBase + 1); i++) {
     digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
     delay(250);                       // wait
     digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
     delay(250);                       // wait
   }
-
-  waveformA = 0;
-  pwmA = 64;
-  transposeA = 0;
-  detuneA = 0;
-  waveformB = 0;
-  pwmB = 64;
-  transposeB = 0;
-  detuneB = 10;
-  transposeDSO = 0;
-  detuneDSO = 0;
-  balance = 128;
-  Filter_freq = 4095;
-  Filter_res = 0;
-  mod_amount = 0;
-  Pan = 128;
-
-  as.set_DcoA_freq(220, false);
-  as.set_DcoB_freq(222, false);
-  as.set_DcoA_pw_cv(pwmA);
-  as.set_DcoB_pw_cv(pwmB);
-  as.set_Balance_cv(balance);
-  as.set_Mod_amount_cv(mod_amount);
-  as.set_Filter_freq_cv(Filter_freq);
-  as.set_Filter_res_cv(Filter_res);
-  as.set_Vca_cv(0);
-  as.set_Pan_cv(128);
-  as.set_Wave_Select(WAVE_AB);
-
-  lfo1.setWaveform(0);
-  lfo1.setFrequency(5);
-  lfo1.setAmplitude(1);
 
   ITimer3.setInterval(1E6 / CONTROL_RATE, updateCtrl);
 
@@ -569,30 +455,26 @@ void setup() {
 }
 
 void setup1() {
-  lfo1.setWaveform(0);
-  lfo1.setFrequency(1);
-  lfo1.setAmplitude(1);
-  dso.setWaveform(0);
-
+  updateSynth(CurMidiChannel);
   ITimer4.setInterval(1E6 / AUDIO_RATE, updateAudio);
 }
 
 void loop() {
   if (eg1.getADSRState() == NOTEOFF) {
-    digitalWrite(LED_BUILTIN, LOW);  // turn the LED off by making the voltage LOW
+    gpio_put(LED_BUILTIN, false);  // turn the LED off by making the voltage LOW
     if (blink) {
-      digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+      gpio_put(LED_BUILTIN, true);  // turn the LED on (HIGH is the voltage level)
       delay(50);                        // wait
-      digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+      gpio_put(LED_BUILTIN, false);   // turn the LED off by making the voltage LOW
       blink = false;
       delay(50);
     }
   } else {
-    digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+    gpio_put(LED_BUILTIN, true);  // turn the LED on (HIGH is the voltage level)
     if (blink) {
-      digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW
+      gpio_put(LED_BUILTIN, false);   // turn the LED off by making the voltage LOW
       delay(50);                        // wait
-      digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
+      gpio_put(LED_BUILTIN, true);  // turn the LED on (HIGH is the voltage level)
       blink = false;
       delay(50);
     }

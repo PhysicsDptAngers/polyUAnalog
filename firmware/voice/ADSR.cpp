@@ -22,7 +22,7 @@ void ADSR::gateOn() {
 
 // Méthode pour commencer le relâchement
 void ADSR::gateOff() {
-  state = RELEASE;
+  if (state != NOTEOFF) state = RELEASE;
 }
 
 // Méthode pour couper le son
