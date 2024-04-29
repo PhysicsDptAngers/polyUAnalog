@@ -15,8 +15,8 @@ As3397::As3397(uint32_t srate) {
   this->MOD_AMOUNT_CV_sliceNum = set_gpio_pwm(MOD_AMOUNT_CV, PWMRes);
   this->FILTER_FREQ_CV_sliceNum = set_gpio_pwm(FILTER_FREQ_CV, PWMResFilter);
   this->FILTER_RES_CV_sliceNum = set_gpio_pwm(FILTER_RES_CV, PWMResFilter);
-  this->VCA_CV_sliceNum = set_gpio_pwm(VCA_CV, PWMResFilter);
-  this->PAN_CV_sliceNum = set_gpio_pwm(PAN_CV, PWMResFilter);
+  this->VCA_CV_sliceNum = set_gpio_pwm(VCA_CV, PWMRes);
+  this->PAN_CV_sliceNum = set_gpio_pwm(PAN_CV, PWMRes);
 
   gpio_init(DCOA_FREQ);
   gpio_set_dir(DCOA_FREQ, GPIO_OUT);
@@ -86,8 +86,8 @@ void As3397::set_DcoA_freq(int32_t freq, bool RAZIntegrator) {
     factor = 32;
   }
 
-  DcoA._Kp = freq * Kp * factor * SCALE_FACTOR;
-  DcoA._Ki = (Ki / freq) * SCALE_FACTOR;
+  DcoA._Kp = freq * Kp * factor;
+  DcoA._Ki = Ki / freq;
 
   if (RAZIntegrator) {
     // Réinitialise l'accumulateur d'erreur
@@ -112,8 +112,8 @@ void As3397::set_DcoB_freq(int32_t freq, bool RAZIntegrator) {
     factor = 32;
   }
 
-  DcoB._Kp = freq * Kp * factor * SCALE_FACTOR;
-  DcoB._Ki = (Ki / freq) * SCALE_FACTOR;
+  DcoB._Kp = freq * Kp * factor;
+  DcoB._Ki = Ki / freq;
 
   if (RAZIntegrator) {
     // Réinitialise l'accumulateur d'erreur
@@ -127,16 +127,16 @@ void As3397::set_DcoFM(int FMmod) {
 }
 
 
-void As3397::set_DcoA_pw_cv(int8_t cv) {
-  int32_t level = cv * DcoA.WaveshapeFactor / 2;
+void As3397::set_DcoA_pw_cv(int32_t cv) {
+  int32_t level = cv * DcoA.WaveshapeFactor;
   if (level > this->DCOA_PW_CV_sliceNum.dutyMax) level = this->DCOA_PW_CV_sliceNum.dutyMax;
   else if (level <= 0) level = this->DCOA_PW_CV_sliceNum.dutyMax;
   pwm_set_chan_level(this->DCOA_PW_CV_sliceNum.slice, this->DCOA_PW_CV_sliceNum.channel, level);
   DcoA.Pwm = cv;
 }
 
-void As3397::set_DcoB_pw_cv(int8_t cv) {
-  int32_t level = cv * DcoB.WaveshapeFactor / 2;
+void As3397::set_DcoB_pw_cv(int32_t cv) {
+  int32_t level = cv * DcoB.WaveshapeFactor;
   if (level > this->DCOB_PW_CV_sliceNum.dutyMax) level = this->DCOB_PW_CV_sliceNum.dutyMax;
   else if (level <= 0) level = this->DCOB_PW_CV_sliceNum.dutyMax;
   pwm_set_chan_level(this->DCOB_PW_CV_sliceNum.slice, this->DCOB_PW_CV_sliceNum.channel, level);
@@ -191,11 +191,11 @@ void As3397::set_Wave_Select(uint8_t wave) {
       gpio_put(WS_BIT0, true);
       gpio_put(WS_BIT1, false);
       break;
-    case WAVE_NONE:
+    case WAVE_A: //Normaly NONE
       gpio_put(WS_BIT0, false);
       gpio_put(WS_BIT1, true);
       break;
-    case WAVE_A:
+    case WAVE_NONE: //Normaly WAVE_A
       gpio_put(WS_BIT0, true);
       gpio_put(WS_BIT1, true);
       break;
@@ -238,7 +238,7 @@ void As3397::updateDcoA() {
   DcoA.error = DcoA.SetPoint - adcval;  // calcul l'erreur pour l'asservissement de l'amplitude de la rampe
   DcoA.errorSum += DcoA.error; // Calcul de la fonction integral
 
-  DcoA.output = (DcoA._Kp * DcoA.SetPoint + DcoA._Ki * DcoA.errorSum) / SCALE_FACTOR;  // Calcul de la sortie du PI
+  DcoA.output = DcoA._Kp * DcoA.SetPoint + DcoA._Ki * DcoA.errorSum;  // Calcul de la sortie du PI
 
   if (DcoA.output < 0) DcoA.output = 0;  // Limite la sortie à 0-65535
   else if (DcoA.output > 65535) DcoA.output = 65535;
@@ -268,7 +268,7 @@ void As3397::updateDcoB() {
   DcoB.error = DcoB.SetPoint - adcval;  // calcul l'erreur pour l'asservissement de l'amplitude de la rampe
   DcoB.errorSum += DcoB.error; // Calcul de la fonction integral
 
-  DcoB.output = (DcoB._Kp * DcoB.SetPoint + DcoB._Ki * DcoB.errorSum) / SCALE_FACTOR;  // Calcul de la sortie du PI
+  DcoB.output = DcoB._Kp * DcoB.SetPoint + DcoB._Ki * DcoB.errorSum;  // Calcul de la sortie du PI
 
   if (DcoB.output < 0) DcoB.output = 0;  // Limite la sortie à 0-65535
   else if (DcoB.output > 65535) DcoB.output = 65535;

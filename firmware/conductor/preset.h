@@ -76,7 +76,7 @@
 #define ALLSOUNDOFF 120
 #define ALLNOTESOFF 123
 
-// Définition des noms des contrôleurs MIDI
+// Definition of MIDI controller names
 const char* controlleurNom[] = {
   "OSC1WAVE", "OSC1TRANSPOSE", "OSC1PWM", "OSC1DETUNE",
   "OSC2WAVE", "OSC2TRANSPOSE", "OSC2DETUNE", "OSC2PWM",
@@ -91,7 +91,8 @@ const char* controlleurNom[] = {
   "AFT2VCA", "AFT2FILTER",
   "GLBDETUNE", "GLBTRANSPOSE", "GLBVELOCITY", "GLBVOLUME", "GLBGLIDE", "PAN"
 };
-// Définition des numero des contrôleurs MIDI
+
+// Setting MIDI controller numbers
 const byte controlleurNum[] = {
   OSC1WAVE, OSC1TRANSPOSE, OSC1PWM, OSC1DETUNE,
   OSC2WAVE, OSC2TRANSPOSE, OSC2DETUNE, OSC2PWM,
@@ -116,7 +117,7 @@ const uint8_t Saw0[] = { OSC1WAVE, 1, OSC1TRANSPOSE, 64, OSC1PWM, 64, OSC1DETUNE
                          DSOWAVE, 0, DSOTRANSPOSE, 64, DSODETUNE, 64, DSOPW, 64, DSOMIX, 0, MIXNOISE, 0,
                          EG1ATTACK, 1, EG1DECAY, 127, EG1SUSTAIN, 127, EG1RELEASE, 1,
                          EG2ATTACK, 1, EG2DECAY, 127, EG2SUSTAIN, 127, EG2RELEASE, 1, EG22FREQ, 0,
-                         FILTERFCLOW, 63, FILTERFC, 31, FILTERRES, 63, FILTERKEY, 0, FILTERENV, 0, MODAMOUNT, 0,
+                         FILTERFCLOW, 63, FILTERFC, 106, FILTERRES, 63, FILTERKEY, 0, FILTERENV, 0, MODAMOUNT, 0,
                          LFO1WAVE, 0, LFO1FREQ, 16, LFO12PWA, 0, LFO12PWB, 0, LFO12FREQ, 0, LFO12FILTER, 0, LFO12PWDSO, 0, LFO12PAN, 0,
                          VEL2VCA, 127, VEL2FILTER, 0,
                          KEY2PAN, 0,
@@ -130,7 +131,7 @@ const uint8_t Preset1[] = { OSC1WAVE, 0, OSC1TRANSPOSE, 64, OSC1PWM, 64, OSC1DET
                             DSOPW, 64, DSOMIX, 0, MIXNOISE, 0, EG1ATTACK, 1,
                             EG1DECAY, 127, EG1SUSTAIN, 127, EG1RELEASE, 1, EG2ATTACK, 1,
                             EG2DECAY, 127, EG2SUSTAIN, 127, EG2RELEASE, 1, EG22FREQ, 0,
-                            FILTERFC, 31, FILTERFCLOW, 63, FILTERRES, 4, FILTERKEY, 0,
+                            FILTERFC, 106, FILTERFCLOW, 63, FILTERRES, 4, FILTERKEY, 0,
                             FILTERENV, 0, MODAMOUNT, 0, LFO1WAVE, 0, LFO1FREQ, 30,
                             LFO12PWA, 57, LFO12PWB, 0, LFO12FREQ, 0, LFO12FILTER, 18,
                             LFO12PWDSO, 0, LFO12PAN, 6, VEL2VCA, 127, VEL2FILTER, 0,
@@ -143,7 +144,7 @@ const uint8_t Preset2[] = { OSC1WAVE, 1, OSC1TRANSPOSE, 64, OSC1PWM, 64, OSC1DET
                             DSOPW, 64, DSOMIX, 0, MIXNOISE, 0, EG1ATTACK, 1,
                             EG1DECAY, 127, EG1SUSTAIN, 127, EG1RELEASE, 1, EG2ATTACK, 1,
                             EG2DECAY, 127, EG2SUSTAIN, 127, EG2RELEASE, 1, EG22FREQ, 0,
-                            FILTERFC, 31, FILTERFCLOW, 63, FILTERRES, 17, FILTERKEY, 0,
+                            FILTERFC, 106, FILTERFCLOW, 63, FILTERRES, 17, FILTERKEY, 0,
                             FILTERENV, 0, MODAMOUNT, 0, LFO1WAVE, 0, LFO1FREQ, 15,
                             LFO12PWA, 0, LFO12PWB, 0, LFO12FREQ, 0, LFO12FILTER, 49,
                             LFO12PWDSO, 0, LFO12PAN, 14, VEL2VCA, 127, VEL2FILTER, 0,
@@ -156,7 +157,7 @@ const uint8_t Preset3[] = { OSC1WAVE, 0, OSC1TRANSPOSE, 64, OSC1PWM, 0, OSC1DETU
                             DSOPW, 64, DSOMIX, 0, MIXNOISE, 0, EG1ATTACK, 86,
                             EG1DECAY, 113, EG1SUSTAIN, 84, EG1RELEASE, 9, EG2ATTACK, 1,
                             EG2DECAY, 127, EG2SUSTAIN, 127, EG2RELEASE, 1, EG22FREQ, 0,
-                            FILTERFC, 31, FILTERFCLOW, 63, FILTERRES, 22, FILTERKEY, 0,
+                            FILTERFC, 106, FILTERFCLOW, 63, FILTERRES, 22, FILTERKEY, 0,
                             FILTERENV, 0, MODAMOUNT, 0, LFO1WAVE, 0, LFO1FREQ, 25,
                             LFO12PWA, 96, LFO12PWB, 0, LFO12FREQ, 0, LFO12FILTER, 41,
                             LFO12PWDSO, 0, LFO12PAN, 0, VEL2VCA, 127, VEL2FILTER, 0,
@@ -169,7 +170,7 @@ const uint8_t Tri1[] = { OSC1WAVE, 2, OSC1TRANSPOSE, 52, OSC1PWM, 0, OSC1DETUNE,
                          DSOPW, 64, DSOMIX, 0, MIXNOISE, 0, EG1ATTACK, 1,
                          EG1DECAY, 127, EG1SUSTAIN, 127, EG1RELEASE, 1, EG2ATTACK, 1,
                          EG2DECAY, 127, EG2SUSTAIN, 127, EG2RELEASE, 1, EG22FREQ, 0,
-                         FILTERFC, 31, FILTERFCLOW, 63, FILTERRES, 4, FILTERKEY, 0,
+                         FILTERFC, 106, FILTERFCLOW, 63, FILTERRES, 4, FILTERKEY, 0,
                          FILTERENV, 0, MODAMOUNT, 0, LFO1WAVE, 0, LFO1FREQ, 16,
                          LFO12PWA, 0, LFO12PWB, 0, LFO12FREQ, 0, LFO12FILTER, 0,
                          LFO12PWDSO, 0, LFO12PAN, 0, VEL2VCA, 127, VEL2FILTER, 0,
@@ -182,7 +183,7 @@ const uint8_t Tri2[] = { OSC1WAVE, 3, OSC1TRANSPOSE, 64, OSC1PWM, 0, OSC1DETUNE,
                          DSOPW, 64, DSOMIX, 0, MIXNOISE, 0, EG1ATTACK, 1,
                          EG1DECAY, 127, EG1SUSTAIN, 127, EG1RELEASE, 1, EG2ATTACK, 1,
                          EG2DECAY, 127, EG2SUSTAIN, 127, EG2RELEASE, 1, EG22FREQ, 0,
-                         FILTERFC, 31, FILTERFCLOW, 63, FILTERRES, 4, FILTERKEY, 0,
+                         FILTERFC, 106, FILTERFCLOW, 63, FILTERRES, 4, FILTERKEY, 0,
                          FILTERENV, 0, MODAMOUNT, 0, LFO1WAVE, 0, LFO1FREQ, 16,
                          LFO12PWA, 0, LFO12PWB, 0, LFO12FREQ, 0, LFO12FILTER, 0,
                          LFO12PWDSO, 0, LFO12PAN, 0, VEL2VCA, 127, VEL2FILTER, 0,
@@ -195,7 +196,7 @@ const uint8_t Tri3[] = { OSC1WAVE, 4, OSC1TRANSPOSE, 64, OSC1PWM, 0, OSC1DETUNE,
                          DSOPW, 64, DSOMIX, 0, MIXNOISE, 0, EG1ATTACK, 1,
                          EG1DECAY, 127, EG1SUSTAIN, 127, EG1RELEASE, 1, EG2ATTACK, 1,
                          EG2DECAY, 127, EG2SUSTAIN, 127, EG2RELEASE, 1, EG22FREQ, 0,
-                         FILTERFC, 31, FILTERFCLOW, 63, FILTERRES, 4, FILTERKEY, 0,
+                         FILTERFC, 106, FILTERFCLOW, 63, FILTERRES, 4, FILTERKEY, 0,
                          FILTERENV, 0, MODAMOUNT, 0, LFO1WAVE, 0, LFO1FREQ, 16,
                          LFO12PWA, 0, LFO12PWB, 0, LFO12FREQ, 0, LFO12FILTER, 0,
                          LFO12PWDSO, 0, LFO12PAN, 0, VEL2VCA, 127, VEL2FILTER, 0,
@@ -208,13 +209,13 @@ const uint8_t Square1[] = { OSC1WAVE, 0, OSC1TRANSPOSE, 64, OSC1PWM, 127, OSC1DE
                             DSOPW, 64, DSOMIX, 0, MIXNOISE, 0, EG1ATTACK, 1,
                             EG1DECAY, 127, EG1SUSTAIN, 127, EG1RELEASE, 1, EG2ATTACK, 1,
                             EG2DECAY, 127, EG2SUSTAIN, 127, EG2RELEASE, 1, EG22FREQ, 0,
-                            FILTERFC, 31, FILTERFCLOW, 63, FILTERRES, 0, FILTERKEY, 0,
+                            FILTERFC, 106, FILTERFCLOW, 63, FILTERRES, 0, FILTERKEY, 0,
                             FILTERENV, 0, MODAMOUNT, 0, LFO1WAVE, 0, LFO1FREQ, 16,
                             LFO12PWA, 0, LFO12PWB, 0, LFO12FREQ, 0, LFO12FILTER, 0,
                             LFO12PWDSO, 0, LFO12PAN, 0, VEL2VCA, 127, VEL2FILTER, 0,
                             KEY2PAN, 0, AFT2VCA, 0, AFT2FILTER, 0, GLBDETUNE, 64,
                             GLBTRANSPOSE, 64, GLBVELOCITY, 127, GLBVOLUME, 32, GLBGLIDE, 0, PAN, 64 };
 
-// Tableau de préréglages
+// Preset table
 const uint8_t* Presets[] = { Saw0, Tri1, Tri2, Tri3, Square1, Preset1, Preset2, Preset3 /* Ajoutez d'autres tableaux de préréglages ici */ };
 #endif

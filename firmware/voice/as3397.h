@@ -10,15 +10,14 @@
 
 
 const uint64_t srateFactor = 4294967296;
-const int64_t SCALE_FACTOR = 65536;
 
 
 struct CallbackData {
   uint8_t WaveshapeFactor = 1;
-  int64_t SetPoint = WaveshapeFactor * 2.5 / convFactor;  // Initialise la consigne de l'asservissement à une amplitude de 2.5V
-  int64_t error = 0, errorSum = 0, output = 0;            //Variables de la commande PI
-  int64_t _Kp = 440 * Kp * SCALE_FACTOR;
-  int64_t _Ki = (Ki / 440) * SCALE_FACTOR;
+  long SetPoint = WaveshapeFactor * 2.5 / convFactor;  // Initialise la consigne de l'asservissement à une amplitude de 2.5V
+  long error = 0, errorSum = 0, output = 0;            //Variables de la commande PI
+  float _Kp = 440 * Kp;
+  float _Ki = Ki / 440;
   int32_t noteFreq = 440;
   int64_t delay_us;
   uint32_t sliceH;
@@ -67,8 +66,8 @@ public:
   void set_DcoA_freq(int32_t freq, bool RAZIntegrator);
   void set_DcoB_freq(int32_t freq, bool RAZIntegrator);
   void set_DcoFM(int FMmod);
-  void set_DcoA_pw_cv(int8_t level);
-  void set_DcoB_pw_cv(int8_t level);
+  void set_DcoA_pw_cv(int32_t level);
+  void set_DcoB_pw_cv(int32_t level);
   void set_Balance_cv(int32_t level);
   void set_Mod_amount_cv(int32_t level);
   void set_Filter_freq_cv(int32_t level);

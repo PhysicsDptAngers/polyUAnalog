@@ -85,7 +85,7 @@ void DSO::setAmplitude(uint8_t a) {
 }
 
 void DSO::setPw(int32_t Pw) {
-  pwm = Pw * HS / 256;
+  pwm = Pw * HS / 128;
 }
 
 void DSO::update() {

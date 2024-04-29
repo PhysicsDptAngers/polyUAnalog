@@ -71,5 +71,5 @@ void LFO::update() {
       value = rand() % 256;  // Générer une valeur aléatoire entre 0 et 255
     break;
   }
-  vlfo = (int8_t)(value - 0x80) /* amplitude*/;
+  vlfo = (int8_t)(value - 0x80) * amplitude;
 }

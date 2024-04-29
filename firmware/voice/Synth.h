@@ -98,7 +98,7 @@ static struct SYNTHVAR synth[16];
 
 void updateSynth(byte channel) {
 
-  synth[channel].RAZPid = true;
+  //synth[channel].RAZPid = true;
 
   as.set_Wave_Select(synth[channel].waveformA + synth[channel].waveformB);
   as.set_WaveshapeFactorDcoA(synth[channel].waveshapeFactorA);
@@ -112,7 +112,7 @@ void updateSynth(byte channel) {
 
   dso.setWaveform(synth[channel].waveformDSO);
   dso.setAmplitude(synth[channel].AmplitudeDSO);
-  dso.setPw(synth[channel].PwDSO);
+  //dso.setPw(synth[channel].PwDSO);
 
   lfo1.setWaveform(synth[channel].Lfo1Wave);
   lfo1.setFrequency(synth[channel].Lfo1Freq);
