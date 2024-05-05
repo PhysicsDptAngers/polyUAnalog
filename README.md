@@ -51,6 +51,20 @@ Stay tuned for a SoundCloud link, which will be shared here soon.
 
 
 
+## Project Progress
+
+| Task               | Description                                    | Status       |
+|--------------------|------------------------------------------------|--------------|
+| Documenting    | Drafting an explanation of the synth's electronics and detailing the functionality of the code.      | ![#c5f015](https://via.placeholder.com/10/c5f015?text=+) In Progress |
+| Multitimbral          | Add multitimbral capability by adapting the software.  | ![#00FF00](https://via.placeholder.com/10/1589F0?text=+) Almost OK ! |
+| Faster PID   | Transitioning from the hardware RC-based Timer of the RP2040 to the PIO ones to achieve a faster response time of the DCO waveform.   | ![#f03c15](https://via.placeholder.com/10/f03c15?text=+) Testing |
+| Conductor board | Design and finalize the electronic, PCB, and firmware layout for the conductor board, which enables the control of voice cards, connects to an FX board, and one or multiple controllers.| ![#1589F0](https://via.placeholder.com/10/1589F0?text=+) Pending |
+| FX Loop | Testing the V4220 codec chip.| ![#1589F0](https://via.placeholder.com/10/1589F0?text=+) Pending |
+| Controler | Finishing the first controler : the "basic synth" | ![#1589F0](https://via.placeholder.com/10/1589F0?text=+) Pending |
+
+| Finishing the paper | Last measurements still to be done | ![#1589F0](https://via.placeholder.com/10/1589F0?text=+) Pending |
+
+
 
 ## License
 
