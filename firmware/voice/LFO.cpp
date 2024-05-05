@@ -5,7 +5,7 @@ LFO::LFO(uint32_t rate)
   : srate(rate) {
   waveform = wtriangle;
   freq = 1;
-  amplitude = 1;
+  amplitude = 64;
   lfosrate = (65535.0 / srate);
   PhaseAcc = rand() % 65536;
   pwm = 64 << 9;
@@ -37,7 +37,7 @@ void LFO::setFrequency(float f) {
   PhaseInc = (uint16_t)(lfosrate * freq);
 }
 
-void LFO::setAmplitude(float a) {
+void LFO::setAmplitude(uint8_t a) {
   amplitude = a;
 }
 
@@ -71,5 +71,5 @@ void LFO::update() {
       value = rand() % 256;  // Générer une valeur aléatoire entre 0 et 255
     break;
   }
-  vlfo = (int8_t)(value - 0x80) * amplitude;
+  vlfo = (int8_t)(value - 0x80) * amplitude / 128;
 }

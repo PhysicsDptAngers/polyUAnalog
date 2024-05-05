@@ -13,7 +13,7 @@ public:
   LFO(uint32_t rate);
   void setWaveform(uint8_t wave);
   void setFrequency(float frequency);
-  void setAmplitude(float a);
+  void setAmplitude(uint8_t a);
   int next();
   void update();
 
@@ -21,7 +21,7 @@ public:
 
 private:
   float freq;
-  float amplitude;
+  uint8_t amplitude;
   uint16_t PhaseAcc;
   uint16_t PhaseInc;
   uint32_t srate;

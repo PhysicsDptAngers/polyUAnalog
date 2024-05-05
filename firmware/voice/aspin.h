@@ -47,7 +47,8 @@ const float Ki = 50;
 
 // Définition des constantes pour le PWM
 const int PWMRes = 256;
-const int PWMResFilter = 4096;
+const int PWMResFilter = 16384;
+const int PWMResVCA = 4096;
 
 // Définition des constantes pour le Wave select control
 #define WAVE_NONE 0

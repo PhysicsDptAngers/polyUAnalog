@@ -1,24 +1,30 @@
 #ifndef AS3397_H
 #define AS3397_H
 
-//#include "pico/stdlib.h"
 #include <hardware/gpio.h>
 #include "hardware/pwm.h"
-//#include "pico/time.h"
 #include "hardware/adc.h"
 #include "aspin.h"
 
+#define PIDFIXE 1
 
 const uint64_t srateFactor = 4294967296;
-
+#if PIDFIXE == 1
+const int64_t SCALE_FACTOR = 1 << 16;
+#endif
 
 struct CallbackData {
   uint8_t WaveshapeFactor = 1;
   long SetPoint = WaveshapeFactor * 2.5 / convFactor;  // Initialise la consigne de l'asservissement à une amplitude de 2.5V
   long error = 0, errorSum = 0, output = 0;            //Variables de la commande PI
+#if PIDFIXE == 0
   float _Kp = 440 * Kp;
   float _Ki = Ki / 440;
-  int32_t noteFreq = 440;
+#else
+  int64_t _Kp = 440 * Kp * SCALE_FACTOR;
+  int64_t _Ki = (Ki / 440) * SCALE_FACTOR;
+#endif
+  float noteFreq = 440;
   int64_t delay_us;
   uint32_t sliceH;
   uint32_t sliceL;
@@ -63,8 +69,8 @@ private:
 public:
   As3397(uint32_t srate);
   struct PWMsliceChannel set_gpio_pwm(uint gpioCV, uint32_t resolution);
-  void set_DcoA_freq(int32_t freq, bool RAZIntegrator);
-  void set_DcoB_freq(int32_t freq, bool RAZIntegrator);
+  void set_DcoA_freq(float freq, bool RAZIntegrator);
+  void set_DcoB_freq(float freq, bool RAZIntegrator);
   void set_DcoFM(int FMmod);
   void set_DcoA_pw_cv(int32_t level);
   void set_DcoB_pw_cv(int32_t level);

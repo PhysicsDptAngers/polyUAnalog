@@ -2,6 +2,7 @@
 #define ADSR_H
 #include <stdint.h>
 #include "tables.h"
+#include "aspin.h"
 
 #define AMAX 0x7FFF
 
@@ -34,6 +35,7 @@ public:
 
     int32_t veg;
     int32_t veg_a;
+    int32_t veg_f;
 };
 
 #endif // ADSR_H

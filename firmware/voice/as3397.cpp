@@ -3,20 +3,27 @@
 As3397::As3397(uint32_t srate) {
   dcosrate = srate;
 
-  this->VWFA_MSB_CV_sliceNum = set_gpio_pwm(VWFA_MSB_CV, PWMRes);
-  this->VWFA_LSB_CV_sliceNum = set_gpio_pwm(VWFA_LSB_CV, PWMRes);
-  this->VWFB_MSB_CV_sliceNum = set_gpio_pwm(VWFB_MSB_CV, PWMRes);
-  this->VWFB_LSB_CV_sliceNum = set_gpio_pwm(VWFB_LSB_CV, PWMRes);
-  this->DSO_MSB_CV_sliceNum = set_gpio_pwm(DSO_MSB, PWMRes);
-  this->DSO_LSB_CV_sliceNum = set_gpio_pwm(DSO_LSB, PWMRes);
+  this->PAN_CV_sliceNum = set_gpio_pwm(PAN_CV, PWMRes);
+  this->MOD_AMOUNT_CV_sliceNum = set_gpio_pwm(MOD_AMOUNT_CV, PWMRes);
+
   this->DCOA_PW_CV_sliceNum = set_gpio_pwm(DCOA_PW_CV, PWMRes);
   this->DCOB_PW_CV_sliceNum = set_gpio_pwm(DCOB_PW_CV, PWMRes);
-  this->BALANCE_CV_sliceNum = set_gpio_pwm(BALANCE_CV, PWMRes);
-  this->MOD_AMOUNT_CV_sliceNum = set_gpio_pwm(MOD_AMOUNT_CV, PWMRes);
-  this->FILTER_FREQ_CV_sliceNum = set_gpio_pwm(FILTER_FREQ_CV, PWMResFilter);
+
+  this->BALANCE_CV_sliceNum = set_gpio_pwm(BALANCE_CV, PWMResVCA);
+  this->VCA_CV_sliceNum = set_gpio_pwm(VCA_CV, PWMResVCA);
+
   this->FILTER_RES_CV_sliceNum = set_gpio_pwm(FILTER_RES_CV, PWMResFilter);
-  this->VCA_CV_sliceNum = set_gpio_pwm(VCA_CV, PWMRes);
-  this->PAN_CV_sliceNum = set_gpio_pwm(PAN_CV, PWMRes);
+  this->FILTER_FREQ_CV_sliceNum = set_gpio_pwm(FILTER_FREQ_CV, PWMResFilter);
+
+  this->VWFA_MSB_CV_sliceNum = set_gpio_pwm(VWFA_MSB_CV, PWMRes);
+  this->VWFA_LSB_CV_sliceNum = set_gpio_pwm(VWFA_LSB_CV, PWMRes);
+
+  this->VWFB_MSB_CV_sliceNum = set_gpio_pwm(VWFB_MSB_CV, PWMRes);
+  this->VWFB_LSB_CV_sliceNum = set_gpio_pwm(VWFB_LSB_CV, PWMRes);
+  
+  this->DSO_MSB_CV_sliceNum = set_gpio_pwm(DSO_MSB, PWMRes);
+  this->DSO_LSB_CV_sliceNum = set_gpio_pwm(DSO_LSB, PWMRes);
+
 
   gpio_init(DCOA_FREQ);
   gpio_set_dir(DCOA_FREQ, GPIO_OUT);
@@ -70,7 +77,7 @@ struct PWMsliceChannel As3397::set_gpio_pwm(uint gpioCV, uint32_t resolution) {
 }
 
 // Fonction pour régler la fréquence de la note DCOA
-void As3397::set_DcoA_freq(int32_t freq, bool RAZIntegrator) {
+void As3397::set_DcoA_freq(float freq, bool RAZIntegrator) {
 
   static uint8_t factor;
 
@@ -86,8 +93,13 @@ void As3397::set_DcoA_freq(int32_t freq, bool RAZIntegrator) {
     factor = 32;
   }
 
+#if PIDFIXE == 0
   DcoA._Kp = freq * Kp * factor;
   DcoA._Ki = Ki / freq;
+#else
+  DcoA._Kp = freq * Kp * factor * SCALE_FACTOR;
+  DcoA._Ki = (Ki / freq) * SCALE_FACTOR;
+#endif
 
   if (RAZIntegrator) {
     // Réinitialise l'accumulateur d'erreur
@@ -96,7 +108,7 @@ void As3397::set_DcoA_freq(int32_t freq, bool RAZIntegrator) {
 }
 
 // Fonction pour régler la fréquence de la note DCOB
-void As3397::set_DcoB_freq(int32_t freq, bool RAZIntegrator) {
+void As3397::set_DcoB_freq(float freq, bool RAZIntegrator) {
 
   static uint8_t factor;
 
@@ -112,8 +124,13 @@ void As3397::set_DcoB_freq(int32_t freq, bool RAZIntegrator) {
     factor = 32;
   }
 
+#if PIDFIXE == 0
   DcoB._Kp = freq * Kp * factor;
   DcoB._Ki = Ki / freq;
+#else
+  DcoB._Kp = freq * Kp * factor * SCALE_FACTOR;
+  DcoB._Ki = (Ki / freq) * SCALE_FACTOR;
+#endif
 
   if (RAZIntegrator) {
     // Réinitialise l'accumulateur d'erreur
@@ -238,7 +255,11 @@ void As3397::updateDcoA() {
   DcoA.error = DcoA.SetPoint - adcval;  // calcul l'erreur pour l'asservissement de l'amplitude de la rampe
   DcoA.errorSum += DcoA.error; // Calcul de la fonction integral
 
+#if PIDFIXE == 0
   DcoA.output = DcoA._Kp * DcoA.SetPoint + DcoA._Ki * DcoA.errorSum;  // Calcul de la sortie du PI
+#else
+  DcoA.output = (DcoA._Kp * DcoA.SetPoint + DcoA._Ki * DcoA.errorSum) / SCALE_FACTOR;  // Calcul de la sortie du PI
+#endif
 
   if (DcoA.output < 0) DcoA.output = 0;  // Limite la sortie à 0-65535
   else if (DcoA.output > 65535) DcoA.output = 65535;
@@ -268,7 +289,11 @@ void As3397::updateDcoB() {
   DcoB.error = DcoB.SetPoint - adcval;  // calcul l'erreur pour l'asservissement de l'amplitude de la rampe
   DcoB.errorSum += DcoB.error; // Calcul de la fonction integral
 
+#if PIDFIXE == 0
   DcoB.output = DcoB._Kp * DcoB.SetPoint + DcoB._Ki * DcoB.errorSum;  // Calcul de la sortie du PI
+#else
+  DcoB.output = (DcoB._Kp * DcoB.SetPoint + DcoB._Ki * DcoB.errorSum) / SCALE_FACTOR;  // Calcul de la sortie du PI
+#endif
 
   if (DcoB.output < 0) DcoB.output = 0;  // Limite la sortie à 0-65535
   else if (DcoB.output > 65535) DcoB.output = 65535;

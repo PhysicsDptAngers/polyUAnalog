@@ -103,6 +103,7 @@ void ADSR::update() {
         break;
     }
   veg = value >> 7;
+  veg_f = PWMResVCA * value / AMAX;
   veg_a = (int16_t)(value - sustain) >> 7;
 }
 

@@ -17,11 +17,11 @@ void DSO::setWaveform(uint8_t wave) {
 
   switch (wave) {
     case 0:
-      //Saw
+      //Square
       data = wave1;
       break;
     case 1:
-      //Square
+      //Saw
       data = wave1;
       break;
     case 2:
@@ -49,27 +49,35 @@ void DSO::setWaveform(uint8_t wave) {
       data = wave7;
       break;
     case 8:
+      //Smooth Brass
       data = wave8;
       break;
     case 9:
+      //Bass
       data = wave9;
       break;
     case 10:
+      //Dark FM
       data = wave10;
       break;
     case 11:
+      //MultiWave
       data = wave11;
       break;
     case 12:
+      //Bell FM
       data = wave12;
       break;
     case 13:
+      //Dark Pad
       data = wave13;
       break;
     case 14:
+      //Organ Mixture
       data = wave14;
       break;
     case 15:
+      //DCO Maze
       data = wave15;
       break;
   }
@@ -85,7 +93,7 @@ void DSO::setAmplitude(uint8_t a) {
 }
 
 void DSO::setPw(int32_t Pw) {
-  pwm = Pw * HS / 128;
+  pwm = Pw * S / 256;
 }
 
 void DSO::update() {
