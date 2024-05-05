@@ -26,7 +26,7 @@
 
     Monophonic voices synthesizer
 
-    v4.31
+    v4.33
     - Fix PWM_B bug
     - Fix DSO Bug
     - Pass Filter FC and Res in 14 bits PWM
