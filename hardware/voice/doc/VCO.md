@@ -20,13 +20,24 @@ Here, the charging of the capacitor is not at constant voltage but at *constant 
 
 #### The AS3397's Current Source
 
-A very classic way to obtain a constant current charge of a capacitor is to include it in a feedback loop of an OpAmp whose linearity condition (V+=V-), forces the current to be constant within the RC series circuit.
+A very classic way to obtain a constant current charge of a capacitor is to include it in a feedback loop of an OpAmp whose linearity condition (V+=V-), forces the current to be constant within the RC series circuit. This is also known as an integrator circuit (you can click on the image to go to circuit.js for a dynamic simulation) :
+
+
+[![Integrator Falstad](img/Falstad_integrator.png)](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAXKQUgoFMBaMMAKAHNxiVwNDPuUKACxQoLAO4hs2Ps27TZhWpAn9wYbmC7ghIlQEM1YJVJngTecEiZIw8eCAYx7GBISEoEKMNh85fesj2LADGRhqmshHKsPYQDBjQbkLYmFjYeMRChJhQsawA8pHmtEJwJaIqksSyuuAolmB1KgBO9Y11WprNIIJwLABKIDU6Isajotw0FJV5CCwA9jOpomXEloJ59mSEbp6iEACWAHYALnRsLfoANixAA)
+
+
+
+
 
 The principle schematic of the AS3397 suggests that the chip uses another system to obtain a current source, namely a transistor placed in the feedback loop followed by a current mirror (CM).
 
 As mentioned earlier, the operational amplifier in its linear regime acts to maintain a constant voltage difference between its inputs (positive and negative terminals). In the context of a current generator, a reference voltage is typically applied to one of the op-amp's inputs (here the + input). Here, this voltage is "WaveShape CV", noted $V_{wf}$ which, as its name indicates, will play a crucial role in controlling the waveform of the oscillator.
 
-The resistor $R_{TA}$ sets the current. ([Reference](http://www.ecircuitcenter.com/Circuits/curr_src1/curr_src1.htm))
+[![Current source Falstad](img/Current_source_Falstad_schematics.png)](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgwMURCaQU8eHn2wJuVckiRUZ0JADUA9gBsALgEMA5gzbqQeKgKEH++feCQskYePFrRSpGnUiFsNhCWo3bbVeDBuMGIgwipg8XAQJkJoFzcPQjwMMIwIGE9iGhQaNySwbGxCZCoAEwYAM3UAVzU2AHdwMNMhMGajKAaQYmKOtsNBTsb+-kGR7DROgCcmqgnw5uw8PnCiuDZNWZAlvhGaNqhOgCUtwNbmkxlacMjZBC6Rs9OUoYCgkP1wj8gukwjPlqdAAeIHIoggNDBCD4fByIHk9QqbBBnBE2HIKGC2xoVFhfCOAH0ACpsIA)
+*Figure X : Schematics of the type of current source used in the AS3397 
+
+
+
 
 The other input of the op-amp, here the - input, is connected to ground via the resistor $R_{T}$, so that the linear operation of the OpAmp forces the voltage across $R_{T}$ to be equal to $V_{wf}$. The current within $R_{T}$, which is also the same as the one that will serve as input to the current mirror, is $I = V_{wf}/R_{T}$.
 
@@ -34,20 +45,15 @@ The OpAmp's feedback loop contains a transistor. More specifically, the OpAmp's 
 - The voltage across $R_{T}$ must be equal to $V_{wf}$, setting a current $I=V_{wf}/R_{T}$
 - The OpAmp's output voltage, which drives the transistor via its base, must be such that the current in the collector also equals $I$
 
-In summary, the choice of the $V_{wf}$ voltage and the $R_{T}$ resistor sets a stable current $I$ that, at least in theory, does not depend on the load in which the current flows. Thus, we are indeed dealing with a current generator. The load is typically placed between the collector and the base of the transistor. The AS3397 uses a current mirror before sending this copy of the current to the capacitor to be charged.
+In summary, the choice of the $V_{wf}$ voltage and the $R_{T}$ resistor sets a stable current $I$ that, at least in theory, does not depend on the load in which the current flows. Thus, we are indeed dealing with a current generator. The load is typically placed between the collector and the base of the transistor. The AS3397 uses a current mirror before sending this copy of the current to the capacitor to be charged, so that
 
 ##### Explanation of a Current Mirror
 
 The somewhat schematic view of the AS3397 does not allow us to know the exact nature of the current mirror used here. Nevertheless, we can revisit the principle of a current mirror by taking the simplest example: connecting two transistors, T1 and T2 (as identical as possible), in the manner presented in Figure X. Since the two transistors share the same voltage between the base and the emitter, the output current passing through the collector of T2 is the same as the input current passing through the collector of T1.
 
 
-
-https://www.analog.com/en/resources/analog-dialogue/articles/current-output-circuit-techniques-add-versatility.html
-
-
-Transconductance amplifier
-
-SChéma en Falstad
+[![Current source Falstad](img/Current_mirror_Falstad.png)](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxEMJCQBZtqBTAWjDACgwMUQnirtCeHnxB1ukEOWzQISCfOhIAagHsANgBcAhgHMGbLTzwSBQpsZAo8QoWCQskYePBDTIpPthooyhLyVcZZGc2DR4aIUxxSy4ocB4MaEIESAQ8MGwMhC48BHoYBGzIQkgUFGwBYszuJwkAEwYAMy0AV002AHc4qyETQShOnkIaV36+3sHxuJo4cDYAJ2nZiRphuIySyDYdabWVkXk2ACV1qgkmbGiViTArqEVJy3xuhDPBpgiY7nMJKIGun5fIy-awDAAePDs9DoEBYGVEXlElhGSg6jTYELAIxonGoxFEaCRKBGRwA+gAVDFPEZkSwoRyzEZgKgARRQ23AxG4xJuXMsrziW0WYD5rBqfLQvXAKQWFCZNBGa0lcRSWy6a2ZnJqb2FfIsIu16zgsrWFg1Z2Cgw1CvAVnANrVcvAtydWJGjtuQhEnvt7tCtq9VANIAOkOd0GweEohFYBsgGDwIyYBSK+AQNAwKTsxFSwXqTVa7TCPpEa1DLDiycUqdyEVYeUgTJcDWabQ0VpGyt+zw9EuewZ5c3VTItmq2ACNXNEiJ2MG8IVghnSqBciSMAMItebzBgAOw0AB0AM4AWwAltuVPM2EAA)
+*Figure X : Schematics of the type of current source used in the AS3397 with a current mirror to copy the current
 
 
 ### Capacitor Discharge
@@ -58,7 +64,8 @@ The arrangement shown in the AS3397 datasheet includes some additional component
 - Not too short, to ensure the capacitor fully discharges.
 - Not too long, to allow the capacitor to begin charging again as soon as it is empty.
 
-TODO: Create a diagram.
+![dco Ramp voltage uncompensated](img/capacitor_discharge.png)
+*Figure X: Charging and discharging of the capacitor dictated by the incoming pulse on the discharge transistor. The duration of the discharge pulse has been artificially extended for clearer illustration.*
 
 Typical components from the 1980s produced pulses that were too long, and the derivative filter was intended to create a shorter pulse. Perhaps as a reminder, a high-pass RC filter acts as a differentiator when the frequency of the signal (its fundamental) is much higher than the cutoff frequency. The transfer function is then simply \( H(\omega) = j\omega \), that is, the operation of deriving the signal.
 
@@ -74,13 +81,19 @@ We have chosen the BS170 transistor, which is easy to source, very inexpensive, 
 
 Note that the resistance of the BS170 when open (Static Drain−Source On−Resistance, typically noted as RDS(ON)) is not negligible and is about 1.5 Ohms here. This should be taken into account during the discharge of the capacitor and makes this process less instantaneous. Figure x shows the time required for the total discharge of the capacitor. This figure also indicates that the duration of the pulse fully allows the capacitor to discharge completely, even considering the increased time due to this residual RDS(ON) resistance.
 
+[![Full capacitor charge AS3397](img/Full_DCO_falstad.png)](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxEMJCQBZtqBTAWjDACgwMUQmUEqUKGjz4C8eKCHIwkSSJJkgAagHsANgBcAhgHMGbLSJrzBw3sfA1hEsEhZIw8eFGg1SxPKUhgaaSl2FFRyc2DRF8cBQJFkJ5MCjJCBYYGgQ8Gk9sGljCNBoIGUgPQjxIbDA8fn4qYJAAEwYAMy0AV002AHceMFjLMx6TIShOkSHTbt7xyBGYwf7J-nA2ACcJk0XZkGw0ROxY6Z01rZ3N7ARueWmAJSOWBM2WDCpLkAt4hRcEGYGKebj36ZdXgReLRIRxBKAowQsFvKzDAAePHK9Ci5F4OBAKGI8mEQyUHUabCRLGyWMxyQgmCoeOEVwA+gAVYmvMw0ciEOzw4Q9EAARRQbEOMXAvRFnGew1WTGIkplVEIgWocBmsu6CW26ok01WmqYiuOWsSKulav1ZjNoONUPlkiYmsuqqo9u4tsdQL1GWRF2GYRdPC9nu13RcKDAZ0gOFE+HKEp4hQ8PT2eAwtjAOJqzgazTaGlC3oD0TNXvkLDtCbwSZKGF821SyDg9SarXaQLVBs2Bqhmp+PeI3HYbedVoeVumACMeAhyBgbJgsUREdRiNQbO9CBBaSAACIAYQA8kLDenuJq0MHpgBjY+9TWlSQoZjRVjQTC4bCkYzEcPpC6wbzfDU9y8j8Nq8paVD3t23D3iKUEjHqmp3o6jSFuA7ziu8PbQHIsCCjcTD3qwrrEehPoDgg8hyAosCDjwBqkUwXqkTaDEYURAIsiw2A2GSTA1pYK48lQywAA55JATAAHxsCoWwQMGX4SDsMAFK88lbFswY8VsbBAAA)
+*Figure X : Schematics of a DCO of the AS3397 with the current source, its current mirror and the charge capacitor discharged by an impulsion coming from the micro-controler sent to a transistor
 
+
+![dco capacitor discharge schematics](img/DCO_charge_and_measure_schematics.png)
+*Figure X: Schematics of capicitor discharge of the DCO (and the measure of the corresponding ramp voltage)*
 
 ## Wave Shaper and Waveform Control
 
-As previously mentioned, the DCOs allow for a perfectly fixed frequency (without the need to worry about the exponential voltage-to-frequency converters, as this is managed by software in the microcontroller). However, this introduces a challenge: the amplitude of the voltage ramp generated depends on the frequency. Indeed, the capacitor's charge time for low frequencies is longer than for high frequencies. Thus, all else being equal, the voltage reached by the ramp—and consequently, the volume of the VCO—is higher at lower frequencies than at higher frequencies.
+As previously mentioned, the DCOs allow for a perfectly fixed frequency (without the need to worry about the exponential voltage-to-frequency converters, as this is managed by software in the microcontroller). However, this introduces a challenge: the amplitude of the voltage ramp generated depends on the frequency. Indeed, the capacitor's charge time for low frequencies is longer than for high frequencies. Thus, all else being equal, the voltage reached by the ramp—and consequently, the volume of the VCO is higher at lower frequencies than at higher frequencies.
 
-TODO: Add a graph for explanation before and after charging voltage control.
+![dco Ramp voltage uncompensated](img/dco_voltage_ramp_wo_control.png)
+*FigX : Voltage at he charging condensator for two different frequencies (440Hz and 880hZ). At low frequency, the condensator has more time to charge and consequently the ramp will reach a higher voltage.*
 
 This problem is particularly critical because, in the AS3397 chip, the voltage ramp passes through a wave shaper circuit to provide a broader range of waveform shapes.
 
@@ -93,6 +106,12 @@ For lower ramp voltages, the wave shaper behaves linearly, and the output wavefo
 Controlling the maximum ramp voltage output from the capacitor leads to two requirements:
 - It must be the same for all frequencies, otherwise, the waveform (i.e., the timbre) will not be the same from one note to another.
 - The maximum ramp voltage of the capacitor must be adjusted to achieve the desired waveform output from the wave shaper.
+
+
+![dco Ramp voltage uncompensated](img/waveshapper_tranfert_function.png)
+*Figure X: Transfer function of the wave shaper. If the maximum \( V_{\text{ramp}} \) of the ramp voltage at the capacitor is lower than \( \frac{5}{24} V_{\text{cc}} \) (here 2.5V), the waveform is a saw. Between 2.5V and 5V, the waveform transitions from a saw to a triangle. At 5V, the waveform is a triangle. For \( V_{\text{ramp}} \) greater than 5V, a clipped triangle is produced at the output of the wave shaper.*
+
+
 
 ### How to Adjust the Maximum Ramp Voltage?
 
@@ -121,6 +140,11 @@ From a technical standpoint, the ADC pin of the RP2040 cannot be connected direc
 
 Continuing with technical details, we have chosen to use a rail-to-rail Operational Amplifier (OpAmp) as a buffer, the MCP60002, which, in addition to buffering, also acts as a limiter. Indeed, the voltage at the ADC terminals must not exceed 3.3V, otherwise, it risks damage. The rail-to-rail OpAmp clamps any voltage that exceeds its supply voltage range, in this case between 0V and 12V. The buffer is followed by a voltage divider made of 3.6K and 1.2K resistors to bring the voltage between 0 and \( \frac{1.2}{(1.2 + 3.6)} \times 12 = 3V \), ensuring that the ADC's voltage limit is not exceeded.
 
+
+![dco capacitor discharge schematics](img/DCO_charge_and_measure_schematics.png)
+*Figure X: Schematic of the Voltage Ramp Measurement and Capacitor Discharge Process.*
+
+
 ### Servo Control of \(V_{wf}\) Based on the Maximum Ramp Voltage \(V_{r}\)
 
 To summarize, the DCO allows for easy setting of the oscillator's note frequency, but the amplitude of the played note must be adjusted for each frequency. In the context of the AS3397 and its wave shaper, amplitude translates into waveform shape. If the amplitude of the voltage ramp is not adjusted, all notes have the same frequency but also different waveforms! The tool to maintain the same waveform is the adjustment of \(V_{wf}\) according to the frequency, which controls the intensity of the charging current of the capacitor and thus its charging speed. However, the proportionality relationship between \(V_{wf}\) and the maximum ramp voltage \(V_{\text{ramp}}\) is not known a priori because we do not know the values of \(R_T\) and \(C\) precisely.
@@ -131,14 +155,10 @@ Our approach is more original; we continuously control and regulate the value of
 
 TODO Faire un court texte sur le PID.
 
-Here is the translated and adapted continuation of the section regarding the fine adjustment of \( V_{wf} \) and other operational aspects, formatted in Markdown:
-
----
-
 ### Fine Adjustment of \( V_{wf} \)
 
 As outlined in the previous paragraphs, \( V_{wf} \) plays a crucial role in waveform control. We can enhance its behavior in two ways:
-- The \( V_{wf} \) voltage, like all other control voltages, is generated via a PWM signal from the RP2040 and low-pass filtered. Its precision and response time can be improved by using a "dual PWM" 16-bit setup, which involves passively summing two 8-bit PWM signals.
+- The \( V_{wf} \) voltage, like all other control voltages, is generated via a PWM signal from the RP2040 and low-pass filtered ([see here for more information](PWM_CV.md). Its precision and response time can be improved by using a "dual PWM" 16-bit setup, which involves passively summing two 8-bit PWM signals.
 - By switching the \( R_T \) resistances, which set the charging current for the lower notes. This switching is performed by a transistor (again, a BS170), changing the \( R_T \) value from 442 kOhm when the transistor is off to about 425 Ohm when it is on (see component value choices). At high frequencies, where the capacitor has little time to charge, we can switch to a resistance \( R_T \) that increases the capacitor's charging current to achieve ramp values sufficient for generating "clipped triangle" waveforms.
 
 ## The Comparator and Square Waveforms
@@ -147,9 +167,23 @@ The AS3397 allows adding a square waveform to the output from the wave shaper by
 
 The threshold voltage \( V_{PW} \) thus allows for controlling the duty cycle of the square signal. However, like the waveform from the wave shaper, the slope of the capacitor's charging ramp depends on the frequency of the played note. If we want to maintain the same duty cycle regardless of the played note, \( V_{PW} \) must be dynamically adjusted.
 
-TODO: Do we do this with a PID?
 
-Negative voltage to cut off PWM.
+![dco capacitor discharge schematics](img/threshold_square_wave.png)
+*Figure X: Square wave generation via the comparison of the ramp voltage and a adjustable \( V_{PW} \) threshold voltage*
+
+
+For example, to achieve a PWM with a duty cycle of 50%, you must set the threshold voltage \( V_{PW} \) to half of the maximum \( V_{ramp} \) of the capacitor's voltage ramp.
+
+Since slight variations in the duty cycle across different notes are not as critical as changes in waveform, we do not dynamically adjust the threshold \( V_{PW} \) voltage. Instead, we maintain a constant value that is set with each frequency change. More precisely, once \( V_{ramp} \), the maximum ramp voltage, is determined based on the waveform selected by the user, it is simply multiplied by the desired duty cycle to calculate \( V_{PW} \).
+
+The PWM voltage control from the RP2040 is level shifted from 0–3.3V to -0.5–5V. This upper limit of 5V can be seen as restrictive because for voltage ramps exceeding 5V, achieving a 100% duty cycle is no longer possible. Nonetheless, there is generally no need to exceed a 50% duty cycle because, for example, a 75% duty cycle has the same sonic spectrum as a 25%. In the case of the AS3397, the implications are somewhat more nuanced. Since the square signal is added on top of the waveform exiting the wave shaper, if this waveform is not symmetric, then 25% and 75% duty cycles do not produce exactly the same waveform.
+
+![dco capacitor discharge schematics](img/PWM_level_shifter.png)
+*Figure X: Schematic of the Level Shifter for \( V_{PW} \), the PWM Threshold. The PWM signal is initially low-pass filtered (cutoff frequency ≈ 700Hz, response time for 12 bits @ 250 MHz: 0.5ms). Diode D1 is conducting, thus its voltage is approximately 0.6V and acts as a bias to achieve negative values at the output of the op-amp set as a non-inverting amplifier (gain ratio 10/6.8, which transforms 3.3V into 5V).*
+
+
+We have also shifted \( V_{PW} \) to negative levels because the only way to mute the square wave is by setting it to a 0% duty cycle (as a reminder, achieving 100% is not possible here for all waveforms). Setting the threshold at 0V, which theoretically should result in a 0% duty cycle, does not fully mute the square wave in our experiments, hence the use of negative values.
+
 
 ## The Quad Mixer
 

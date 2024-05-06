@@ -61,7 +61,7 @@ Stay tuned for a SoundCloud link, which will be shared here soon.
 | Conductor board | Design and finalize the electronic, PCB, and firmware layout for the conductor board, which enables the control of voice cards, connects to an FX board, and one or multiple controllers.| ![#1589F0](https://via.placeholder.com/10/1589F0?text=+) Pending |
 | FX Loop | Testing the V4220 codec chip.| ![#1589F0](https://via.placeholder.com/10/1589F0?text=+) Pending |
 | Controler | Finishing the first controler : the "basic synth" | ![#1589F0](https://via.placeholder.com/10/1589F0?text=+) Pending |
-
+| Continous waveform for the DCO | Produce waveform in between saw and triangle and modulate it | ![#1589F0](https://via.placeholder.com/10/1589F0?text=+) Pending |
 | Finishing the paper | Last measurements still to be done | ![#1589F0](https://via.placeholder.com/10/1589F0?text=+) Pending |
 
 

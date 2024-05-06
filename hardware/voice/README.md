@@ -8,8 +8,7 @@ The AS3397 chip is manufactured by  ALFA RPAR, a Latvian semiconductor manufactu
 
 [Datasheet AS3397](datasheet/AS3397.pdf)
 
-![AS_3397_DCO](doc/img/AS3397_schematic_vco.png)
-*Figure 1. Schematic Diagram of the AS3397 with Focus on the DCO Section*
+
 
 ## Sonic Possibilities of the AS3397
 
@@ -42,7 +41,7 @@ For a comprehensive exploration of the Voltage Controlled Filter (VCF) used in t
 
 ### Voltage-Controlled Amplifier (VCA)
 
-The AS3397 features a stereo Voltage Controlled Amplifier, which generates a current that must be converted into a corresponding voltage through a "transimpedance" circuit, typically one utilizing an Operational Amplifier (OpAmp).
+The AS3397 features a stereo Voltage Controlled Amplifier, which generates a current that must be converted into a corresponding voltage through a "transimpedance" circuit, typically one utilizing an Operational Amplifier (OpAmp). The stereo part of the VCA is a new addition of the AS3397 that was not present in the CEM3396.
 
 
 ## Driving the AS3397 Chip with an RP2040 (Pi Pico)
