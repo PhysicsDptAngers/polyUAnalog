@@ -76,16 +76,39 @@ struct PWMsliceChannel As3397::set_gpio_pwm(uint gpioCV, uint32_t resolution) {
   return sliceChannel;
 }
 
-// Fonction pour régler la fréquence de la note DCOA
-void As3397::set_DcoA_freq(float freq, bool RAZIntegrator) {
+/**
+ * @brief Sets the frequency of DCO A.
+ * 
+ * This function adjusts the frequency of the digitally controlled oscillator (DCO A).
+ * It performs the following actions:
+ * - Updates the phase increment based on the desired frequency.
+ * - Manages frequency-dependent scaling using a MOSFET switch that modifies the resistance value,
+ *   thereby adjusting the charging current of the DCO capacitor.
+ * - Adjusts the proportional and integral control parameters for the PID feedback loop, which
+ *   controls the maximum charging voltage of the DCO. This, in turn, influences the DCO waveform
+ *   through the waveshaper.
+ * - If requested, resets the integrator error accumulator of the PID controller.
+ * 
+ * @param freq The desired frequency in Hz.
+ * @param RAZIntegrator If true, resets the integrator error accumulator.
+ */
+ void As3397::set_DcoA_freq(float freq, bool RAZIntegrator) {
 
   static uint8_t factor;
 
   DcoA.noteFreq = freq;
-  //DcoA.delay_us = 1E6 / freq;
+
+  // Compute phase increment based on desired frequency, dcosrate is fixed via a hardware timer of the rp2040 and
+  // corresponds to a call to "updateAudio" (see synth.h) at AUDIO_RATE (typically 62.5 kHz)
+  // srateFactor : ? software FM ?
   DcoA.PhaseInc = (uint32_t)(freq * srateFactor / dcosrate);
 
-  if (freq > (1500 / DcoA.WaveshapeFactor)) {
+// Adjust the frequency scaling factor based on the note's frequency.
+// A lower frequency results in a longer voltage ramp. Very low or very high frequencies may lose precision,
+// so the voice board has two different charging current settings.
+// The appropriate setting, based on the note frequency, is selected by opening or closing a MOSFET 
+// transistor using gpio_put(GAMME_A, true/false);  
+if (freq > (1500 / DcoA.WaveshapeFactor)) {
     gpio_put(GAMME_A, true);
     factor = 1;
   } else if (freq < (1000 / DcoA.WaveshapeFactor)) {
@@ -93,21 +116,29 @@ void As3397::set_DcoA_freq(float freq, bool RAZIntegrator) {
     factor = 32;
   }
 
-#if PIDFIXE == 0
-  DcoA._Kp = freq * Kp * factor;
-  DcoA._Ki = Ki / freq;
-#else
-  DcoA._Kp = freq * Kp * factor * SCALE_FACTOR;
-  DcoA._Ki = (Ki / freq) * SCALE_FACTOR;
-#endif
+  // Set proportional and integral control gains
+  #if PIDFIXE == 0
+    DcoA._Kp = freq * Kp * factor;
+    DcoA._Ki = Ki / freq;
+  #else
+    DcoA._Kp = freq * Kp * factor * SCALE_FACTOR;
+    DcoA._Ki = (Ki / freq) * SCALE_FACTOR;
+  #endif
 
+  // Reset error accumulator if requested
   if (RAZIntegrator) {
-    // Réinitialise l'accumulateur d'erreur
     DcoA.errorSum = 0;
   }
 }
 
-// Fonction pour régler la fréquence de la note DCOB
+
+/**
+ * @brief Sets the frequency of DCO B.
+ * 
+ * See set_DcoA_freq documentation.
+ * @param freq The desired frequency in Hz.
+ * @param RAZIntegrator If true, resets the integrator error accumulator.
+ */
 void As3397::set_DcoB_freq(float freq, bool RAZIntegrator) {
 
   static uint8_t factor;
@@ -133,17 +164,24 @@ void As3397::set_DcoB_freq(float freq, bool RAZIntegrator) {
 #endif
 
   if (RAZIntegrator) {
-    // Réinitialise l'accumulateur d'erreur
     DcoB.errorSum = 0;
   }
 }
+
 
 void As3397::set_DcoFM(int FMmod) {
   DcoA.PhaseInc = (uint32_t)((DcoA.noteFreq + FMmod) * srateFactor / dcosrate);
   DcoB.PhaseInc = (uint32_t)((DcoB.noteFreq + FMmod) * srateFactor / dcosrate);
 }
 
-
+/**
+ * @brief Sets the pulse width control voltage (PW CV) for DCO A.
+ * 
+ * This function adjusts the pulse width modulation (PWM) of the square part of DCO A  
+ * based on the provided control voltage (CV). 
+ * 
+ * @param cv The control voltage value for pulse width adjustment.
+ */
 void As3397::set_DcoA_pw_cv(int32_t cv) {
   int32_t level = cv * DcoA.WaveshapeFactor;
   if (level > this->DCOA_PW_CV_sliceNum.dutyMax) level = this->DCOA_PW_CV_sliceNum.dutyMax;
@@ -151,6 +189,7 @@ void As3397::set_DcoA_pw_cv(int32_t cv) {
   pwm_set_chan_level(this->DCOA_PW_CV_sliceNum.slice, this->DCOA_PW_CV_sliceNum.channel, level);
   DcoA.Pwm = cv;
 }
+
 
 void As3397::set_DcoB_pw_cv(int32_t cv) {
   int32_t level = cv * DcoB.WaveshapeFactor;
@@ -199,6 +238,8 @@ void As3397::set_Pan_cv(int32_t level) {
 
 void As3397::set_Wave_Select(uint8_t wave) {
   wave = wave & 3;
+
+  // The quad mixer has two binary input that leads to four cases :
   switch (wave) {
     case WAVE_AB:
       gpio_put(WS_BIT0, false);
@@ -220,6 +261,9 @@ void As3397::set_Wave_Select(uint8_t wave) {
 }
 
 void As3397::set_WaveshapeFactorDcoA(uint8_t waveshape) {
+
+  // Currently, four waveshapes have been implemented: saw, triangle, and clipped triangle.  
+  // However, intermediate waveshapes or even waveshape modulation are entirely possible.
   if (waveshape > 4) waveshape = 4;
   else if (waveshape < 1) waveshape = 1;
   DcoA.WaveshapeFactor = waveshape;
@@ -235,77 +279,126 @@ void As3397::set_WaveshapeFactorDcoB(uint8_t waveshape) {
   set_DcoB_pw_cv(DcoB.Pwm);
 }
 
+// Send the value outputed by the DSO to the dual two 8bits PWM-DAC 
 void As3397::DSO(int32_t wave) {
   uint16_t wavea = wave + 32768;
+  // Electronically speaking, the two signals—LSB and MSB—are mixed using a passive resistor mixer with a resistance ratio of 256 between the two resistors.
   uint16_t Data_H = (wavea / PWMRes);
   uint16_t Data_L = (wavea & (PWMRes - 1));
   pwm_set_chan_level(Dso.sliceH, Dso.channelH, Data_H);
   pwm_set_chan_level(Dso.sliceL, Dso.channelL, Data_L);
 }
 
-void As3397::updateDcoA() {
+
+
+/**
+ * @brief Updates the phase accumulator, discharges the DCO capacitor if needed,  
+ * and applies PI control to the DCO A waveshape.
+ * 
+ * This function updates the phase accumulator for DCO A and applies  
+ * a Proportional-Integral (PI) control loop to regulate the amplitude  
+ * of the charging capacitor ramp. The PI controller adjusts the current  
+ * flowing into the capacitor, ensuring proper waveform generation.  
+ * 
+ * The process includes:
+ * - Updating the phase accumulator.
+ * - If the phase accumulator exceeds `PhaseInc` (whose value depends on the desired frequency), then:
+ *   - Reading the peak value of the analog ramp signal. Since the capacitor is about to discharge,  
+ *     this corresponds to the maximum ramp voltage. This value, processed by the waveshaper,  
+ *     defines the DCO waveform.
+ *   - Discharging the capacitor by briefly activating the MOSFET transistor, which shorts the  
+ *     capacitor to ground. The duration of this pulse is determined by the execution time  
+ *     of the following instructions (i.e. in beetween "gpio_put(DCOA_FREQ, true);" and "gpio_put(DCOA_FREQ, false);"). It should be sufficient to fully discharge the capacitor,  
+ *     which takes a few microseconds due to the MOSFET's residual resistance.
+ *   - Computing the error for amplitude control. To maintain a consistent waveform across all frequencies,  
+ *     the maximum ramp voltage must be dynamically adjusted by modifying the charging voltage.  
+ *     This is controlled via the "Waveshape A" control voltage (`VWFA_MSB_CV_sliceNum` and  
+ *     `VWFA_LSB_CV_sliceNum` variables).
+ *   - Applying the PI controller to adjust the charging current.
+ *   - Setting PWM-DAC values to regulate the capacitor charge rate.
+ */
+ void As3397::updateDcoA() {
+  // Update the phase accumulator
   DcoA.PhaseAcc += DcoA.PhaseInc;
-  if (DcoA.PhaseAcc >= DcoA.PhaseInc) return;
+  if (DcoA.PhaseAcc >= DcoA.PhaseInc) return; // 
 
+  // Select the ADC input channel corresponding to the ramp voltage
   adc_select_input(INPUT_RAMPE_A);
-  uint16_t adcval = adc_read();  // Lecture de la valeur analogique max de la rampe
+  uint16_t adcval = adc_read();  // Read the peak analog value of the ramp. It corresponds to the maximum voltage of the ramp since we are about to discharge the condensator
 
-  gpio_put(DCOA_FREQ, true);  //décharge le condensateur de rampe
+  // Discharge the capacitor (reset the ramp voltage). Electronically, this process takes a few µs.
+  gpio_put(DCOA_FREQ, true);
 
-  DcoA.error = DcoA.SetPoint - adcval;  // calcul l'erreur pour l'asservissement de l'amplitude de la rampe
-  DcoA.errorSum += DcoA.error; // Calcul de la fonction integral
+  // Compute the amplitude control error (difference between setpoint and measured value)
+  DcoA.error = DcoA.SetPoint - adcval;
 
-#if PIDFIXE == 0
-  DcoA.output = DcoA._Kp * DcoA.SetPoint + DcoA._Ki * DcoA.errorSum;  // Calcul de la sortie du PI
-#else
-  DcoA.output = (DcoA._Kp * DcoA.SetPoint + DcoA._Ki * DcoA.errorSum) / SCALE_FACTOR;  // Calcul de la sortie du PI
-#endif
+  // Accumulate the error for integral control
+  DcoA.errorSum += DcoA.error;
 
-  if (DcoA.output < 0) DcoA.output = 0;  // Limite la sortie à 0-65535
+  // Compute the PI controller output, which determines the charging current
+  #if PIDFIXE == 0
+      DcoA.output = DcoA._Kp * DcoA.SetPoint + DcoA._Ki * DcoA.errorSum;
+  #else
+      DcoA.output = (DcoA._Kp * DcoA.SetPoint + DcoA._Ki * DcoA.errorSum) / SCALE_FACTOR;
+  #endif
+
+  // Limit the output value to the valid range (0 - 65535)
+  if (DcoA.output < 0) DcoA.output = 0;
   else if (DcoA.output > 65535) DcoA.output = 65535;
 
-  // Calcule les données pour la sortie haute et basse du PWM
+  // Compute the high and low PWM values
   uint16_t Data_H = (DcoA.output / PWMRes);
   uint16_t Data_L = (DcoA.output & (PWMRes - 1));
 
-  // Écriture sur les broches de sortie du PWM
-  // Les deux sorties PWM sont combinées pour former un DAC 16bits
-  // Ceci commande le courant de charge du condensateur donc la pente de la rampe
+  // Write to PWM-DAC output channels
+  // The two PWM outputs are combined to form a 16-bit DAC,
+  // which controls the capacitor charging current and, consequently, the ramp slope.
   pwm_set_chan_level(DcoA.sliceH, DcoA.channelH, Data_H);
   pwm_set_chan_level(DcoA.sliceL, DcoA.channelL, Data_L);
 
-  gpio_put(DCOA_FREQ, false);  // Début de charge du condensateur de la rampe
+  // Start charging the capacitor (begin ramp cycle)
+  gpio_put(DCOA_FREQ, false);
 }
 
 void As3397::updateDcoB() {
+  // Update the phase accumulator
   DcoB.PhaseAcc += DcoB.PhaseInc;
   if (DcoB.PhaseAcc >= DcoB.PhaseInc) return;
 
+  // Select the ADC input channel corresponding to the ramp voltage
   adc_select_input(INPUT_RAMPE_B);
-  uint16_t adcval = adc_read();  // Lecture de la valeur analogique max de la rampe
+  uint16_t adcval = adc_read();  // Read the peak analog value of the ramp
 
-  gpio_put(DCOB_FREQ, true);  //décharge le condensateur de rampe
+  // Discharge the capacitor (reset the ramp voltage)
+  gpio_put(DCOB_FREQ, true);
 
-  DcoB.error = DcoB.SetPoint - adcval;  // calcul l'erreur pour l'asservissement de l'amplitude de la rampe
-  DcoB.errorSum += DcoB.error; // Calcul de la fonction integral
+  // Compute the amplitude control error (difference between setpoint and measured value)
+  DcoB.error = DcoB.SetPoint - adcval;
 
-#if PIDFIXE == 0
-  DcoB.output = DcoB._Kp * DcoB.SetPoint + DcoB._Ki * DcoB.errorSum;  // Calcul de la sortie du PI
-#else
-  DcoB.output = (DcoB._Kp * DcoB.SetPoint + DcoB._Ki * DcoB.errorSum) / SCALE_FACTOR;  // Calcul de la sortie du PI
-#endif
+  // Accumulate the error for integral control
+  DcoB.errorSum += DcoB.error;
 
-  if (DcoB.output < 0) DcoB.output = 0;  // Limite la sortie à 0-65535
+  // Compute the PI controller output, which determines the charging current
+  #if PIDFIXE == 0
+      DcoB.output = DcoB._Kp * DcoB.SetPoint + DcoB._Ki * DcoB.errorSum;
+  #else
+      DcoB.output = (DcoB._Kp * DcoB.SetPoint + DcoB._Ki * DcoB.errorSum) / SCALE_FACTOR;
+  #endif
+
+  // Limit the output value to the valid range (0 - 65535)
+  if (DcoB.output < 0) DcoB.output = 0;
   else if (DcoB.output > 65535) DcoB.output = 65535;
-  // Calcule les données pour la sortie haute et basse du PWM
+
+  // Compute the high and low PWM values
   uint16_t Data_H = (DcoB.output / PWMRes);
   uint16_t Data_L = (DcoB.output & (PWMRes - 1));
 
-  // Écriture sur les broches de sortie du PWM
-  // Les deux sorties PWM sont combinées pour former un DAC 16bits
-  // Ceci commande le courant de charge du condensateur donc la pente de la rampe
+  // Write to PWM output channels
+  // The two PWM outputs are combined to form a 16-bit DAC,
+  // which controls the capacitor charging current and, consequently, the ramp slope.
   pwm_set_chan_level(DcoB.sliceH, DcoB.channelH, Data_H);
   pwm_set_chan_level(DcoB.sliceL, DcoB.channelL, Data_L);
 
-  gpio_put(DCOB_FREQ, false);  // Début de charge du condensateur de la rampe
+  // Start charging the capacitor (begin ramp cycle)
+  gpio_put(DCOB_FREQ, false);
 }

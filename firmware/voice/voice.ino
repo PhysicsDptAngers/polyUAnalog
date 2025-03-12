@@ -1,3 +1,32 @@
+/**
+ * @file voice.ino
+ * @brief Monophonic voice synthesizer for the PolyUAnalog project.
+ * 
+ * The "main" file that integrates all auxiliary files to fetch MIDI data from the I²C bus and send the correct voltage to the AS3397 chip.
+ *
+ * This file manages the initialization and real-time control of  
+ * a polyphonic analog and open-source synthesizer, handling  
+ * voice control, modulation, I2C communication, and LED status.
+ * 
+ * @author M. Loumaigne, D. Guichaoua
+ * @date 2023 - 2024
+ * @version 4.33
+ * 
+ * @section Features
+ * - Fixes PWM_B and DSO bugs.
+ * - Implements 14-bit PWM control for filter cutoff and resonance.
+ * - Implements 12-bit PWM control for VCA and balance.
+ * - Limits VCA output level to prevent saturation.
+ * - Optimizes PI calculations.
+ * 
+ * @section TODO
+ * - Implement one-byte control change functionality.
+ * - Fix ADSR sustain bug.
+ * - Add preset transfer via SysEx.
+ * - Implement multitimbral support.
+ */
+
+
 /*
 
                            ,--,                                  ,---,                                     ,--,
@@ -49,26 +78,64 @@
 #include <elapsedMillis.h>  // Include library for elapsed time measurement
 #include "RPi_Pico_TimerInterrupt.h"
 
+/** @def AUTOI2CADR
+ *  @brief Enables automatic I2C address detection.
+ */
 #define AUTOI2CADR 1
+
+/** @def MAXVOICES
+ *  @brief Maximum number of synthesizer voices.
+ */
 #define MAXVOICES 16
 #define I2CVoice 0
+
+/** @def I2CclockFreq
+ *  @brief I2C clock frequency in Hz.
+ */
 #define I2CclockFreq 400000
+
+/** @def I2CAddressBase
+ *  @brief Base address for I2C voice modules.
+ */
 #define I2CAddressBase 0x10
 #define I2CVoie 0
+
+/** @def BUFFER_SIZE
+ *  @brief Size of the I2C communication buffer.
+ */
 #define BUFFER_SIZE 1024  // Taille du tampon I2C, ajustez-la en fonction de vos besoins
 
+/** @brief I2C data buffer. */
 byte buffer[BUFFER_SIZE];
-int bufferWriteIndex = 0;  // Index d'écriture dans le tampon
-int bufferReadIndex = 0;   // Index de lecture dans le tampon
+
+/** @brief Write index for the I2C buffer. */
+int bufferWriteIndex = 0;  
+
+/** @brief Read index for the I2C buffer. */
+int bufferReadIndex = 0;   
+
+/** @brief I2C address for the synthesizer module. */
 uint8_t I2CAddress;
 
+/** @brief LED instance for status indication. */
 LED led(LED_BUILTIN);
-elapsedMillis msec = 0;  // Elapsed time since the last LED state change
+/** @brief Elapsed time for LED state management. */
+elapsedMillis msec = 0;  
 
+/** @brief Hardware Timer for control signal updates. */
 RPI_PICO_Timer ITimer3(2);
+
+/** @brief Hardware Timer for audio processing updates. */
 RPI_PICO_Timer ITimer4(3);
 
-
+/**
+ * @brief Handles incoming I2C data.
+ * 
+ * This function reads data from the I2C buffer and stores it  
+ * in a circular buffer for later processing.
+ * 
+ * @param bytesReceived Number of bytes received over I2C.
+ */
 void i2cReceive(int bytesReceived) {
   while (Wire.available()) {  // loop through all but the last
     int nextWriteIndex = (bufferWriteIndex + 1) % BUFFER_SIZE;
@@ -81,12 +148,24 @@ void i2cReceive(int bytesReceived) {
   //led.Blink();
 }
 
+
+/**
+ * @brief Handles I2C requests for the synthesizer's state.
+ * 
+ * This function sends the current ADSR envelope state  
+ * over I2C to the master device.
+ */
 void i2cRequest() {
   // Renvoie le status de la voie à la carte orchestre (ATTACK, DECAY, SUSTAIN, RELEASE, NOTEOFF)
   Wire.write(eg1.getADSRState());
 }
 
-
+/**
+ * @brief Initializes the synthesizer module.
+ * 
+ * This function configures GPIOs, ADC, I2C communication,  
+ * waveform parameters, LFOs, envelopes, and real-time timers.
+ */
 void setup() {
   // put your setup code here, to run once:
   pinMode(LED_BUILTIN, OUTPUT);
@@ -184,12 +263,18 @@ void setup() {
   Serial.println(I2CAddress, HEX);
 }
 
+/**
+ * @brief Initializes the secondary core setup (currently unused).
+ */
 void setup1() {
 }
 
+/**
+ * @brief Main loop for handling LED blinking based on note state. verything else is managed by hardware timers (audio and control updates) or by core1 for processing I²C messages. 
+ */
 void loop() {
   static bool NoteState = false;
-  // gestion du blink de la led (non blocant)
+  Management of LED blinking (non-blocking)
   if (eg1.getADSRState() == NOTEOFF) {
     if (NoteState) {
       NoteState = false;
@@ -207,11 +292,14 @@ void loop() {
   }
 }
 
+/**
+ * @brief Secondary core loop for processing MIDI input via I²C bus from the dedicated buffer.
+ */
 void loop1() {
-  // Vérifiez si le tampon contient des données à traiter
+  // Check if the buffer contains data to process
   while (bufferReadIndex != bufferWriteIndex) {
     byte value = buffer[bufferReadIndex];
-    OnMidi(value);                                          // Traitez chaque octet du tampon
-    bufferReadIndex = (bufferReadIndex + 1) % BUFFER_SIZE;  // Incrémente l'index de lecture
+    OnMidi(value);                                          // Process each byte in the buffer  
+    bufferReadIndex = (bufferReadIndex + 1) % BUFFER_SIZE;  // Increment the read index
   }
 }

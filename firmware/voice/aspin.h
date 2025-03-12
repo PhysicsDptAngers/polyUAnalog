@@ -1,6 +1,13 @@
+/**
+ * @file aspin.h
+ * @briefDefines the pin connections between the AS3397 chip and the RP2040. 
+ * This is entirely hardware-dependent and should not be modified 
+ * unless the corresponding hardware connections on the voice board have also been changed.
+ */
+
 #ifndef ASPIN_H
 #define ASPIN_H
-// Définition des broches d'entrée sortie
+
 
 #define VWFA_MSB_CV 10
 #define VWFA_LSB_CV 11

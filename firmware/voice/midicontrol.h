@@ -1,3 +1,8 @@
+/**
+ * @file midicontrol.h
+ * @brief Defines the MIDI CC numbers assigned to each parameter.
+ */
+
 #ifndef MIDICTRL_H
 #define MIDICTRL_H
 

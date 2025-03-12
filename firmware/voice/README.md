@@ -1,4 +1,4 @@
-# Firmware for One Voice Card
+# Firmware for One Voice Board
 
 ## What is a Voice Board?
 
@@ -18,7 +18,11 @@ The two main components are the **AS3397 chip** and the **Raspberry Pi Pico micr
 
 # List of Files and Overview of Their Functions
 
+
+
 In the near future, all files will be extensively commented and will have dedicated Doxygen documentation.
+
+[📚 View the documentation (WIP)](docs/html/index.html)
 
 - **`voice.ino`**: The main file that integrates all auxiliary files to fetch MIDI data from the I²C bus and send the correct voltage to the AS3397 chip.
 - **`as3397.h` / `as3397.cpp`**: This class represents the interface with the AS3397 chip. For instance, the chip requires ten control voltages for configuration, which are generated using PWM signals from the RP2040 microcontroller. As a result, this class contains 10 (+4) PWM members. This is the most complex file to understand, as it is closely tied to certain hardware-specific aspects of the AS3397 chip.

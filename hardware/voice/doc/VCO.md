@@ -178,9 +178,8 @@ Since slight variations in the duty cycle across different notes are not as crit
 
 The PWM voltage control from the RP2040 is level shifted from 0–3.3V to -0.5–5V. This upper limit of 5V can be seen as restrictive because for voltage ramps exceeding 5V, achieving a 100% duty cycle is no longer possible. Nonetheless, there is generally no need to exceed a 50% duty cycle because, for example, a 75% duty cycle has the same sonic spectrum as a 25%. In the case of the AS3397, the implications are somewhat more nuanced. Since the square signal is added on top of the waveform exiting the wave shaper, if this waveform is not symmetric, then 25% and 75% duty cycles do not produce exactly the same waveform.
 
-![dco capacitor discharge schematics](img/PWM_level_shifter.png)
+![dco capacitor discharge schematics](img/PWM_CV_shift_Schematics.png)
 *Figure X: Schematic of the Level Shifter for \( V_{PW} \), the PWM Threshold. The PWM signal is initially low-pass filtered (cutoff frequency ≈ 700Hz, response time for 12 bits @ 250 MHz: 0.5ms). Diode D1 is conducting, thus its voltage is approximately 0.6V and acts as a bias to achieve negative values at the output of the op-amp set as a non-inverting amplifier (gain ratio 10/6.8, which transforms 3.3V into 5V).*
-
 
 We have also shifted \( V_{PW} \) to negative levels because the only way to mute the square wave is by setting it to a 0% duty cycle (as a reminder, achieving 100% is not possible here for all waveforms). Setting the threshold at 0V, which theoretically should result in a 0% duty cycle, does not fully mute the square wave in our experiments, hence the use of negative values.
 
@@ -195,7 +194,8 @@ In total, the VCO of an AS3397 chip can generate four analog signals:
 
 These signals can be mixed or not mixed into the VCAs via the use of the quad mixer. Its operation is detailed in Figure 3 of the datasheet.
 
-TODO: Insert the datasheet drawing here.
+![dco capacitor discharge schematics](img/waveshape_datasheet.png)
+*Figure X: Extracted from the datasheet. Some waveform that can be produced by the VCO by adding the waveform at the exit of the waveshapper and a square PWW signal*
 
 An important point is that square waveforms are always sent to the VCA. As mentioned earlier, the only way to mute them and set their duty cycle to 0 is through this method.
 
@@ -207,11 +207,27 @@ The quad mixer then allows selecting four mixing modes for the voltages from the
 
 The AS3397 datasheet does not specify how to produce these voltages, whereas the CEM3396 datasheet proposes a setup that we have adapted to the RP2040, which operates at 3.3V instead of 5V, and where we used an active circuit instead of a transistor since we had an operational amplifier left.
 
-The setup is shown in Figure X. Here is also a link to its simulation with Circuit.js. Briefly, it consists of an op-amp adder and shifter setup. Two digital outputs from the RP2040 allow defining four states which, via the choice of resistances and the offset voltage, produce output voltages of -0.7, 0.5, 2, and 3 V (-0.6, 1.5V, 2.6V, 3.3V).
 
-https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgBDcMFcY3tHj69i4JCyRh48cNDIowCQhhoJsabNiyz5YPMWw1irFDRQIhU6WwBOIJuvAZCtS86ghCeeLfuPBriABVJo+APJB+MJBGLxg-B6QvjRCASkg2F4eoXBsAO6RlgkBplRJdiU0VCZBVdm4uXY1pdy86mUZDUkFNWDu6X0u3YGDgcH5rYWTLUkAJpPtC1lxAHI0YCkT6ZlC3hlZw3s7S0JJAOYgR1l7VR3lC2hTi9U+AEpPj5htjx11SHfQBBsADO9j2owccXcHQAZhwADbAhggsFUAKQqawhFItjvJjg9wsGg0JxDDx1bDQegAoF4vbojYk4LkkJUxJQQFsIA
+The setup is shown in Figure X. Here is also a link to its simulation with Circuit.js. Briefly, it consists of an op-amp adder and shifter setup. Two digital outputs from the RP2040 allow defining four states which, via the choice of resistances and the offset voltage, produce output voltages of -0.7, 0.5, 2, and 3 V (-0.6, 1.5V, 2.9V, 3.5V).
 
-FIXME simulation vers schematics
+[![Quad mixer circuit simulation](img/Quad_mixer_falstad.png)](https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgBDcMFcY3tHj69i4JCyRh48KLGmE82NGRQIF2KSSjJpbAE4gmS8BkK0hYU9oXx9h44PMhHVTLYDyz-MOcZeYfnAoOxohR1CQbAVtbFw4NgB3LwtAxxQaKkg7NIzuAVyqWNsDVnyqUsi0GLispIrLMwiG4KSmqwiXRLzk7vTMtgATbqVynkjo-wA5GjBQroiooTxC6NqQZfGLMcXggHN1laWqDMzgku2qxxHtKXiAJR7rzF5r09ykU5gENgBnQw3mkZ-FZyiAAGYcAA2PwYv3+rm8QJ6oIh0NhDyYAKsLBoNBMZjehWg9E+0G+GI2jhxeJc2ly2GJ2kyZLYQA)
+*Figure X: Schematic for Generating the Four Voltages for the Quad Mixer. The two 3.3V inputs originate from two GPIO pins of the RP2040. The diode, constantly active due to the +5V supply and the 1K current-limiting resistor, establishes a negative reference voltage of approximately -0.7V.
+*
+
+
+## The balance VCA
+
+La dernière étage du VCO est deux VCA qui permettent de mixer les niveaux relatifs entre le VCOA et le VCOB. Ces niveaux sont réglés par le CV voltage "balance". Cette tension est généré par le rp2040 en utilisant un signal PWM filtré passe-bas.  Contrairement à la plupart des autres CV, l'entrée Balance attend des tensions entre -2.2V pour avoir uniquement le DCO B et 2.2V pour avoir uniquement le DCO A. De ce fait, après le filtrage par le filtre passe-bas RC, un montage AO multiplicateur et level shifter est ajouté.
+
+![Schematic balance CV](img/Balance_CV_schematics.png)]
+*Figure X: Schematic for level shift the low-pass filtered PWM control voltage, intially between 0 and 3.3V, to -2.5V and 2.5V.
+
+
+
+
+
+Falstad_Balance_cv_level_shifter
+
 
 ## Le choix des composants
 

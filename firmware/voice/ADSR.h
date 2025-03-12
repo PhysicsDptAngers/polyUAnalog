@@ -1,3 +1,11 @@
+/**
+ * @file adsr.h
+ * @brief Envelope generator class implementing an ADSR (Attack, Decay, Sustain, Release) model.
+ * 
+ * A basic implementation of an Attack-Decay-Sustain-Release (ADSR) envelope. Nothing special.
+ * 
+ */
+
 #ifndef ADSR_H
 #define ADSR_H
 #include <stdint.h>

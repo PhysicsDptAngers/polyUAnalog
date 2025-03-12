@@ -1,15 +1,9 @@
-/*
-  LED.h - Library for controlling an LED using GPIO on microcontrollers.
-  Created by [Your Name], [Date]
+/**
+ * @file Led.h
+ * @brief The Digital Signal Oscillator (DSO) class and instructions. 
+ * Library for controlling an LED using GPIO on microcontrollers.
+ */
 
-  This library implements a simple LED control class that allows controlling
-  the state of an LED connected to a microcontroller through GPIO.
-
-  Usage:
-  - Include this header file in your project.
-  - Create an instance of the LED class with a specified GPIO pin.
-  - Use the methods provided by the LED class to control the LED state.
-*/
 
 #ifndef LED_H
 #define LED_H
