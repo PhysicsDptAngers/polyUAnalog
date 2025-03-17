@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "AS3397_eurorack_0603")(type "KiCad")(uri "${KIPRJMOD}/AS3397_eurorack_0603.pretty")(options "")(descr ""))
+)
