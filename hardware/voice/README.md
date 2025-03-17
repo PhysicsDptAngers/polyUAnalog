@@ -1,13 +1,23 @@
-# Monophonic Synth Based on the AS3397 Chip
+# Monophonic Synth Based on the AS3397 Chip: The Voice Board
 
-Welcome to the hardware documentation for our monophonic synthesizer voice module, a core component of the polyUAnalog project. This document outlines the design and capabilities of the voice module, centered around the remarkable AS3397 chip.
+These PCBs allow the generation of *one* analog audio voice using the AS3397 chip, controlled by an RP2040/RP2530 (Raspberry Pi Pico) microcontroller.
+
+## Hardware
+
+We offer three different circuit designs:
+
+- **Main (SMD 1206)**: This is the reference board, designed to be controlled by the *conductor board* along with other voice boards to form a polyphonic synthesizer. It uses relatively large *SMD 1206* (Surface-Mounted) components, which can be soldered by hand with some practice.
+  
+- **Eurorack (SMD 0603) – WIP**: Designed for use with the *Eurorack version of the conductor board* (work in progress as of March 2025). As with all Eurorack modules, space is limited, so this board uses small **SMD 0603** components. While it can be soldered by hand, it requires some experience and possibly dedicated tools like a binocular magnifier.
+
+- **Mono Through-Hole – WIP**: The simplest version to assemble and arguably the best starting point. This is a *standalone* analog voice module that does *not* require a conductor board to generate sound. It includes a dedicated *MIDI input socket* and *power circuitry*, allowing you to simply connect a MIDI cable and a *+12V power supply* to get a fully functional monophonic analog synthesizer!
+
 
 ## The AS3397 Chip
 
-The AS3397 chip is manufactured by  ALFA RPAR, a Latvian semiconductor manufacturer. It's a modern reissue of the CEM3396, a chip that found its home in iconic synthesizers like the Oberheim Matrix-6. 
+The AS3397 chip is manufactured by ALFA RPAR, a Latvian semiconductor manufacturer. It's a modern reissue of the CEM3396, a chip that found its home in iconic synthesizers like the Oberheim Matrix-6. 
 
 [Datasheet AS3397](datasheet/AS3397.pdf)
-
 
 
 ## Sonic Possibilities of the AS3397
