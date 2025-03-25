@@ -10,7 +10,7 @@ We offer three different circuit designs:
   
 - **Eurorack (SMD 0603) – WIP**: Designed for use with the *Eurorack version of the conductor board* (work in progress as of March 2025). As with all Eurorack modules, space is limited, so this board uses small **SMD 0603** components. While it can be soldered by hand, it requires some experience and possibly dedicated tools like a binocular magnifier.
 
-- **Mono Through-Hole – WIP**: The simplest version to assemble and arguably the best starting point. This is a *standalone* analog voice module that does *not* require a conductor board to generate sound. It includes a dedicated *MIDI input socket* and *power circuitry*, allowing you to simply connect a MIDI cable and a *+12V power supply* to get a fully functional monophonic analog synthesizer!
+- **Mono Through-Hole – WIP**: The simplest version to assemble and arguably the best starting point. This is a *standalone* analog voice module that does *not* require a conductor board to generate sound. Additionaly, the board is large and use trhough-hole component (except for the as3397 chip). It also includes a dedicated *MIDI input socket* and *power circuitry*, allowing you to simply connect a MIDI cable and a *+12V power supply* to get a fully functional monophonic analog synthesizer!
 
 
 ## The AS3397 Chip
