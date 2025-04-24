@@ -1,8 +1,3 @@
-/**
- * @file tables.h
- * @brief Contains raw wavetable data for the DSO.
- */
-
 #ifndef TABLES_H
 #define TABLES_H
 

@@ -13,9 +13,29 @@ enum { MIDI_OTHER,
        MIDI_PITCH_BEND
 };
 
-float midiToFreq(uint8_t midikey, int8_t transpose, int8_t detune) {
+inline float midiToFreq(uint8_t midikey, int8_t transpose, int8_t detune) {
   float freq = 8.1757989156 * pow(2.0, ((midikey + transpose + GlbTranspose) / 12.0) + ((detune) / 1200.0));
   return freq;
+}
+
+inline int midiToTime(byte value) {
+  int t;
+  const float a = 0.06835;
+  const float b = 1.2556;
+
+  t = ((exp(value * a) - 1) * b) + 1;
+
+  return t;
+}
+
+inline float midiToRate(byte value) {
+  float f;
+  const float a = 0.04638671875;
+  const float b = 0.08868986535;
+
+  f = ((exp(value * a) - 1) * b) + 0.01;
+
+  return f;
 }
 
 //---------------------
@@ -30,6 +50,9 @@ void handleNoteOn(byte channel, byte pitch, byte vel) {
   freqB = midiToFreq(key, transposeB, detuneB);
   freqDSO = midiToFreq(key, transposeDSO, detuneDSO);
   RAZPid = true;
+  as.set_DcoA_freq(freqA);
+  as.set_DcoB_freq(freqB);
+  dso.setFrequency(freqDSO);
   eg1.gateOn();
   eg2.gateOn();
 }
@@ -150,7 +173,7 @@ void handleControlChange(byte channel, byte controller, byte value) {
       Filter_freq = (Filter_freqHigh << 7) + Filter_freqLow;
       break;
     case FILTERFCLOW:
-      Filter_freqHigh = value;
+      Filter_freqLow = value;
       Filter_freq = (Filter_freqHigh << 7) + Filter_freqLow;
       break;
     case FILTERRES:
@@ -173,7 +196,7 @@ void handleControlChange(byte channel, byte controller, byte value) {
       lfo1.setWaveform(value);
       break;
     case LFO1FREQ:
-      lfo1.setFrequency(value / 10.0);
+      lfo1.setFrequency(midiToRate(value));
       break;
     case LFO12PWA:
       Lfo1ToPwmA = value;
@@ -194,28 +217,28 @@ void handleControlChange(byte channel, byte controller, byte value) {
       Lfo1ToPan = value;
       break;
     case EG1ATTACK:
-      eg1.setAttack(value);
+      eg1.setAttack(midiToTime(value));
       break;
     case EG1DECAY:
-      eg1.setDecay(value);
+      eg1.setDecay(midiToTime(value));
       break;
     case EG1SUSTAIN:
       eg1.setSustain(value);
       break;
     case EG1RELEASE:
-      eg1.setRelease(value);
+      eg1.setRelease(midiToTime(value));
       break;
     case EG2ATTACK:
-      eg2.setAttack(value);
+      eg2.setAttack(midiToTime(value));
       break;
     case EG2DECAY:
-      eg2.setDecay(value);
+      eg2.setDecay(midiToTime(value));
       break;
     case EG2SUSTAIN:
       eg2.setSustain(value);
       break;
     case EG2RELEASE:
-      eg2.setRelease(value);
+      eg2.setRelease(midiToTime(value));
       break;
     case EG22FREQ:
       Eg2ToFreq = value;

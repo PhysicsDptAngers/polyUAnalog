@@ -15,72 +15,76 @@ void DSO::setWaveform(uint8_t wave) {
 
   waveform = wave;
 
+  const int16_t *wave_ptr = wave1;
+
   switch (wave) {
     case 0:
       //Square
-      data = wave1;
+      wave_ptr = wave1;
       break;
     case 1:
       //Saw
-      data = wave1;
+      wave_ptr = wave1;
       break;
     case 2:
       //Pulse
-      data = wave2;
+      wave_ptr = wave2;
       break;
     case 3:
-      //Sine
-      data = wave3;
+      //Sin
+      wave_ptr = wave3;
       break;
     case 4:
       //Tri
-      data = wave4;
+      wave_ptr = wave4;
       break;
     case 5:
       //VariStep
-      data = wave5;
+      wave_ptr = wave5;
       break;
     case 6:
       //SkewSaw
-      data = wave6;
+      wave_ptr = wave6;
       break;
     case 7:
       //SkewSquare
-      data = wave7;
+      wave_ptr = wave7;
       break;
     case 8:
       //Smooth Brass
-      data = wave8;
+      wave_ptr = wave8;
       break;
     case 9:
       //Bass
-      data = wave9;
+      wave_ptr = wave9;
       break;
     case 10:
       //Dark FM
-      data = wave10;
+      wave_ptr = wave10;
       break;
     case 11:
       //MultiWave
-      data = wave11;
+      wave_ptr = wave11;
       break;
     case 12:
       //Bell FM
-      data = wave12;
+      wave_ptr = wave12;
       break;
     case 13:
       //Dark Pad
-      data = wave13;
+      wave_ptr = wave13;
       break;
     case 14:
       //Organ Mixture
-      data = wave14;
+      wave_ptr = wave14;
       break;
     case 15:
       //DCO Maze
-      data = wave15;
+      wave_ptr = wave15;
       break;
   }
+  // Copier les données en RAM
+  memcpy(data, wave_ptr, S*2);
 }
 
 void DSO::setFrequency(float f) {
@@ -97,17 +101,34 @@ void DSO::setPw(int32_t Pw) {
 }
 
 void DSO::update() {
-  const float alpha = 0.6;
-  static int32_t y = 0;
-  const int a0 = alpha * 256;
-  const int a1 = 256 - a0;
+    PhaseAcc += PhaseInc;
 
-  PhaseAcc += PhaseInc;
-  uint16_t Index = PhaseAcc >> 17;
-  if (waveform) wave = (data[Index] + data[((Index) + pwm) & (S - 1)]);
-  else wave = (data[Index] - data[((Index) + pwm) & (S - 1)]);
-  y = (a0 * wave + a1 * y ) >> 8;
-  wave = y;
+    uint16_t Index = PhaseAcc >> 17;             // Index actuel
+    uint16_t nextIndex = (Index + 1) & (S - 1);  // Prochain échantillon
 
-  vdso = (wave * amplitude >> 8);
-}
+    uint16_t frac = (PhaseAcc & 0x1FFFF) >> 10;        // Fraction de phase (17 bits)
+
+    // --- Première interpolation ---
+    int16_t sampleA = data[Index];
+    int16_t sampleB = data[nextIndex];
+    int16_t interpolatedSample = sampleA + ((sampleB - sampleA) * frac >> 7);
+
+    // --- Seconde interpolation pour PWM ---
+    uint16_t pwmIndex = (Index + pwm) & (S - 1);
+    uint16_t nextPwmIndex = (pwmIndex + 1) & (S - 1);
+
+    int16_t samplePwmA = data[pwmIndex];
+    int16_t samplePwmB = data[nextPwmIndex];
+    int16_t interpolatedPwm = samplePwmA + ((samplePwmB - samplePwmA) * frac >> 7);
+
+    // Génération du signal final
+    if (waveform) {
+        wave = interpolatedSample + interpolatedPwm;
+    } else {
+        wave = interpolatedSample - interpolatedPwm;
+    }
+
+    // Appliquer l’amplitude
+    vdso = (wave * amplitude) >> 8;
+  }
+

@@ -1,47 +1,50 @@
 #include "ADSR.h"
 
-// Constructeur de la classe ADSR
+// Constructor for the ADSR class
 ADSR::ADSR(uint32_t rate)
   : ADSR_RATE(rate) {
-  // Initialisation de l'état, de la valeur et du niveau de sustain
-  state = NOTEOFF;
-  value = 0;
-  sustain = 0;
+  // Initialize the state, value, and sustain level
+  state = NOTEOFF;  // Set the initial state to NOTEOFF
+  value = 0;        // Initialize the ADSR envelope value to 0
+  sustain = 0;      // Set the sustain level to 0 initially
 
-  // Réglage des paramètres d'attaque, de décroissance, de relâchement et de sustain par défaut
-  setAttack(2);
-  setDecay(10);
-  setRelease(30);
-  setSustain(100);
+  // Set default attack, decay, release, and sustain parameters
+  setAttack(2);     // Set attack time (2 milliseconds) for the ADSR envelope
+  setDecay(10);     // Set decay time (10 milliseconds) for the ADSR envelope
+  setRelease(30);   // Set release time (30 milliseconds) for the ADSR envelope
+  setSustain(100);  // Set sustain level (100) for the ADSR envelope
 }
 
-// Méthode pour commencer l'attaque
+// Method to initiate attack phase
 void ADSR::gateOn() {
-  state = ATTACK;
+  state = ATTACK;// Set the ADSR state to ATTACK, triggering the attack phase
 }
 
-// Méthode pour commencer le relâchement
+// Method to initiate release phase
 void ADSR::gateOff() {
-  state = RELEASE;
+  state = RELEASE;// Set the ADSR state to RELEASE if the current state is not NOTEOFF
 }
 
-// Méthode pour couper le son
+// Method to silence the ADSR envelope
 void ADSR::soundOff() {
-  state = NOTEOFF;
-  veg = 0;
-  veg_a = (int16_t)(0 - sustain) >> 7;
+  state = NOTEOFF;  // Set the ADSR state to NOTEOFF, stopping the envelope generation
+  veg = 0;  // Reset the envelope generator value to zero
+  veg_a = (int16_t)(0 - sustain) >> 7;  // Calculate the release envelope rate for a smooth release transition
+  veg_f = 0;
 }
 
-// Méthode pour régler le temps d'attaque
-void ADSR::setAttack(int8_t timems) {
-  attack_time = ADSR_RATE * tablogMidi[timems] / 1000.0;
-  if (timems < 2) attack_inc = AMAX + 1;
-  else attack_inc = AMAX / attack_time;
+// Method to set the attack time of the ADSR envelope
+void ADSR::setAttack(int32_t timems) {
+  attack_time = ADSR_RATE * timems / 1000.0;  // Calculate attack time in samples
+  if (timems < 2)
+    attack_inc = AMAX + 1;  // Set attack increment for very short times (less than 2ms)
+  else
+    attack_inc = AMAX / attack_time;  // Calculate attack increment based on the attack time
 }
 
-// Méthode pour régler le temps de décroissance
-void ADSR::setDecay(int8_t timems) {
-  decay_time = ADSR_RATE * tablogMidi[timems] / 1000.0 - 1.0;
+// Method to set the decay time of the ADSR envelope
+void ADSR::setDecay(int32_t timems) {
+  decay_time = ADSR_RATE * timems / 1000.0 - 1.0;
   decay_inc = (AMAX - sustain) / decay_time;
 }
 
@@ -53,8 +56,8 @@ void ADSR::setSustain(int8_t value) {
 }
 
 // Méthode pour régler le temps de relâchement
-void ADSR::setRelease(int8_t timems) {
-  release_time = ADSR_RATE * tablogMidi[timems] / 1000.0;
+void ADSR::setRelease(int32_t timems) {
+  release_time = ADSR_RATE * timems / 1000.0;
   release_inc = sustain / release_time;
 }
 

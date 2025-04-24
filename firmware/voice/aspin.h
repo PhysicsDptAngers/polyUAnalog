@@ -1,13 +1,6 @@
-/**
- * @file aspin.h
- * @briefDefines the pin connections between the AS3397 chip and the RP2040. 
- * This is entirely hardware-dependent and should not be modified 
- * unless the corresponding hardware connections on the voice board have also been changed.
- */
-
 #ifndef ASPIN_H
 #define ASPIN_H
-
+// Définition des broches d'entrée sortie
 
 #define VWFA_MSB_CV 10
 #define VWFA_LSB_CV 11
@@ -50,7 +43,7 @@ const float convFactor = (RampeDivisor * 3.3) / 4096;
 
 //Gains du PI Kp et Ki
 const float Kp = Rt * Ct * 16 * RampeDivisor;  //Le x16 c'est pour passer de 12bits (ADC In) à 16bits (PWM out)
-const float Ki = 50;
+const float Ki = 100;
 
 // Définition des constantes pour le PWM
 const int PWMRes = 256;

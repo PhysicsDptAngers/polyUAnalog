@@ -1,8 +1,3 @@
-/**
- * @file LFO.h
- * @brief A basic implementation of a Low-Frequency Oscillator (LFO), optimized for computational efficiency.
- */
-
 #ifndef LFO_H
 #define LFO_H
 #include <stdint.h>
