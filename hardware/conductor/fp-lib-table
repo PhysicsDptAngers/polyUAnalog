@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "picoW")(type "KiCad")(uri "C:/Users/Matthieu-bureau/Documents/KiCad/7.0/picoW")(options "")(descr ""))
+  (lib (name "SD_card")(type "KiCad")(uri "C:/Users/Matthieu-bureau/Documents/KiCad/7.0/SD_card")(options "")(descr ""))
+  (lib (name "Eurocad")(type "KiCad")(uri "C:/Users/Matthieu-bureau/Documents/KiCad/7.0/eurocad-master/Eurocad.pretty")(options "")(descr ""))
+)

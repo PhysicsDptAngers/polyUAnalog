@@ -5014,17 +5014,6 @@
 		)
 		(uuid e24e2285-3f4e-46a0-9a72-67a8b34afd22)
 	)
-	(text "Compatible op-amp\nTCL2262 or TLV9102 \nTLV2372\n"
-		(exclude_from_sim no)
-		(at 250.952 192.024 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "01ad83f4-a70e-479a-8e52-1dd71b31d7d8")
-	)
 	(text "3.3V -> 5V"
 		(exclude_from_sim no)
 		(at 297.18 74.93 0)
@@ -5131,17 +5120,6 @@
 		)
 		(uuid "3d035819-7485-497b-94ea-2699bbcb5848")
 	)
-	(text "Compatible op-amp\nTCL2262 or TLV9102 \nTLV2372\n"
-		(exclude_from_sim no)
-		(at 420.116 173.99 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3e8a7aff-665c-490e-8498-cec2b022b138")
-	)
 	(text "AS3397"
 		(exclude_from_sim no)
 		(at 13.97 29.21 0)
@@ -5164,17 +5142,6 @@
 			(justify left bottom)
 		)
 		(uuid "63c4cefe-3ebc-494e-8f19-841cddc7fbe1")
-	)
-	(text "Compatible op-amp\nTCL2262 or TLV9102 \nTLV2372\n"
-		(exclude_from_sim no)
-		(at 78.74 197.104 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "70cf146a-6f50-4baa-9510-8a421dda876d")
 	)
 	(text "0V to 5V\n"
 		(exclude_from_sim no)
@@ -5220,28 +5187,6 @@
 			(justify left bottom)
 		)
 		(uuid "960623a7-0d3f-4c9f-8e03-816e8975f4a0")
-	)
-	(text "Compatible op-amp\nTCL2262 or TLV9102 \nTLV2372\n"
-		(exclude_from_sim no)
-		(at 421.64 290.576 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a1e771a9-230a-453e-a5b8-0ae19dd065e2")
-	)
-	(text "Compatible op-amp\nTCL2262 or TLV9102 \nTLV2372\n"
-		(exclude_from_sim no)
-		(at 224.282 285.75 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ab1dab7e-bb4a-4e68-b71e-b25059367bf9")
 	)
 	(text "Audio output\n(transimpedance opAmp)"
 		(exclude_from_sim no)

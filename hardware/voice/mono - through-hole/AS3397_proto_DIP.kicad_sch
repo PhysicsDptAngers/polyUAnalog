@@ -6548,6 +6548,17 @@
 		)
 		(uuid "0145b8b5-f6f4-4a87-8e82-c9d62426c3f4")
 	)
+	(text "Compatible op-amp\nTCL2262 or TLV9102 \nTLV2372\n"
+		(exclude_from_sim no)
+		(at 417.322 370.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "07df64d6-93a4-4070-9d35-1f234ba35956")
+	)
 	(text "Registers change"
 		(exclude_from_sim no)
 		(at 299.466 326.39 0)
@@ -6685,6 +6696,28 @@
 		)
 		(uuid "63c4cefe-3ebc-494e-8f19-841cddc7fbe1")
 	)
+	(text "Compatible op-amp\nTCL2262 or TLV9102 \nTLV2372\n"
+		(exclude_from_sim no)
+		(at 113.03 244.094 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6a3f2029-9dda-4573-81b2-5c54a45a35b7")
+	)
+	(text "Compatible op-amp\nTCL2262 or TLV9102 \nTLV2372\n"
+		(exclude_from_sim no)
+		(at 276.098 309.118 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6c69d507-d3b8-4904-aaa7-c62e4b5ef6c8")
+	)
 	(text "0V to 5V\n"
 		(exclude_from_sim no)
 		(at 519.43 156.21 0)
@@ -6728,6 +6761,17 @@
 			(justify left bottom)
 		)
 		(uuid "960623a7-0d3f-4c9f-8e03-816e8975f4a0")
+	)
+	(text "Compatible op-amp\nTCL2262 or TLV9102 \nTLV2372\n"
+		(exclude_from_sim no)
+		(at 265.43 325.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a023f486-57bb-46c8-b371-d60e2aa4959b")
 	)
 	(text "level shifter\nPWM low-pass filtering"
 		(exclude_from_sim no)
@@ -6809,6 +6853,17 @@
 			(justify left bottom)
 		)
 		(uuid "f260f316-b40e-48a8-937b-97379af0621d")
+	)
+	(text "Compatible op-amp\nTCL2262 or TLV9102 \nTLV2372\n"
+		(exclude_from_sim no)
+		(at 245.364 244.094 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f5a57448-5143-4229-b73d-de35e64156a6")
 	)
 	(text "-0.5V to 5V\n"
 		(exclude_from_sim no)
@@ -14484,7 +14539,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6002"
+		(property "Value" "TS922"
 			(at 308.102 278.13 0)
 			(effects
 				(font
@@ -14838,7 +14893,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6002"
+		(property "Value" "TS922"
 			(at 441.452 287.528 0)
 			(effects
 				(font
@@ -17167,18 +17222,17 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "4f401ef6-7224-4c89-9ddc-f10520977548")
 		(property "Reference" "R24"
-			(at 270.51 109.22 90)
+			(at 269.748 113.03 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "100k"
-			(at 270.51 111.76 90)
+		(property "Value" "50K"
+			(at 274.828 113.03 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17878,15 +17932,15 @@
 		(fields_autoplaced yes)
 		(uuid "5a0e9bc3-23d1-467e-b1b8-d22193f028b2")
 		(property "Reference" "U8"
-			(at 194.31 252.73 0)
+			(at 194.31 251.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "MCP6002"
-			(at 194.31 255.27 0)
+		(property "Value" "TS922"
+			(at 194.31 254 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18254,18 +18308,17 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "61b4afe1-8569-4a22-ad44-298c06f692ac")
 		(property "Reference" "R23"
-			(at 270.51 76.2 90)
+			(at 266.954 80.264 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "100k"
-			(at 270.51 78.74 90)
+		(property "Value" "50K"
+			(at 272.034 79.756 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20269,15 +20322,15 @@
 		(fields_autoplaced yes)
 		(uuid "81d2767e-23c4-4ba5-87f1-0e8c7b41d02b")
 		(property "Reference" "U11"
-			(at 96.52 334.01 0)
+			(at 96.52 332.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "MCP6002"
-			(at 96.52 336.55 0)
+		(property "Value" "TS922"
+			(at 96.52 335.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21529,7 +21582,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6002"
+		(property "Value" "TS922"
 			(at 378.46 262.89 0)
 			(effects
 				(font
@@ -22167,7 +22220,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6002"
+		(property "Value" "TS922"
 			(at 139.7 379.73 0)
 			(effects
 				(font
@@ -22525,7 +22578,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6002"
+		(property "Value" "TS922"
 			(at 497.84 317.5 0)
 			(effects
 				(font
@@ -24749,7 +24802,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6002"
+		(property "Value" "TS922"
 			(at 234.696 269.748 0)
 			(effects
 				(font
@@ -26666,7 +26719,7 @@
 		(dnp no)
 		(uuid "d01186fa-34e9-4f7d-80fc-de89ef7f072e")
 		(property "Reference" "U6"
-			(at 271.78 87.63 0)
+			(at 272.542 93.472 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26674,7 +26727,7 @@
 			)
 		)
 		(property "Value" "TL072"
-			(at 271.78 86.36 0)
+			(at 272.034 86.106 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27974,7 +28027,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6002"
+		(property "Value" "TS922"
 			(at 378.46 293.37 0)
 			(effects
 				(font
@@ -28894,7 +28947,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6002"
+		(property "Value" "TS922"
 			(at 222.25 337.82 0)
 			(effects
 				(font
@@ -29351,7 +29404,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6002"
+		(property "Value" "TS922"
 			(at 81.28 259.08 0)
 			(effects
 				(font
@@ -29841,7 +29894,7 @@
 				)
 			)
 		)
-		(property "Value" "MCP6002"
+		(property "Value" "TS922"
 			(at 496.57 252.73 0)
 			(effects
 				(font

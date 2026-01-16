@@ -217,6 +217,9 @@ void loop() {
     OnMidi(value);  
   }
 
+
+
+
   // gestion du blink de la led (non blocant)
   if (eg1.getADSRState() == NOTEOFF) {
     if (NoteState) {
@@ -238,3 +241,6 @@ void loop() {
 void loop1() {
   update_synth();
 }
+
+
+
