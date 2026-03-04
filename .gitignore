@@ -1,0 +1,48 @@
+# --- KiCad ---
+# Sauvegardes automatiques et fichiers de verrouillage
+*.bak
+*.lck
+*-backups/
+~*
+_autosave-*
+fp-info-cache
+
+# Fichiers de configuration utilisateur (souvent spécifiques à la machine)
+*.kicad_prl
+
+# --- Fabrication (Gerbers & Drill) ---
+# Dossiers de sortie KiCad
+plots/
+Gerber/
+# Extensions de fichiers de fabrication
+*.gbr
+*.gbl
+*.gbs
+*.gbp
+*.gbo
+*.gtl
+*.gts
+*.gtp
+*.gto
+*.gm*
+*.drl
+*.xln
+*.gbrjob
+plots.zip
+
+# --- Documentation ---
+# Ignorer la doc générée par Doxygen (conservez le Doxyfile)
+firmware/voice/docs/html/
+firmware/voice/docs/latex/
+*.pdf
+
+# --- Python & Firmware ---
+__pycache__/
+*.pyc
+.DS_Store
+
+# --- Archives ---
+*.zip
+
+# --- Fichiers locaux / Utilitaires ---
+arborescence.txt
