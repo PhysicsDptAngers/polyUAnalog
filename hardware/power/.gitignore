@@ -1,0 +1,30 @@
+# Sauvegardes et fichiers temporaires KiCad
+*-backups/
+*.bak
+*.lck
+~*
+fp-info-cache
+
+# Fichiers de sortie et documentation
+plots/
+*.zip
+*.plt
+*.pdf
+
+# Fichiers de fabrication (Gerbers & Drill)
+*.gbr
+*.gbl
+*.gbs
+*.gbp
+*.gbo
+*.gtl
+*.gts
+*.gtp
+*.gto
+*.gm*
+*.drl
+*.xln
+
+# Fichiers locaux / Capture d'écran
+arborescence.txt
+*.png
