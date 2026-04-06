@@ -6,7 +6,11 @@ The synthesizer requires three voltage rails for proper operation:
 - **+5V** rail for the microcontrollers, various digital ICs, and as the positive supply for the operational amplifiers (OpAmps)  
 - **−5V** rail required by the AS3397 and as the negative supply for the OpAmps  
 
-Several strategies have been considered for implementing the power supply. In the proposed design, we use a **USB-C power supply unit** that supports **Power Delivery (PD)** mode to provide a stable **12V / 5A** rail. The **+5V rail** is derived using a standard buck converter, such as the **LM2575**, for which the schematic is yet to be finalized. The **−5V rail** is generated using an **inverting buck-boost topology**. This technique is well documented in the literature (e.g., [TI Application Note (SSZTAU6A)](https://www.ti.com/lit/ta/ssztau6/ssztau6.pdf)), and example implementations are available online.
+Several strategies have been considered for implementing the power supply. 
+
+In the proposed design, we use a USB-C power supply unit that supports Power Delivery (PD) mode to provide a stable 12V/5A rail. 
+	
+A buck converter based on the TPS5430 chip, that can easily be obtained as an affordable off-the-shelf module, is used to generate the \SI{+5}{\volt} and \SI{-5}{\volt} rails. With a \SI{3}{\ampere} capacity, this setup is more than sufficient to power both the conductor board and the various voice boards.
 
 Alternative configurations have also been explored:
 
