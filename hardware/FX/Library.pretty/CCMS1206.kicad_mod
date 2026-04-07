@@ -1,0 +1,220 @@
+(footprint "CCMS1206"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Empreinte Condensateur CMS 1206")
+	(tags "condensateur cms 1206")
+	(property "Reference" "REF**"
+		(at 0 -2 0)
+		(layer "F.SilkS")
+		(uuid "c7f1df2f-7a06-4695-ad66-d1de9e9832e6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "10µ"
+		(at 0 1.7 0)
+		(layer "F.Fab")
+		(uuid "ba5ae5da-69f8-4241-b75d-479892e4d31f")
+		(effects
+			(font
+				(size 0.6 0.6)
+				(thickness 0.1)
+				(bold yes)
+			)
+		)
+	)
+	(property "Datasheet" "http://geii/magasin/jpg/CCMS1206.jpg"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bf1b783b-517e-471c-8b27-67324031042d")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Description" "Condensateur CMS Non Polarisé, 1206"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "54d5303f-d08e-4543-b386-22bb3de926b3")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Lieu" "MAG-CMS"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b4972d5c-1f4a-4414-9826-084df6fa8818")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -2.6 -1.1)
+		(end 2.6 -1.1)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1ee1a262-7cc5-4c7c-8391-177a985bdd1c")
+	)
+	(fp_line
+		(start -2.6 1.1)
+		(end -2.6 -1.1)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "465b7d08-fec3-436b-8bc7-88ace7634406")
+	)
+	(fp_line
+		(start 2.6 -1.1)
+		(end 2.6 1.1)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1cd96f9f-cbcb-4a1c-ad4e-f7a686c4a2a5")
+	)
+	(fp_line
+		(start 2.6 1.1)
+		(end -2.6 1.1)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "e37d8657-b1c5-4d1c-83f6-6ff27af63e0c")
+	)
+	(fp_rect
+		(start -2.7 -1.2)
+		(end 2.7 1.2)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "78b2f179-8b4c-4d79-a363-e060ca4f932b")
+	)
+	(fp_line
+		(start -1.6 -0.8)
+		(end -1.6 0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8bdae779-f423-417f-b823-64bd3c0505e7")
+	)
+	(fp_line
+		(start -1.6 -0.8)
+		(end 1.6 -0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "085550a4-519d-4f1c-b9a8-ca2e26e5f85d")
+	)
+	(fp_line
+		(start -1.6 0.8)
+		(end 1.6 0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "0198b0c2-0cc7-4caf-8b28-349a2fab9a65")
+	)
+	(fp_line
+		(start 1.6 -0.8)
+		(end 1.6 0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "0fba8300-d1fc-4c3a-b881-9731d3b9c1a5")
+	)
+	(fp_rect
+		(start -1.6 -0.8)
+		(end -1.11 0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "c6a8c465-ce75-4e98-b96f-bcddc03cb5ca")
+	)
+	(fp_rect
+		(start 1.105 -0.8)
+		(end 1.595 0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "cfb4d634-a3ec-41fa-b1cf-8728ccf25142")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "c4b73308-2cd3-4361-8a23-f3774acc93e3")
+		(effects
+			(font
+				(size 0.2 0.2)
+				(thickness 0.05)
+				(bold yes)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -1.6 0)
+		(size 1.6 1.8)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0)
+		(uuid "bf8652b3-cf24-4eca-85a0-e8a6b6bbd62c")
+	)
+	(pad "2" smd rect
+		(at 1.6 0)
+		(size 1.6 1.8)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0)
+		(uuid "67b1a802-6d80-4355-afe9-09086ef4f1f8")
+	)
+	(embedded_fonts no)
+	(model "C:/KICAD/0IUT/3dmodels/0IUT_Device_C/CCMS1206.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
