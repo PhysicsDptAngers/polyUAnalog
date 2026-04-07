@@ -1,0 +1,223 @@
+(footprint "MA01-02"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(locked yes)
+	(layer "F.Cu")
+	(descr "Empreinte Barrette Mâle de 2 Contacts, Verticale, Pas : 2,54mm  Drill : 1mm")
+	(tags "barrette mâle 2 pins pas 2,54mm verticale")
+	(property "Reference" "REF**"
+		(at -0.5 -2.23 0)
+		(layer "F.SilkS")
+		(uuid "c9981d55-0f93-48f7-9ab5-21066971f034")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Jumper_02"
+		(at 1.9 4 90)
+		(layer "F.Fab")
+		(uuid "607cf0a9-b3fb-457f-9c8c-3d63b31f0661")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.1)
+				(bold yes)
+			)
+			(justify left)
+		)
+	)
+	(property "Datasheet" "http://geii/magasin/jpg/MA01-02.jpg"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c9de2835-5742-4a42-a1e9-5825ee417631")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Description" "1 Jumper 2 Pôles, Pas : 2,54mm"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6a636a7c-4eed-4fd6-89cb-8bfeb0bb9721")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Lieu" "TIROCLASSE 2-08"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bab256d5-d3e5-4d4a-9f13-6e6e5f459058")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -1.33 -1.33)
+		(end 0 -1.33)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "12d45ea6-9304-49cc-a8ef-1930fd0a45f2")
+	)
+	(fp_line
+		(start -1.33 0)
+		(end -1.33 -1.33)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "ab5f69ba-3b24-4638-986a-ad2c98379d75")
+	)
+	(fp_line
+		(start -1.33 1.27)
+		(end -1.33 3.87)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c8561db2-50a0-4cdd-9f6a-f9ede26a1957")
+	)
+	(fp_line
+		(start -1.33 1.27)
+		(end 1.33 1.27)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "fddd9a5c-c8f1-4de9-996f-36e148b46faf")
+	)
+	(fp_line
+		(start -1.33 3.87)
+		(end 1.33 3.87)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "ac4c2dc6-1f9f-41ff-aeb5-32381f982ec9")
+	)
+	(fp_line
+		(start 1.33 1.27)
+		(end 1.33 3.87)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8c829474-907e-4437-aa38-b0143228d1f3")
+	)
+	(fp_line
+		(start -1.27 -0.635)
+		(end -0.635 -1.27)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "6aeb5626-1b8e-4847-a315-c8efd4788935")
+	)
+	(fp_line
+		(start -1.27 3.81)
+		(end -1.27 -0.635)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "605ede76-8a33-409a-98c5-22712b8eb0d8")
+	)
+	(fp_line
+		(start -0.635 -1.27)
+		(end 1.27 -1.27)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "595b8ab6-682f-40a0-bf2e-6d5f0291ac7e")
+	)
+	(fp_line
+		(start 1.27 -1.27)
+		(end 1.27 3.81)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "fbb597fd-1291-4b6b-aa33-64e68f1f5be1")
+	)
+	(fp_line
+		(start 1.27 3.81)
+		(end -1.27 3.81)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "61ba464b-89ff-477a-bc10-f881c68b5cae")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 1.27 90)
+		(layer "F.Fab")
+		(uuid "5a5c3c93-dcb2-426e-a209-6bca5feae3e9")
+		(effects
+			(font
+				(size 0.2 0.2)
+				(thickness 0.05)
+				(bold yes)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 2.5 1.5)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "8842d06f-3bff-42ae-9c08-6dabdbeb0af5")
+	)
+	(pad "2" thru_hole oval
+		(at 0 2.54)
+		(size 2.5 1.5)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "13e030e0-df0a-4140-bbde-4ccacfd5d856")
+	)
+	(embedded_fonts no)
+	(model "C:/KICAD/0IUT/3dmodels/0IUT_Connect_Barre/MA01-02.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

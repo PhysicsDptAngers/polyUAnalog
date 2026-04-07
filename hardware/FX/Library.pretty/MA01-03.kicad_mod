@@ -1,0 +1,229 @@
+(footprint "MA01-03"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Empreinte Barrette Mâle de 3 Contacts, Verticale, Pas : 2,54mm  Drill : 1mm")
+	(tags "barrette mâle 3 pins pas 2,54mm verticale")
+	(property "Reference" "REF**"
+		(at 0 7.5 0)
+		(layer "F.SilkS")
+		(uuid "7e4e3998-056a-4a32-b148-8d32f468bf99")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Jumper_03"
+		(at 2 6.5 270)
+		(layer "F.Fab")
+		(uuid "136f8967-fca8-4fcf-9de8-2e3a1e02f555")
+		(effects
+			(font
+				(size 0.6 0.6)
+				(thickness 0.1)
+			)
+			(justify right)
+		)
+	)
+	(property "Datasheet" "http://geii/magasin/jpg/MA01-03.jpg"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2884b936-bd02-4c4b-be4c-4674df5c663a")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Description" "1 Jumper 3 Pôles, Pas : 2,54mm"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "65853d98-d31f-4a05-8bcc-6b0e9444b2f9")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Lieu" "TIROCLASSE 2-08"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f4f36f53-9f90-429b-a221-a147501a363d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -1.33 -1.33)
+		(end 0 -1.33)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b89d68c3-208f-4b3b-b70f-d5077eedd06d")
+	)
+	(fp_line
+		(start -1.33 0)
+		(end -1.33 -1.33)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6948f8cc-a2e2-42a5-aed1-a8f65b3e7d0d")
+	)
+	(fp_line
+		(start -1.33 1.27)
+		(end -1.33 6.41)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f13f29d7-02a1-4ce6-8355-b16118313eae")
+	)
+	(fp_line
+		(start -1.33 1.27)
+		(end 1.33 1.27)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "145cdd97-911f-4d4f-abec-a38270a90cac")
+	)
+	(fp_line
+		(start -1.33 6.41)
+		(end 1.33 6.41)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "25367ce9-4d85-4daa-8d78-28db5357490e")
+	)
+	(fp_line
+		(start 1.33 1.27)
+		(end 1.33 6.41)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "28c28ba7-976b-4239-a131-0a8a1552b73c")
+	)
+	(fp_line
+		(start -1.27 -0.635)
+		(end -0.635 -1.27)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "85b9038d-5392-4dcb-9c3f-a97384802c6b")
+	)
+	(fp_line
+		(start -1.27 6.35)
+		(end -1.27 -0.635)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "08e42be5-ee19-467b-b601-83de69f1aae8")
+	)
+	(fp_line
+		(start -0.635 -1.27)
+		(end 1.27 -1.27)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "c5c684db-0003-4e82-a7fe-b0f771a983ee")
+	)
+	(fp_line
+		(start 1.27 -1.27)
+		(end 1.27 6.35)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "644bfbea-32db-48cd-879d-867d360b9ff8")
+	)
+	(fp_line
+		(start 1.27 6.35)
+		(end -1.27 6.35)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "0b683261-22a1-465c-b069-fed46fe7be5e")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.54 270)
+		(layer "F.Fab")
+		(uuid "505a877f-39e5-4000-898e-a5d7ad307def")
+		(effects
+			(font
+				(size 0.2 0.2)
+				(thickness 0.05)
+				(bold yes)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 2.5 1.5)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "cec8ff8d-d84c-4965-8dbc-fb1220645764")
+	)
+	(pad "2" thru_hole oval
+		(at 0 2.54)
+		(size 2.5 1.5)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "21e9e720-1968-4c19-bb36-9a4d8672ffcc")
+	)
+	(pad "3" thru_hole oval
+		(at 0 5.08)
+		(size 2.5 1.5)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "bd7e27af-ae6d-4282-a00d-cbe1367f0134")
+	)
+	(embedded_fonts no)
+	(model "C:/KICAD/0IUT/3dmodels/0IUT_Connect_Barre/MA01-03.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

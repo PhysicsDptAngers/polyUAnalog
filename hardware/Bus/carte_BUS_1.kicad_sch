@@ -1,0 +1,8179 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "11b4dace-c2fa-4c12-bd2a-2e00bd77a986")
+	(paper "A5")
+	(lib_symbols
+		(symbol "0IUT_Con_Barrette:Barrette_1M_01x04"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Barrette secable 1"
+				(at -2.032 -6.35 90)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "0IUT_Connect_Barre:MA01-04"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://geii/magasin/pdf/Barrette secable 1.pdf"
+				(at 0 8.89 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Barrette Mâle 4 Contacts, Sécable, Pas : 2,54mm"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Image" "http://geii/magasin/jpg/Barrette secable 1.jpg"
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Lieu" "TIROCLASSE 2-08"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "barrette 1 mâle sécable 4 pins pas 2,54mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Barrette_1M_01x04_1_1"
+				(rectangle
+					(start -1.27 3.81)
+					(end 1.27 -6.35)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start 1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -5.08 180)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "0IUT_Con_Barrette:Barrette_1M_01x05"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Barrette secable 1"
+				(at -2.032 -6.35 90)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "0IUT_Connect_Barre:MA01-05"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://geii/magasin/pdf/Barrette secable 1.pdf"
+				(at 0 11.43 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Barrette Mâle 5 Contacts, Sécable, Pas : 2,54mm"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Image" "http://geii/magasin/jpg/Barrette secable 1.jpg"
+				(at 0 12.7 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Lieu" "TIROCLASSE 2-08"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "barrette 1 mâle sécable 5 pins pas 2,54mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Barrette_1M_01x05_1_1"
+				(rectangle
+					(start -1.27 6.35)
+					(end 1.27 -6.35)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start 1.27 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 5.08 180)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -5.08 180)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "0IUT_Con_Divers:edge_pad"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "EP"
+				(at 0 2.286 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "0IUT_DIVERS:edge_pad"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Edge pad for connecting two pcb"
+				(at 0.254 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "edge_pad_1_1"
+				(rectangle
+					(start -5.08 1.27)
+					(end 5.08 -1.27)
+					(stroke
+						(width 0)
+						(type solid)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "0IUT_Con_HE10:HE10_10D1"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 1.27 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "HE10_10D1"
+				(at 1.27 -7.366 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+				)
+			)
+			(property "Footprint" "0IUT_Connect_HE10:09185106904"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://geii/magasin/jpg/HE10-10D1.jpg"
+				(at 0 11.43 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Connecteur HE10 Droit Mâle avec éjecteur, 10 contacts, Pas : 2,54mm, Type 09185106904"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Lieu" "Armoire n°3-107"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "connecteur he10-10 droit pas 2,54mm 09185106904"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "HE10_10D1_1_1"
+				(rectangle
+					(start -1.27 6.35)
+					(end 3.81 -6.35)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 5.207)
+					(end 2.54 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 2.667)
+					(end 2.54 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 0.127)
+					(end 2.54 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 -2.413)
+					(end 2.54 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 -4.953)
+					(end 2.54 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 5.08 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 5.08 180)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 2.54 180)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 3.81)
+					(name "Pin_8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -5.08 180)
+					(length 3.81)
+					(name "Pin_10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "0IUT_Con_Jumper:Jumper_02"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.794 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Jumper_02"
+				(at 0 -2.032 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+				)
+			)
+			(property "Footprint" "0IUT_Connect_Barre:MA01-02"
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://geii/magasin/jpg/MA01-02.jpg"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "1 Jumper 2 Pôles, Pas : 2,54mm"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Lieu" "TIROCLASSE 2-08"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "1 jumper 2 pôles pas 2,54mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Jumper_02_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.4579)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.524 1.27)
+					(mid 0 1.778)
+					(end 1.524 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.4579)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Jumper_02_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "0IUT_Cosse:Cosse_P"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Cosse_P"
+				(at 0 -2.286 0)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(property "Footprint" "0IUT_Connecteurs:Cosse_P"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://geii/magasin/pdf/COSSE P.pdf"
+				(at 0 5.334 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Cosse Poignard MFOM (Y71L)"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Image" "http://geii/magasin/jpg/COSSE P.jpg"
+				(at 0 6.604 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Lieu" "TIROCLASSE 2-04"
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "Cosse poignard "
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Cosse_P_1_1"
+				(rectangle
+					(start 1.27 1.27)
+					(end -1.27 -1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start 1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "0IUT_Device_R:R_CMS_1206"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(property "Footprint" "0IUT_Device:RCMS1206"
+				(at 0 -13.97 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://geii/magasin/jpg/RCMS1206.jpg"
+				(at 0 12.7 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Résistance CMS 1206"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Lieu" "MAG-CMS"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "resistance cms"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_CMS_1206_0_1"
+				(rectangle
+					(start -1.016 2.54)
+					(end 1.016 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_CMS_1206_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "0IUT_Holes:Hole_3,2mm"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 2.794 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Hole_3,2mm"
+				(at 0 -2.286 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+				)
+			)
+			(property "Footprint" "0IUT_Holes:Hole_3,2mm"
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Trou Non Métalisé de 3,2 mm"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 0.762 0.762)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "trou non métalisé"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Hole_3,2mm_1_1"
+				(circle
+					(center 0 0)
+					(radius 1.27)
+					(stroke
+						(width 0.508)
+						(type solid)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text_box "Voice card 4"
+		(exclude_from_sim no)
+		(at 16.51 16.51 0)
+		(size 27.305 43.18)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "0f701cb2-0775-45ab-9523-1626db656028")
+	)
+	(text_box "Resistor Web"
+		(exclude_from_sim no)
+		(at 69.85 60.96 0)
+		(size 36.83 39.37)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "1e48344d-e1a9-4b07-885e-dde334c32c41")
+	)
+	(text_box "Voice card 2"
+		(exclude_from_sim no)
+		(at 85.09 16.51 0)
+		(size 27.305 43.18)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "42117ecf-96cc-4037-a7fd-cc1435634c25")
+	)
+	(text_box "Input"
+		(exclude_from_sim no)
+		(at 163.83 50.8 0)
+		(size 30.48 22.225)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "47f1aebf-a8a8-4517-bc24-f425f2047d66")
+	)
+	(text_box "Voice card 1"
+		(exclude_from_sim no)
+		(at 118.11 16.51 0)
+		(size 27.305 43.18)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "55fd27ea-394a-4c35-b609-c16dcf7ee574")
+	)
+	(text_box "Address 3V3"
+		(exclude_from_sim no)
+		(at 172.72 108.585 0)
+		(size 53.975 39.37)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "9029361c-c268-4567-be69-488c36c55558")
+	)
+	(text_box "pad edge connection"
+		(exclude_from_sim no)
+		(at 16.51 66.04 0)
+		(size 46.99 68.58)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "9310b90a-f80a-43c6-8291-948623d01e50")
+	)
+	(text_box "Test points"
+		(exclude_from_sim no)
+		(at 151.765 17.145 0)
+		(size 37.465 30.48)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "97edb987-5e1a-4980-add7-c9fcdc1bfce5")
+	)
+	(text_box "Voice card 3"
+		(exclude_from_sim no)
+		(at 50.8 16.51 0)
+		(size 27.305 43.18)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "9a9ff142-8e5a-4608-984f-ebb432a3e575")
+	)
+	(text_box "Output"
+		(exclude_from_sim no)
+		(at 163.83 76.2 0)
+		(size 30.48 22.225)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "db347772-1afa-4bbd-95ba-48e79cdc5caa")
+	)
+	(junction
+		(at 99.06 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "30806b1f-9abc-45a1-acc3-b9251ae5ebc2")
+	)
+	(junction
+		(at 99.06 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "46e7ec0e-a838-4ab4-85b3-9c5cb0cbffe6")
+	)
+	(junction
+		(at 154.94 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5132c993-03a0-42b0-8a78-25a44dad913d")
+	)
+	(junction
+		(at 83.82 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5a297445-fd59-4cf5-b6d2-c9e8cd60d1f7")
+	)
+	(junction
+		(at 134.62 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7a4025ec-6f8d-437e-aef6-ca237c46c91c")
+	)
+	(junction
+		(at 91.44 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7b771ab6-7518-48a8-ad2c-58debdcc0bb5")
+	)
+	(junction
+		(at 144.78 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b4706d80-cdf3-4e65-aa67-a0d578085f74")
+	)
+	(junction
+		(at 124.46 77.47)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bbab6a38-1ca0-446c-97bd-07c3ababed2c")
+	)
+	(junction
+		(at 91.44 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c60202ee-1357-40b5-b644-509526001a3a")
+	)
+	(junction
+		(at 83.82 85.09)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e06b61db-648a-4811-8e25-428be1972062")
+	)
+	(wire
+		(pts
+			(xy 91.44 85.09) (xy 91.44 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "005b0302-6fec-4a0d-89a3-51630482bfae")
+	)
+	(wire
+		(pts
+			(xy 20.32 85.09) (xy 25.4 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04907613-a19e-4af7-98e0-7a2f0869391b")
+	)
+	(wire
+		(pts
+			(xy 97.79 27.94) (xy 105.41 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0571cc1d-00cc-4256-b3b6-3d4ed7cf1ea9")
+	)
+	(wire
+		(pts
+			(xy 134.62 82.55) (xy 134.62 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06bfa406-0ca1-4359-986b-70ebeb5bc1cb")
+	)
+	(wire
+		(pts
+			(xy 76.2 78.74) (xy 83.82 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "070805bc-6232-4772-893f-187bb7cd6be1")
+	)
+	(wire
+		(pts
+			(xy 165.1 63.5) (xy 171.45 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "078dee28-5c21-45c8-9189-4f9379e65aa3")
+	)
+	(wire
+		(pts
+			(xy 63.5 49.53) (xy 72.39 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09ddb2a0-73f0-4a78-8119-1493d081ed3d")
+	)
+	(wire
+		(pts
+			(xy 20.32 78.74) (xy 25.4 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "109fae3e-c8ae-4671-8e2b-02704601dac1")
+	)
+	(wire
+		(pts
+			(xy 63.5 25.4) (xy 71.12 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12049ff8-d049-422b-bd58-264fc91acf74")
+	)
+	(wire
+		(pts
+			(xy 20.32 110.49) (xy 25.4 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "178236cf-27f5-434f-9526-4fac5c212a80")
+	)
+	(wire
+		(pts
+			(xy 132.08 35.56) (xy 140.97 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17edcc73-256c-4006-8fb0-911ca1d5abc5")
+	)
+	(wire
+		(pts
+			(xy 63.5 54.61) (xy 72.39 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1934f2a0-371a-44ea-9b5a-e51da14f6a59")
+	)
+	(wire
+		(pts
+			(xy 154.94 68.58) (xy 154.94 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1af1bb25-958f-41ee-813d-4afe19c01fe2")
+	)
+	(wire
+		(pts
+			(xy 107.95 77.47) (xy 115.57 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c4b751b-2edd-4e7c-98d1-bb9c6bd99b87")
+	)
+	(wire
+		(pts
+			(xy 83.82 95.25) (xy 83.82 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1c53d327-0878-43b4-84ab-f50609ee03af")
+	)
+	(wire
+		(pts
+			(xy 129.54 54.61) (xy 138.43 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "200f20ef-eddf-4453-b525-cb5a060dc607")
+	)
+	(wire
+		(pts
+			(xy 29.21 25.4) (xy 36.83 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2061e871-5bef-454b-a456-60809103b328")
+	)
+	(wire
+		(pts
+			(xy 52.07 85.09) (xy 60.96 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "221829e9-f8b5-430c-b4d0-cb977611883d")
+	)
+	(wire
+		(pts
+			(xy 134.62 77.47) (xy 135.89 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "223b6d5c-b450-44b1-84f4-8b31b204c0d6")
+	)
+	(wire
+		(pts
+			(xy 184.15 68.58) (xy 193.04 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24689f65-386f-423e-9cc7-1efb809493d4")
+	)
+	(wire
+		(pts
+			(xy 29.21 27.94) (xy 36.83 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2723a003-cb6d-4099-baab-1e57783376f5")
+	)
+	(wire
+		(pts
+			(xy 144.78 68.58) (xy 144.78 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "288950d0-c34f-435d-b7a8-2c558c44d96f")
+	)
+	(wire
+		(pts
+			(xy 52.07 104.14) (xy 60.96 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28aadb06-c89e-4149-b8fb-524fd2a9ecd8")
+	)
+	(wire
+		(pts
+			(xy 63.5 33.02) (xy 72.39 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2a61210c-d781-4e63-8884-e4b1950989e7")
+	)
+	(wire
+		(pts
+			(xy 129.54 57.15) (xy 138.43 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d7458cf-1882-432f-820f-897163b4d602")
+	)
+	(wire
+		(pts
+			(xy 165.1 68.58) (xy 171.45 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e8007a5-d34c-48d9-bde0-6519ea67339c")
+	)
+	(wire
+		(pts
+			(xy 29.21 35.56) (xy 38.1 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "300efb55-8e1d-43e8-ab5b-c5e09879b524")
+	)
+	(wire
+		(pts
+			(xy 165.1 88.9) (xy 171.45 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "304c591f-fed9-4fc6-8d38-8dbbdf5ebfae")
+	)
+	(wire
+		(pts
+			(xy 76.2 95.25) (xy 76.2 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "328647d1-562a-4836-bcd2-7b936dbb1d1e")
+	)
+	(wire
+		(pts
+			(xy 20.32 104.14) (xy 25.4 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36d00169-b32f-4272-8a38-219b56c0869f")
+	)
+	(wire
+		(pts
+			(xy 96.52 49.53) (xy 105.41 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38709891-ffad-4b46-9d51-eea265efde9d")
+	)
+	(wire
+		(pts
+			(xy 52.07 91.44) (xy 60.96 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3931dfa3-ef14-4c40-bfb1-ae8c915be7d9")
+	)
+	(wire
+		(pts
+			(xy 83.82 85.09) (xy 83.82 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3cc2159c-efd9-4626-b241-aea6fc334003")
+	)
+	(wire
+		(pts
+			(xy 184.15 86.36) (xy 193.04 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d2416e5-e33c-4902-9095-a0b3c775b594")
+	)
+	(wire
+		(pts
+			(xy 165.1 91.44) (xy 171.45 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d43eea5-1c78-48ec-a483-b1c17898deb0")
+	)
+	(wire
+		(pts
+			(xy 76.2 66.04) (xy 76.2 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e269596-b0a1-4d6f-8a24-e8a348fef79c")
+	)
+	(wire
+		(pts
+			(xy 99.06 66.04) (xy 99.06 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f41f11d-2a04-4e3c-bc37-0cad39b7e133")
+	)
+	(wire
+		(pts
+			(xy 99.06 78.74) (xy 104.14 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4320d63a-0ee5-46dd-a8fb-2b325d0737cc")
+	)
+	(wire
+		(pts
+			(xy 29.21 33.02) (xy 38.1 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "48beaa1c-9ab6-4e62-9920-f7a935addd15")
+	)
+	(wire
+		(pts
+			(xy 134.62 68.58) (xy 134.62 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49f9b1c6-22de-45e6-9363-df70f3808770")
+	)
+	(wire
+		(pts
+			(xy 124.46 68.58) (xy 124.46 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a3520b3-c04a-43e5-8e99-4bde3950ca66")
+	)
+	(wire
+		(pts
+			(xy 166.37 34.29) (xy 168.91 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ad9778f-fd6b-456c-b90f-0cbfdbea2bbf")
+	)
+	(wire
+		(pts
+			(xy 184.15 66.04) (xy 193.04 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4cc79089-9e4c-4dd7-9352-3e7e11a0ab68")
+	)
+	(wire
+		(pts
+			(xy 132.08 33.02) (xy 140.97 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e9c9404-39e8-4758-a973-8aafd9432a29")
+	)
+	(wire
+		(pts
+			(xy 76.2 78.74) (xy 76.2 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "544c0800-095c-4043-bdeb-e86c700e4d50")
+	)
+	(wire
+		(pts
+			(xy 124.46 82.55) (xy 124.46 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5451043e-78b2-4076-9c1c-51b6fc98a918")
+	)
+	(wire
+		(pts
+			(xy 83.82 78.74) (xy 91.44 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5650f691-468f-4cce-89bf-0671ab740841")
+	)
+	(wire
+		(pts
+			(xy 173.99 24.13) (xy 171.45 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57030065-555a-47b5-87b7-667d8e1aa9e7")
+	)
+	(wire
+		(pts
+			(xy 170.18 44.45) (xy 173.99 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57809ae7-d607-44fd-a172-344a423ac84d")
+	)
+	(wire
+		(pts
+			(xy 144.78 97.79) (xy 144.78 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58926b36-b91d-4088-a622-d53473dd5b9e")
+	)
+	(wire
+		(pts
+			(xy 165.1 86.36) (xy 171.45 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "592f3377-3213-4b99-8a82-e79af9909fd2")
+	)
+	(wire
+		(pts
+			(xy 52.07 72.39) (xy 60.96 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "599b1c5f-f32d-4867-a5cd-571edef60347")
+	)
+	(wire
+		(pts
+			(xy 166.37 39.37) (xy 168.91 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59dcb488-f06d-455a-a950-e41eb7fee4e6")
+	)
+	(wire
+		(pts
+			(xy 83.82 78.74) (xy 83.82 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b0e2e5b-f2fd-47f8-b3d6-37c908fac200")
+	)
+	(wire
+		(pts
+			(xy 83.82 66.04) (xy 83.82 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b915d10-3430-44c4-9a2e-c145759aa344")
+	)
+	(wire
+		(pts
+			(xy 29.21 54.61) (xy 38.1 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c62962a-40d0-4805-9646-bdf9a377055a")
+	)
+	(wire
+		(pts
+			(xy 153.67 77.47) (xy 154.94 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ec5d5e4-90bf-4b4d-a4be-f58098b47723")
+	)
+	(wire
+		(pts
+			(xy 99.06 95.25) (xy 99.06 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "618dfe8c-c635-4a45-b33b-12d9f51b1090")
+	)
+	(wire
+		(pts
+			(xy 165.1 60.96) (xy 171.45 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61a7f2a8-fff2-436a-ba67-bcaf92f381c2")
+	)
+	(wire
+		(pts
+			(xy 91.44 78.74) (xy 99.06 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64f9525b-a480-4781-921c-91fc1b5e4e16")
+	)
+	(wire
+		(pts
+			(xy 184.15 88.9) (xy 193.04 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6616fa01-fa88-40d6-95d2-3b943e84260d")
+	)
+	(wire
+		(pts
+			(xy 154.94 77.47) (xy 161.29 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67608968-5e8f-4359-a09d-ff06936979a5")
+	)
+	(wire
+		(pts
+			(xy 96.52 52.07) (xy 105.41 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68cb1409-eb3b-471d-86e4-db0381e642db")
+	)
+	(wire
+		(pts
+			(xy 171.45 34.29) (xy 173.99 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69a648ad-9206-4c93-8be4-7d6b9cd45b7c")
+	)
+	(wire
+		(pts
+			(xy 184.15 83.82) (xy 193.04 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a1efd56-bdc8-45c6-839f-7f3201766af6")
+	)
+	(wire
+		(pts
+			(xy 143.51 77.47) (xy 144.78 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b2f5ece-8e39-401a-9c8c-341db6fb7a32")
+	)
+	(wire
+		(pts
+			(xy 52.07 123.19) (xy 60.96 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7010e897-d790-46a0-9b9a-5628b1d91515")
+	)
+	(wire
+		(pts
+			(xy 96.52 57.15) (xy 105.41 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78d88a82-73d6-4b2b-bd75-b468045eab27")
+	)
+	(wire
+		(pts
+			(xy 184.15 93.98) (xy 193.04 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ac313f1-f9df-4954-92f1-bbe36da6ec52")
+	)
+	(wire
+		(pts
+			(xy 184.15 60.96) (xy 193.04 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b60f61e-7890-4e7e-8a36-607609bc1c55")
+	)
+	(wire
+		(pts
+			(xy 29.21 30.48) (xy 38.1 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b87b844-e579-41b8-850f-9400e0d08922")
+	)
+	(wire
+		(pts
+			(xy 134.62 97.79) (xy 134.62 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d0b3d82-2150-4aac-aadd-732185411859")
+	)
+	(wire
+		(pts
+			(xy 165.1 93.98) (xy 171.45 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "840ebf82-ce4d-48c6-a8d5-8386ece98a92")
+	)
+	(wire
+		(pts
+			(xy 99.06 76.2) (xy 99.06 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87ef3e9c-123b-4940-97d3-f65161f34fe2")
+	)
+	(wire
+		(pts
+			(xy 52.07 110.49) (xy 60.96 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c7c3918-4fbf-4f37-955a-b5ff21c2500a")
+	)
+	(wire
+		(pts
+			(xy 165.1 66.04) (xy 171.45 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d068075-0a51-4c21-9fac-9b0c28bac418")
+	)
+	(wire
+		(pts
+			(xy 83.82 85.09) (xy 91.44 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "947f322f-2b53-4b44-8df2-3cf5bbcb1d33")
+	)
+	(wire
+		(pts
+			(xy 91.44 85.09) (xy 99.06 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9639aa2d-15d2-4a46-80ce-ec7686560995")
+	)
+	(wire
+		(pts
+			(xy 29.21 46.99) (xy 38.1 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "989838bf-aed3-4e5a-8227-e05971a70b5d")
+	)
+	(wire
+		(pts
+			(xy 184.15 91.44) (xy 193.04 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9992752a-267c-47e0-a9fb-85f52da0c7e6")
+	)
+	(wire
+		(pts
+			(xy 91.44 66.04) (xy 91.44 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9db3e9a2-584b-4908-8fc6-d0b1d10a7a28")
+	)
+	(wire
+		(pts
+			(xy 97.79 33.02) (xy 106.68 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0b45a7b-2373-4b7f-a75c-b8996c4f1cf2")
+	)
+	(wire
+		(pts
+			(xy 91.44 95.25) (xy 91.44 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a21adfda-60e0-42e0-ac62-a7b5e0ce2274")
+	)
+	(wire
+		(pts
+			(xy 76.2 85.09) (xy 83.82 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a3ca4694-bccf-462e-8ecd-f2b980b401cb")
+	)
+	(wire
+		(pts
+			(xy 123.19 77.47) (xy 124.46 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a66ae8f1-b136-4509-ba62-4cd22544a5a2")
+	)
+	(wire
+		(pts
+			(xy 20.32 116.84) (xy 25.4 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7219437-2c7c-48c5-a866-75586a1e7d00")
+	)
+	(wire
+		(pts
+			(xy 63.5 27.94) (xy 71.12 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9ac1560-b27b-4778-9687-c7356b984dff")
+	)
+	(wire
+		(pts
+			(xy 133.35 77.47) (xy 134.62 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aae932a6-8735-4871-996f-bc4f2f85db2b")
+	)
+	(wire
+		(pts
+			(xy 29.21 49.53) (xy 38.1 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab9cf804-7320-45cb-830e-4b1a4ba4b6b6")
+	)
+	(wire
+		(pts
+			(xy 144.78 82.55) (xy 144.78 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac4efc69-0993-49dd-a168-6dbc632fc0d7")
+	)
+	(wire
+		(pts
+			(xy 20.32 91.44) (xy 25.4 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae134dc0-aaaa-426f-9263-9a7a84bc3d40")
+	)
+	(wire
+		(pts
+			(xy 20.32 97.79) (xy 25.4 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae75e791-1a4d-4f17-80bd-b89a0c7a153f")
+	)
+	(wire
+		(pts
+			(xy 76.2 85.09) (xy 76.2 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b47285c9-ff9b-4887-8dea-f53751ea6026")
+	)
+	(wire
+		(pts
+			(xy 171.45 39.37) (xy 173.99 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b79ca76c-2237-4bda-b626-9f871c1ea690")
+	)
+	(wire
+		(pts
+			(xy 184.15 63.5) (xy 193.04 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba91e6b2-3a44-46f4-89e2-3bd712ee3ffc")
+	)
+	(wire
+		(pts
+			(xy 165.1 83.82) (xy 171.45 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfd93cc5-5c2a-4eb7-8895-5e63ac668ccf")
+	)
+	(wire
+		(pts
+			(xy 132.08 25.4) (xy 139.7 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bff4cf5f-4193-4a1b-b0bb-a88e9d19e9c9")
+	)
+	(wire
+		(pts
+			(xy 166.37 29.21) (xy 168.91 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c17ae26d-0b2f-451c-83ff-b1da22e73faa")
+	)
+	(wire
+		(pts
+			(xy 97.79 30.48) (xy 106.68 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c29647c5-eec6-4776-9417-1a7d77c99d08")
+	)
+	(wire
+		(pts
+			(xy 63.5 52.07) (xy 72.39 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9fbcb77-947e-422b-b1ed-4e3d0ad56c1e")
+	)
+	(wire
+		(pts
+			(xy 124.46 77.47) (xy 125.73 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc58a180-cf31-4b8a-bc63-f6cd835dfb3b")
+	)
+	(wire
+		(pts
+			(xy 129.54 49.53) (xy 138.43 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cda910d7-ea14-4c06-9a28-895488c9206d")
+	)
+	(wire
+		(pts
+			(xy 124.46 97.79) (xy 124.46 92.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cfc7a98b-b9b6-4e48-908e-e6799ce322ac")
+	)
+	(wire
+		(pts
+			(xy 129.54 52.07) (xy 138.43 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cfe1444b-9692-4874-acae-00f3b0f107f1")
+	)
+	(wire
+		(pts
+			(xy 99.06 85.09) (xy 99.06 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d21a03de-500e-48e3-8636-38471a3b638e")
+	)
+	(wire
+		(pts
+			(xy 20.32 123.19) (xy 25.4 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d49826ef-204d-4765-a8c5-c088c306ac6c")
+	)
+	(wire
+		(pts
+			(xy 63.5 46.99) (xy 72.39 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d501eb9d-41f2-47c4-8d58-4f45ee359446")
+	)
+	(wire
+		(pts
+			(xy 96.52 54.61) (xy 105.41 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d591fea0-faf8-443a-9116-94abfada7b53")
+	)
+	(wire
+		(pts
+			(xy 52.07 116.84) (xy 60.96 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d618fc74-9102-465f-992f-a517d90df4ce")
+	)
+	(wire
+		(pts
+			(xy 99.06 85.09) (xy 104.14 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6a525c6-aa09-4a10-910d-26c0c5f8a259")
+	)
+	(wire
+		(pts
+			(xy 132.08 27.94) (xy 139.7 27.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d903d43d-be11-4de2-9663-17328f52c476")
+	)
+	(wire
+		(pts
+			(xy 144.78 77.47) (xy 146.05 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d982a5da-94b6-4c1b-a035-f73491a3b9e4")
+	)
+	(wire
+		(pts
+			(xy 173.99 29.21) (xy 171.45 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dbfbe5ae-4254-4132-b8cb-1280fd19053f")
+	)
+	(wire
+		(pts
+			(xy 52.07 78.74) (xy 60.96 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e160bca8-f3f1-4e6b-a81e-f9b2ca6a3dca")
+	)
+	(wire
+		(pts
+			(xy 97.79 25.4) (xy 105.41 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e38aaa85-7c0d-44a4-a60e-73a43fd55985")
+	)
+	(wire
+		(pts
+			(xy 97.79 35.56) (xy 106.68 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3c8e6e1-abe0-45fd-9264-b2e882be0ec4")
+	)
+	(wire
+		(pts
+			(xy 20.32 129.54) (xy 25.4 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e491d518-1df3-4f8a-9c7b-2319136b6261")
+	)
+	(wire
+		(pts
+			(xy 63.5 30.48) (xy 72.39 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e76dabad-f53e-4ecd-b602-20c3130368bc")
+	)
+	(wire
+		(pts
+			(xy 20.32 72.39) (xy 25.4 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efc5342d-a797-48b7-a528-bc847636a367")
+	)
+	(wire
+		(pts
+			(xy 184.15 58.42) (xy 193.04 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f942254b-a62d-45a7-90b9-f9dff9c20081")
+	)
+	(wire
+		(pts
+			(xy 165.1 58.42) (xy 171.45 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f96d8988-74d2-4079-91a6-83af1fbf59fa")
+	)
+	(wire
+		(pts
+			(xy 29.21 52.07) (xy 38.1 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa1d8261-a07a-43f8-9a9b-a1eda2176e95")
+	)
+	(wire
+		(pts
+			(xy 132.08 30.48) (xy 140.97 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "faab2b3b-aa0c-4eff-9bdf-506fa3035259")
+	)
+	(wire
+		(pts
+			(xy 63.5 35.56) (xy 72.39 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fcb77961-6f3e-44f0-8b70-7df4f6dabc54")
+	)
+	(wire
+		(pts
+			(xy 166.37 24.13) (xy 168.91 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd6041f3-25ce-49b2-9215-631311e62c4a")
+	)
+	(wire
+		(pts
+			(xy 91.44 76.2) (xy 91.44 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd692308-0aee-4074-a61d-c3fdaf24940a")
+	)
+	(label "GND"
+		(at 124.46 97.79 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "011dfdd8-f736-404a-b389-d2ea4d7ed59c")
+	)
+	(label "SCL"
+		(at 20.32 85.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0249cd86-4968-4ffb-87b0-ffc73fa9bb1f")
+	)
+	(label "ADD1"
+		(at 154.94 68.58 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "03a7db16-ccf3-43cb-81d5-f71160b149b6")
+	)
+	(label "L2"
+		(at 105.41 25.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "073c4268-600a-4684-934a-5d9d4f6a7408")
+	)
+	(label "SDA"
+		(at 72.39 33.02 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "07beb1a8-814b-4c01-b9bc-157fcce22fd7")
+	)
+	(label "GND"
+		(at 134.62 97.79 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "080845e4-4408-4c04-b0d5-8a79f16e5ca2")
+	)
+	(label "ADDOUT"
+		(at 107.95 77.47 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "095dde4a-f68b-45eb-ac14-f20f1ae77492")
+	)
+	(label "-5V"
+		(at 38.1 54.61 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "0cbf846f-f056-4ac8-b210-ef6e6c23eb48")
+	)
+	(label "L"
+		(at 20.32 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0d1529c1-1612-4b47-adf7-617814bb924c")
+	)
+	(label "R4"
+		(at 171.45 39.37 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0d46c1d3-0724-4e99-9aa6-0216ce5d74fd")
+	)
+	(label "R"
+		(at 20.32 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "14e07c22-5744-4e21-acfe-f8fda549a173")
+	)
+	(label "+5V"
+		(at 60.96 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "17962fee-d570-4605-b3d5-88b8c41ea426")
+	)
+	(label "R3"
+		(at 71.12 27.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1a372fec-f4d1-459e-b399-811bc3b413df")
+	)
+	(label "+5V"
+		(at 193.04 66.04 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1e103a53-b6e0-4af0-a39d-54e4c5a49672")
+	)
+	(label "L4"
+		(at 36.83 25.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1f821a8d-7086-469f-a593-1b1bf1c6c879")
+	)
+	(label "GND"
+		(at 193.04 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "23910bab-6f5c-4489-89bb-16c0cd1bb597")
+	)
+	(label "L1"
+		(at 99.06 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2e5976f4-265d-4c71-a76b-407afca842ee")
+	)
+	(label "L3"
+		(at 71.12 25.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "30a15052-9378-4f39-8add-2b398acd879e")
+	)
+	(label "GND"
+		(at 193.04 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "31198f64-a8b7-467a-9dfb-aa84ee332181")
+	)
+	(label "+12V"
+		(at 165.1 68.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3172ab59-46d1-4187-9772-1cb0aafb9d1f")
+	)
+	(label "L3"
+		(at 168.91 34.29 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "31c37cdd-ae69-4b69-8a8d-0ba3b7bd8af5")
+	)
+	(label "SCL"
+		(at 140.97 30.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "355d48e7-6369-4cb1-9e9c-24af71b9a13d")
+	)
+	(label "GND"
+		(at 193.04 93.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "39a8aa0c-f51b-4271-9c31-a91ca93c7bd9")
+	)
+	(label "L3"
+		(at 83.82 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "39afb7ad-d914-49f2-b390-550366c2d886")
+	)
+	(label "+12V"
+		(at 165.1 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3c554a55-48fc-47d4-b775-6d7a351a1bb6")
+	)
+	(label "R2"
+		(at 105.41 27.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3c8a073b-1275-4285-bdfd-02df2a240088")
+	)
+	(label "L1"
+		(at 139.7 25.4 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "484c31d7-5dd8-4ef9-8efd-60779af1254f")
+	)
+	(label "ADD2"
+		(at 105.41 54.61 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4c4365b3-f170-45bc-a459-fc2c7ec28943")
+	)
+	(label "R"
+		(at 20.32 110.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4ef5a387-3058-4aef-9442-b5afddbdfabe")
+	)
+	(label "ADDOUT"
+		(at 60.96 85.09 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "50942569-7a10-4053-ae81-09ff100e0e2f")
+	)
+	(label "SCL"
+		(at 165.1 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "50fec88c-1ee7-4f4c-a6af-756d97fc8cbd")
+	)
+	(label "SDA"
+		(at 20.32 123.19 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "520280d3-1b42-4572-b082-59485df1b649")
+	)
+	(label "GND"
+		(at 60.96 72.39 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "54236621-8f5c-40a6-a508-058b638821ad")
+	)
+	(label "-5V"
+		(at 60.96 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "55040bed-a188-47c3-9e5a-c3199249bec7")
+	)
+	(label "L4"
+		(at 168.91 39.37 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "59ff630c-0a2e-4956-9de5-ee8abc99f4a4")
+	)
+	(label "SCL"
+		(at 72.39 30.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5d61594f-9529-43db-be01-a26b45da448d")
+	)
+	(label "R4"
+		(at 36.83 27.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5eed451f-7689-4a80-90dc-67a6ab26da58")
+	)
+	(label "-5V"
+		(at 60.96 123.19 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5ef1f912-9fc2-40fe-9834-42de41afa5cd")
+	)
+	(label "R3"
+		(at 171.45 34.29 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5fe2416a-709d-47fd-b8a7-769df083e908")
+	)
+	(label "+5V"
+		(at 193.04 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "649d3007-5b6b-4a57-acc6-6c83f9204565")
+	)
+	(label "GND"
+		(at 144.78 97.79 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "699287bf-f3b5-40c2-82ac-755600b08150")
+	)
+	(label "L4"
+		(at 76.2 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6a341a3f-5fe6-471b-95f1-cec39fee0740")
+	)
+	(label "GND"
+		(at 105.41 49.53 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6b20bdb6-20f0-4290-a7e0-4f14789b1447")
+	)
+	(label "R1"
+		(at 139.7 27.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6c73207c-320f-4368-801e-50474766204c")
+	)
+	(label "ADD1"
+		(at 138.43 54.61 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6ed78cb3-3cde-44d3-93d9-4b5abb13ee3d")
+	)
+	(label "SDA"
+		(at 20.32 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "714b1168-5ab3-4c22-851c-e11f235c17d2")
+	)
+	(label "R"
+		(at 104.14 85.09 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7353e8be-b575-4ba6-bc71-b8ce8cb2e3d8")
+	)
+	(label "+12V"
+		(at 20.32 129.54 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7438ba35-620f-467c-b937-a24d7559fe2c")
+	)
+	(label "+12V"
+		(at 106.68 35.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7606a3cf-cc9b-477e-a956-0bd59901c368")
+	)
+	(label "SCL"
+		(at 106.68 30.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "76d81c38-b63b-41b9-8ab8-ff602fb9f4a8")
+	)
+	(label "R"
+		(at 165.1 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7977ad21-61a3-4e02-b3b3-fc0abea06ec6")
+	)
+	(label "-5V"
+		(at 138.43 57.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7ab906c8-4b7f-4209-834e-9504486052bd")
+	)
+	(label "ADD2"
+		(at 144.78 68.58 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7d2e16b5-1093-4c20-8719-d261afbf3031")
+	)
+	(label "+5V"
+		(at 38.1 49.53 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7dcea363-6622-406d-bdb7-7515a79e084d")
+	)
+	(label "SCL"
+		(at 165.1 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7f47d2c4-d299-46ac-81d6-81c52eeb6e1a")
+	)
+	(label "SCL"
+		(at 38.1 30.48 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7f775d26-aa7b-42cf-b487-8c4c0429041e")
+	)
+	(label "ADDIN"
+		(at 60.96 116.84 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "80cf1e66-8d54-4a2e-948c-93df5d0c8a8b")
+	)
+	(label "GND"
+		(at 38.1 46.99 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "84c81e7e-9ad0-4826-96d2-2cb6c424e2cb")
+	)
+	(label "GND"
+		(at 193.04 58.42 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "88db6c5b-cf49-443b-bc28-fed9830bc5d4")
+	)
+	(label "R1"
+		(at 99.06 99.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8a5fa291-ec27-4133-8416-13beb346c212")
+	)
+	(label "R"
+		(at 165.1 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8c5d6175-707e-4053-882a-38af341ae035")
+	)
+	(label "L"
+		(at 20.32 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "90e45379-cb46-493a-b129-74ce5848b146")
+	)
+	(label "R4"
+		(at 76.2 99.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "958e82c9-c020-4ac1-a734-7f8ccd05f4b7")
+	)
+	(label "ADDIN"
+		(at 193.04 63.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "991dde82-2a25-482e-994d-4e2c8a8cd562")
+	)
+	(label "GND"
+		(at 138.43 49.53 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9962daa2-f246-4e3f-97e0-2605daac4ff8")
+	)
+	(label "L2"
+		(at 168.91 29.21 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9981b572-0dc1-43ba-b010-2928b8b566d8")
+	)
+	(label "+12V"
+		(at 140.97 35.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9ba0fec5-08c8-4d51-8ba1-ca90c5c29589")
+	)
+	(label "ADDOUT"
+		(at 193.04 88.9 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9bcc3322-ec0a-4d5a-8ecc-224263de683d")
+	)
+	(label "ADDIN"
+		(at 161.29 77.47 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9d38d37a-660c-4c2a-bdc8-e81dc645cdf2")
+	)
+	(label "L"
+		(at 104.14 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "9e03dc36-d915-4405-a725-97632ba4204b")
+	)
+	(label "+12V"
+		(at 72.39 35.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a092b4d1-1585-4b6f-901e-86c2ec418e46")
+	)
+	(label "SDA"
+		(at 140.97 33.02 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a88e6ce2-e6eb-4bc8-93fc-b9b64dec7df8")
+	)
+	(label "+12V"
+		(at 38.1 35.56 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a91835ff-4ec3-4492-8f6c-51037e34fa66")
+	)
+	(label "GND"
+		(at 170.18 44.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "aa42b07a-01fd-4a8a-af9d-380e6d74a682")
+	)
+	(label "L"
+		(at 168.91 24.13 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "abb4e0cd-c281-4a61-87b7-6b93f15bc178")
+	)
+	(label "-5V"
+		(at 72.39 54.61 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ad98dd90-1f06-4486-9f6a-52c01c9b5817")
+	)
+	(label "-5V"
+		(at 193.04 86.36 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "af1058f4-92f4-4dd3-b741-50f02b419433")
+	)
+	(label "+5V"
+		(at 72.39 49.53 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b06c0a03-d635-4138-b963-2073a9193b05")
+	)
+	(label "ADD3"
+		(at 134.62 68.58 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b42556a1-eff2-4074-a514-cc0b5a2de4ef")
+	)
+	(label "+5V"
+		(at 138.43 52.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "b97efa93-2f38-4688-9ff0-00767c29e6ce")
+	)
+	(label "L"
+		(at 165.1 83.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bc0a8ed2-1e54-442e-bb13-7d848bddfcd2")
+	)
+	(label "R2"
+		(at 171.45 29.21 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bd0ae2b5-b88f-465f-ae2e-f02e6261bf2b")
+	)
+	(label "+5V"
+		(at 60.96 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c0d8899a-1214-48e6-ad3c-9361e5c613b9")
+	)
+	(label "-5V"
+		(at 193.04 60.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c4cde053-999b-4f4d-aded-6d711b3ba6dc")
+	)
+	(label "SDA"
+		(at 165.1 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c94de5c0-1ed0-4648-a60f-cdc52bbed7b2")
+	)
+	(label "L"
+		(at 165.1 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d424ef7c-22c7-4f9c-af3c-23657f8f326c")
+	)
+	(label "R3"
+		(at 83.82 99.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d4792501-3847-4b5d-8c68-e972b53cfe40")
+	)
+	(label "R2"
+		(at 91.44 99.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d8463f6f-14ac-4711-af2e-d6e596b3ed91")
+	)
+	(label "ADD4"
+		(at 124.46 68.58 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d929414c-5cf7-4431-bdb0-74f98078c8f6")
+	)
+	(label "SDA"
+		(at 38.1 33.02 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e0da2a08-3dbb-4ea8-a62d-ab5105f31b4a")
+	)
+	(label "L2"
+		(at 91.44 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e44b7a38-4413-4a7a-994b-ece81e22ff20")
+	)
+	(label "SDA"
+		(at 165.1 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e55d29bd-5928-4b4c-ac0e-8e07904b0cd9")
+	)
+	(label "+5V"
+		(at 105.41 52.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ead0f213-2cf4-4f05-ba7e-da1b68b40d44")
+	)
+	(label "SDA"
+		(at 106.68 33.02 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ed40d463-1506-40df-9556-fc9dec1c042f")
+	)
+	(label "GND"
+		(at 60.96 104.14 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "edd93149-79fa-44ba-b0c0-c3d5eb2f368d")
+	)
+	(label "GND"
+		(at 72.39 46.99 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f0440153-b10d-408a-9f64-eac7ff582f9e")
+	)
+	(label "ADD4"
+		(at 38.1 52.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f52b1827-214e-4572-b8a5-a5dbdeeb00c2")
+	)
+	(label "-5V"
+		(at 105.41 57.15 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "f6773345-29f3-4f65-b319-5aa7c1730b14")
+	)
+	(label "R"
+		(at 171.45 24.13 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f931ebb7-119f-42a6-93be-75aa61baf385")
+	)
+	(label "SCL"
+		(at 20.32 116.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f9c34a48-6242-448f-a521-719f7063acaa")
+	)
+	(label "+12V"
+		(at 20.32 97.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fd2eb2ba-7d91-45ab-9641-cfd35e482ea1")
+	)
+	(label "ADD3"
+		(at 72.39 52.07 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fe5b6adf-f706-40af-a4cc-f28b40fc4603")
+	)
+	(symbol
+		(lib_id "0IUT_Cosse:Cosse_P")
+		(at 161.29 29.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "024cf5d9-2943-45f0-9bcc-67f428e10069")
+		(property "Reference" "J13"
+			(at 156.21 27.432 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Cosse_P"
+			(at 156.21 29.972 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connecteurs:Cosse_P"
+			(at 161.29 36.83 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/COSSE P.pdf"
+			(at 161.29 23.876 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cosse Poignard MFOM (Y71L)"
+			(at 161.29 35.56 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/COSSE P.jpg"
+			(at 161.29 22.606 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-04"
+			(at 161.29 38.1 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cda9fb5d-c385-4e49-a692-141f3223961e")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Holes:Hole_3,2mm")
+		(at 74.93 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0583e2bf-f801-4692-9586-d7387ce0bae8")
+		(property "Reference" "H1"
+			(at 77.47 107.3149 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Hole_3,2mm"
+			(at 77.47 109.22 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "0IUT_Holes:Hole_3,2mm"
+			(at 74.93 116.84 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Trou Non Métalisé de 3,2 mm"
+			(at 74.93 115.57 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "H1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 33.02 97.79 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0c51b0de-4808-4253-9326-0046661dd436")
+		(property "Reference" "EP5"
+			(at 33.02 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 33.02 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 33.02 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 32.766 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b61e1cce-e17c-45dc-9826-5478be4dc76f")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 44.45 72.39 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0d705f2b-728f-41a2-a192-1b95fa0b7025")
+		(property "Reference" "EP6"
+			(at 44.45 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 44.45 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 44.45 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 44.704 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "77f70bf5-e509-44c8-a171-3a342be6733d")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Device_R:R_CMS_1206")
+		(at 99.06 91.44 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "17c6fef0-86ae-42b0-9df0-59ec6503e1fe")
+		(property "Reference" "R2"
+			(at 97.028 91.44 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 101.092 91.44 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Device:RCMS1206"
+			(at 99.06 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/RCMS1206.jpg"
+			(at 99.06 104.14 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Résistance CMS 1206"
+			(at 99.06 78.74 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "MAG-CMS"
+			(at 99.06 76.2 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f0a5635b-3586-4671-a318-e048bc148f92")
+		)
+		(pin "2"
+			(uuid "93b47c5a-ec9e-4ed4-8095-d198c9e37529")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 33.02 123.19 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "232029c9-4713-460e-b3a1-9a1598f0175b")
+		(property "Reference" "EP13"
+			(at 33.02 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 33.02 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 33.02 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 32.766 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "af5db539-0933-45a8-a82e-8fac494ae402")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Cosse:Cosse_P")
+		(at 179.07 44.45 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "289447bc-a24a-49ba-82e5-3d17e0b040ca")
+		(property "Reference" "J24"
+			(at 184.15 42.672 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Cosse_P"
+			(at 184.15 45.212 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connecteurs:Cosse_P"
+			(at 179.07 52.07 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/COSSE P.pdf"
+			(at 179.07 39.116 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cosse Poignard MFOM (Y71L)"
+			(at 179.07 50.8 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/COSSE P.jpg"
+			(at 179.07 37.846 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-04"
+			(at 179.07 53.34 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c75ffccc-ad13-4019-b551-016bfb831a43")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Device_R:R_CMS_1206")
+		(at 149.86 77.47 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "336948a6-1c60-4c6e-ad6c-885f89aeb396")
+		(property "Reference" "R10"
+			(at 149.86 75.438 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 149.86 77.47 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Device:RCMS1206"
+			(at 163.83 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/RCMS1206.jpg"
+			(at 137.16 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Résistance CMS 1206"
+			(at 162.56 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "MAG-CMS"
+			(at 165.1 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8ae9a563-c7da-4084-a9e5-1ee190303eaf")
+		)
+		(pin "2"
+			(uuid "9b6880fb-60cb-422c-9138-6e7a081571e3")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "R10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_HE10:HE10_10D1")
+		(at 176.53 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "370112d2-9421-465e-bb04-250fdf619f7f")
+		(property "Reference" "J10"
+			(at 177.8 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "HE10_10D1"
+			(at 177.8 81.28 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connect_HE10:09185106904"
+			(at 176.53 100.33 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/HE10-10D1.jpg"
+			(at 176.53 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Connecteur HE10 Droit Mâle avec éjecteur, 10 contacts, Pas : 2,54mm, Type 09185106904"
+			(at 176.53 99.06 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "Armoire n°3-107"
+			(at 176.53 101.6 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "43f08ebb-5ffc-4240-8f26-30daf50212f8")
+		)
+		(pin "4"
+			(uuid "7693251b-ae48-4751-9d89-4f0a39278a1e")
+		)
+		(pin "8"
+			(uuid "b2436634-1353-4c95-a341-3f7c19c1e5a9")
+		)
+		(pin "1"
+			(uuid "9f1cefbd-3df9-4c16-95d6-343c463cee3a")
+		)
+		(pin "3"
+			(uuid "fe91f891-1ab1-41a7-a2e2-c150bd83d65d")
+		)
+		(pin "7"
+			(uuid "00ea2dbe-2a13-414f-9efa-bf280331f837")
+		)
+		(pin "5"
+			(uuid "b4f9079f-2b73-473c-9d8b-ecb207616164")
+		)
+		(pin "9"
+			(uuid "7775f19d-2085-48f8-a618-f10221b63053")
+		)
+		(pin "2"
+			(uuid "5442a0c7-8234-45ad-a2bd-8244cc96c762")
+		)
+		(pin "10"
+			(uuid "cfcdbdaa-868b-4a05-8b57-d1913625e712")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Barrette:Barrette_1M_01x04")
+		(at 91.44 52.07 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3a9c8c1c-1a98-4c6b-b8ae-8e6351fbbf84")
+		(property "Reference" "J5"
+			(at 91.44 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Barrette secable 1"
+			(at 91.44 46.99 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connect_Barre:MA01-04"
+			(at 91.44 63.5 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/Barrette secable 1.pdf"
+			(at 91.44 43.18 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Barrette Mâle 4 Contacts, Sécable, Pas : 2,54mm"
+			(at 91.44 62.23 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/Barrette secable 1.jpg"
+			(at 91.44 41.91 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-08"
+			(at 91.44 64.77 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "cb9e4b06-babd-4ba5-9484-e884f9fd9dbb")
+		)
+		(pin "2"
+			(uuid "aa66bd3a-e720-40ae-a3eb-7ef5f295b741")
+		)
+		(pin "3"
+			(uuid "9cef30bc-4995-47df-a322-e568d605cade")
+		)
+		(pin "1"
+			(uuid "e80ddd9e-959f-4f87-bdf5-0db89e432dfb")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 44.45 85.09 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "408018fb-e4ed-432f-90b3-fe43fdd888ea")
+		(property "Reference" "EP8"
+			(at 44.45 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 44.45 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 44.45 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 44.704 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b96f52cc-6d74-42bd-8486-1f746111953a")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Device_R:R_CMS_1206")
+		(at 91.44 91.44 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "460e1bd1-c73d-4303-b889-adf557ad2bd8")
+		(property "Reference" "R4"
+			(at 89.408 91.44 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 93.472 91.44 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Device:RCMS1206"
+			(at 91.44 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/RCMS1206.jpg"
+			(at 91.44 104.14 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Résistance CMS 1206"
+			(at 91.44 78.74 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "MAG-CMS"
+			(at 91.44 76.2 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a25ef3c4-6ed9-4b43-b58e-52d83d43b089")
+		)
+		(pin "2"
+			(uuid "54ad6ea5-6174-4c5f-96f6-9b97ccea23ad")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 33.02 78.74 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "48c672cb-1a3e-4fe7-ad59-f400be434959")
+		(property "Reference" "EP2"
+			(at 33.02 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 33.02 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 33.02 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 32.766 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d508c33d-3d5f-4207-b266-fdb98e44055c")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 44.45 123.19 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "49ac3920-02f5-4297-b0c9-34581668b0a1")
+		(property "Reference" "EP18"
+			(at 44.45 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 44.45 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 44.45 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 44.704 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4fcad363-8510-45c7-85b2-6b5d239b8551")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 44.45 116.84 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "49eccb58-05ca-46c0-afc2-3974a8bb596c")
+		(property "Reference" "EP17"
+			(at 44.45 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 44.45 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 44.45 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 44.704 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b97f090e-ed07-4057-a317-938b5dffd72f")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 33.02 104.14 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "53091698-afa5-49c4-81ac-1a24ba034896")
+		(property "Reference" "EP10"
+			(at 33.02 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 33.02 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 33.02 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 32.766 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d8d355e3-8078-4cf7-8440-792d030fb50b")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Cosse:Cosse_P")
+		(at 161.29 24.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5491a047-67a0-471c-b1cd-b7fb40481b97")
+		(property "Reference" "J11"
+			(at 156.21 22.352 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Cosse_P"
+			(at 156.21 24.892 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connecteurs:Cosse_P"
+			(at 161.29 31.75 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/COSSE P.pdf"
+			(at 161.29 18.796 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cosse Poignard MFOM (Y71L)"
+			(at 161.29 30.48 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/COSSE P.jpg"
+			(at 161.29 17.526 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-04"
+			(at 161.29 33.02 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "788dc609-8a7c-4318-8644-0860ee26159a")
+		)
+		(instances
+			(project ""
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Device_R:R_CMS_1206")
+		(at 76.2 72.39 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5ea2938b-202e-42c3-9cd2-3b19a0fcb501")
+		(property "Reference" "R7"
+			(at 78.232 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 74.168 72.39 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Device:RCMS1206"
+			(at 76.2 86.36 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/RCMS1206.jpg"
+			(at 76.2 59.69 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Résistance CMS 1206"
+			(at 76.2 85.09 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "MAG-CMS"
+			(at 76.2 87.63 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b0ef17f8-6416-47da-bb46-aaa76e309f8b")
+		)
+		(pin "2"
+			(uuid "22c51f84-181d-4ade-b2a2-5351ace0aced")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "R7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 33.02 91.44 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5f312b65-339d-424d-8ea1-363610443228")
+		(property "Reference" "EP4"
+			(at 33.02 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 33.02 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 33.02 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 32.766 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c6c2049c-0c6e-4938-8133-85243633751e")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 44.45 78.74 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6165612d-1070-4bad-8093-1a3c31f85770")
+		(property "Reference" "EP7"
+			(at 44.45 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 44.45 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 44.45 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 44.704 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "707ec7a7-287d-4389-a38f-c3cda9747c34")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 33.02 85.09 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "64ce6825-dfd1-4148-b805-6f65912163f6")
+		(property "Reference" "EP3"
+			(at 33.02 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 33.02 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 33.02 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 32.766 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4bce7ad9-569b-4691-9d44-4a15b9a556ce")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Barrette:Barrette_1M_01x05")
+		(at 24.13 30.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6a21c18e-edb6-4685-b428-4b1cf98e5701")
+		(property "Reference" "J8"
+			(at 24.13 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Barrette secable 1"
+			(at 24.13 22.86 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connect_Barre:MA01-05"
+			(at 24.13 41.91 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/Barrette secable 1.pdf"
+			(at 24.13 19.05 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Barrette Mâle 5 Contacts, Sécable, Pas : 2,54mm"
+			(at 24.13 40.64 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/Barrette secable 1.jpg"
+			(at 24.13 17.78 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-08"
+			(at 24.13 43.18 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "52be48dc-1910-422d-b47d-173fc353a1b0")
+		)
+		(pin "2"
+			(uuid "8570c989-212c-40b5-bcf4-bbcb92744a97")
+		)
+		(pin "3"
+			(uuid "2601a95f-159f-4cb7-b169-b57e02eaece2")
+		)
+		(pin "5"
+			(uuid "94de9aba-8a38-4f02-b978-51ac79f7c7c1")
+		)
+		(pin "1"
+			(uuid "1ba0a191-2e47-471a-9867-8c2b319e0a3b")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Barrette:Barrette_1M_01x05")
+		(at 92.71 30.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6b4417b3-d6a0-4c4c-a87d-9d03ad2ff6ff")
+		(property "Reference" "J4"
+			(at 92.71 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Barrette secable 1"
+			(at 92.71 22.86 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connect_Barre:MA01-05"
+			(at 92.71 41.91 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/Barrette secable 1.pdf"
+			(at 92.71 19.05 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Barrette Mâle 5 Contacts, Sécable, Pas : 2,54mm"
+			(at 92.71 40.64 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/Barrette secable 1.jpg"
+			(at 92.71 17.78 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-08"
+			(at 92.71 43.18 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "8522efb2-1f92-48c1-9723-2472caf7f578")
+		)
+		(pin "2"
+			(uuid "b96cb97b-1a8b-46be-89f8-218986488ab5")
+		)
+		(pin "3"
+			(uuid "4ff61469-5775-4bcb-afc0-2615b91b8f9d")
+		)
+		(pin "5"
+			(uuid "579e9581-9f64-483b-8f1a-80432cb7d563")
+		)
+		(pin "1"
+			(uuid "7c7c46e9-8352-43d7-96c6-9355cb57c0f4")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Device_R:R_CMS_1206")
+		(at 139.7 77.47 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "739e26bf-0c64-4918-806a-4374e40ea364")
+		(property "Reference" "R9"
+			(at 139.7 75.438 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 139.7 77.47 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Device:RCMS1206"
+			(at 153.67 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/RCMS1206.jpg"
+			(at 127 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Résistance CMS 1206"
+			(at 152.4 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "MAG-CMS"
+			(at 154.94 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e4e94827-064d-4b3d-bdeb-a841006ae1de")
+		)
+		(pin "2"
+			(uuid "a09874b9-3d61-4f17-8b37-4269d2acc481")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Barrette:Barrette_1M_01x04")
+		(at 58.42 49.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8ab25fdd-7379-4961-a1bf-688c3e9ffac0")
+		(property "Reference" "J9"
+			(at 58.42 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Barrette secable 1"
+			(at 58.42 44.45 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connect_Barre:MA01-04"
+			(at 58.42 60.96 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/Barrette secable 1.pdf"
+			(at 58.42 40.64 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Barrette Mâle 4 Contacts, Sécable, Pas : 2,54mm"
+			(at 58.42 59.69 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/Barrette secable 1.jpg"
+			(at 58.42 39.37 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-08"
+			(at 58.42 62.23 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "68d2ad1b-ede6-4ed4-a026-b6b0e5dadbf9")
+		)
+		(pin "2"
+			(uuid "69215d1e-94e5-4e64-86d1-71ce984fded6")
+		)
+		(pin "3"
+			(uuid "5ef6edf9-510d-477a-9bc1-f1194e809762")
+		)
+		(pin "1"
+			(uuid "1a77334b-515e-4cbd-9218-1d3e6529cac1")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Cosse:Cosse_P")
+		(at 161.29 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8b41746a-bf4a-4d7f-83d0-c459adb7d6e1")
+		(property "Reference" "J15"
+			(at 156.21 37.592 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Cosse_P"
+			(at 156.21 40.132 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connecteurs:Cosse_P"
+			(at 161.29 46.99 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/COSSE P.pdf"
+			(at 161.29 34.036 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cosse Poignard MFOM (Y71L)"
+			(at 161.29 45.72 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/COSSE P.jpg"
+			(at 161.29 32.766 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-04"
+			(at 161.29 48.26 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b3879b0c-7dfa-42e4-b701-9fd7885d6565")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Device_R:R_CMS_1206")
+		(at 129.54 77.47 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8dea8e76-f0b4-43f7-aa2e-ca4702d3a79f")
+		(property "Reference" "R11"
+			(at 129.54 75.438 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 129.54 77.47 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Device:RCMS1206"
+			(at 143.51 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/RCMS1206.jpg"
+			(at 116.84 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Résistance CMS 1206"
+			(at 142.24 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "MAG-CMS"
+			(at 144.78 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "41fce0a6-c272-4be9-8b35-50d827418995")
+		)
+		(pin "2"
+			(uuid "7ab1e428-9994-4e99-8bdc-27600f9693b1")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "R11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Holes:Hole_3,2mm")
+		(at 74.93 118.11 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8e10644c-5c29-4a11-ace1-eb265ffc077f")
+		(property "Reference" "H3"
+			(at 77.47 117.4749 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Hole_3,2mm"
+			(at 77.47 119.38 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "0IUT_Holes:Hole_3,2mm"
+			(at 74.93 127 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Trou Non Métalisé de 3,2 mm"
+			(at 74.93 125.73 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "carte_puissance3"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Cosse:Cosse_P")
+		(at 179.07 29.21 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "90dbb734-023a-4635-a594-822023fabf43")
+		(property "Reference" "J18"
+			(at 184.15 27.432 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Cosse_P"
+			(at 184.15 29.972 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connecteurs:Cosse_P"
+			(at 179.07 36.83 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/COSSE P.pdf"
+			(at 179.07 23.876 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cosse Poignard MFOM (Y71L)"
+			(at 179.07 35.56 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/COSSE P.jpg"
+			(at 179.07 22.606 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-04"
+			(at 179.07 38.1 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "28cf612c-45fb-4afe-91b9-fcef618c6cab")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Device_R:R_CMS_1206")
+		(at 83.82 91.44 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "97e9c2ff-1833-4a0f-bce2-255202234ecb")
+		(property "Reference" "R6"
+			(at 81.788 91.44 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 85.852 91.44 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Device:RCMS1206"
+			(at 83.82 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/RCMS1206.jpg"
+			(at 83.82 104.14 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Résistance CMS 1206"
+			(at 83.82 78.74 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "MAG-CMS"
+			(at 83.82 76.2 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "206019b7-f2c9-4be7-b75d-09ba92394d38")
+		)
+		(pin "2"
+			(uuid "e51a8732-a47a-4667-b009-e7950cf32f4d")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Cosse:Cosse_P")
+		(at 179.07 34.29 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9c44b050-463e-4e36-a9d5-41a941c25e18")
+		(property "Reference" "J19"
+			(at 184.15 32.512 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Cosse_P"
+			(at 184.15 35.052 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connecteurs:Cosse_P"
+			(at 179.07 41.91 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/COSSE P.pdf"
+			(at 179.07 28.956 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cosse Poignard MFOM (Y71L)"
+			(at 179.07 40.64 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/COSSE P.jpg"
+			(at 179.07 27.686 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-04"
+			(at 179.07 43.18 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5ca10921-1464-48f1-96c3-8a0612099843")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Device_R:R_CMS_1206")
+		(at 83.82 72.39 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a1a77c5c-85f5-4202-901c-f3924f724cc9")
+		(property "Reference" "R5"
+			(at 81.788 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 85.852 72.39 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Device:RCMS1206"
+			(at 83.82 58.42 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/RCMS1206.jpg"
+			(at 83.82 85.09 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Résistance CMS 1206"
+			(at 83.82 59.69 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "MAG-CMS"
+			(at 83.82 57.15 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "594acf36-30d8-4f76-ac2a-d7432f33e14a")
+		)
+		(pin "2"
+			(uuid "cb2ca207-824d-485c-9644-08d4619c9c66")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Device_R:R_CMS_1206")
+		(at 76.2 91.44 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a23e0d6d-fb7c-47b1-bcb4-ba7bf4c54bdf")
+		(property "Reference" "R8"
+			(at 74.168 91.44 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 78.232 91.44 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Device:RCMS1206"
+			(at 76.2 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/RCMS1206.jpg"
+			(at 76.2 104.14 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Résistance CMS 1206"
+			(at 76.2 78.74 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "MAG-CMS"
+			(at 76.2 76.2 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3c4df297-1668-4def-a777-1a1c721e26a0")
+		)
+		(pin "2"
+			(uuid "8f298bd9-d595-4de4-8595-048c4756fca4")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Device_R:R_CMS_1206")
+		(at 99.06 72.39 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a691f2f8-c4a8-413d-9481-bd7b032e11b8")
+		(property "Reference" "R1"
+			(at 97.028 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 101.092 72.39 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Device:RCMS1206"
+			(at 99.06 58.42 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/RCMS1206.jpg"
+			(at 99.06 85.09 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Résistance CMS 1206"
+			(at 99.06 59.69 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "MAG-CMS"
+			(at 99.06 57.15 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b8547286-b948-4163-8138-4f5e2e572fcb")
+		)
+		(pin "2"
+			(uuid "b0a75eb7-1c25-4216-9d40-088e91ca6893")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 33.02 129.54 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a7b9ae02-f888-4126-8d43-e71d0484612f")
+		(property "Reference" "EP14"
+			(at 33.02 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 33.02 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 33.02 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 32.766 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "79cd6f88-5f02-4dbe-a077-79d3ab04755d")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 33.02 72.39 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ae9dad38-d445-459f-a48e-fdddb75a6026")
+		(property "Reference" "EP1"
+			(at 33.02 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 33.02 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 33.02 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 32.766 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f83f5008-6485-4e0e-9bd4-50ed0b86c81d")
+		)
+		(instances
+			(project ""
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 33.02 110.49 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b1e9c9be-0298-42ed-b44e-00e05358c706")
+		(property "Reference" "EP11"
+			(at 33.02 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 33.02 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 33.02 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 32.766 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8f274dd7-f2d9-4637-a988-b69a054f3876")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 33.02 116.84 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b4787313-5ef3-4311-b08f-c75db5c886a2")
+		(property "Reference" "EP12"
+			(at 33.02 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 33.02 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 33.02 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 32.766 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9fb8bf10-e16e-442b-8cca-2d9e346d1517")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Barrette:Barrette_1M_01x05")
+		(at 58.42 30.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b8f4b568-a590-4c08-b15d-73a728d0f9b5")
+		(property "Reference" "J6"
+			(at 58.42 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Barrette secable 1"
+			(at 58.42 22.86 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connect_Barre:MA01-05"
+			(at 58.42 41.91 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/Barrette secable 1.pdf"
+			(at 58.42 19.05 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Barrette Mâle 5 Contacts, Sécable, Pas : 2,54mm"
+			(at 58.42 40.64 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/Barrette secable 1.jpg"
+			(at 58.42 17.78 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-08"
+			(at 58.42 43.18 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "af35668e-4eb4-4fc0-8060-2c454e05917b")
+		)
+		(pin "2"
+			(uuid "c0daa9b0-8a63-4f36-b8a5-7946a154e143")
+		)
+		(pin "3"
+			(uuid "8e2484de-4cdf-4f20-be0d-10baaf7cee16")
+		)
+		(pin "5"
+			(uuid "b606d734-8594-43b6-9c8d-a4227b744cfc")
+		)
+		(pin "1"
+			(uuid "8ef53967-8d88-42bf-a9b3-bca27327ee73")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Device_R:R_CMS_1206")
+		(at 91.44 72.39 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b976f061-16ce-430e-8661-feaf1032d9ac")
+		(property "Reference" "R3"
+			(at 89.408 72.39 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 93.472 72.39 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Device:RCMS1206"
+			(at 91.44 58.42 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/RCMS1206.jpg"
+			(at 91.44 85.09 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Résistance CMS 1206"
+			(at 91.44 59.69 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "MAG-CMS"
+			(at 91.44 57.15 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f1073995-e516-410a-b920-584dbc02297d")
+		)
+		(pin "2"
+			(uuid "1918648b-b5e0-442b-b1b8-7ad75c3f8199")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Holes:Hole_3,2mm")
+		(at 74.93 113.03 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ba3c9374-448a-4e3f-a26b-a414031729bf")
+		(property "Reference" "H2"
+			(at 77.47 112.3949 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Hole_3,2mm"
+			(at 77.47 114.3 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "0IUT_Holes:Hole_3,2mm"
+			(at 74.93 121.92 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Trou Non Métalisé de 3,2 mm"
+			(at 74.93 120.65 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "carte_puissance3"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "H2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Jumper:Jumper_02")
+		(at 144.78 87.63 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "beeb3e22-6d46-489f-8149-adf843319b18")
+		(property "Reference" "J12"
+			(at 146.05 86.9949 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Jumper_02"
+			(at 146.05 88.9 90)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "0IUT_Connect_Barre:MA01-02"
+			(at 153.67 87.63 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/MA01-02.jpg"
+			(at 138.43 87.63 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1 Jumper 2 Pôles, Pas : 2,54mm"
+			(at 152.4 87.63 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-08"
+			(at 154.94 87.63 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "ef9e7200-a7a1-49a2-b06c-04955ccb374c")
+		)
+		(pin "1"
+			(uuid "011dfdae-bca2-49ac-9e14-7b2586874fc6")
+		)
+		(instances
+			(project ""
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Cosse:Cosse_P")
+		(at 179.07 24.13 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bef034a1-8498-4de2-a7de-3bb32e62f506")
+		(property "Reference" "J16"
+			(at 184.15 22.352 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Cosse_P"
+			(at 184.15 24.892 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connecteurs:Cosse_P"
+			(at 179.07 31.75 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/COSSE P.pdf"
+			(at 179.07 18.796 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cosse Poignard MFOM (Y71L)"
+			(at 179.07 30.48 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/COSSE P.jpg"
+			(at 179.07 17.526 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-04"
+			(at 179.07 33.02 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f16f6c7a-80a5-4996-b845-82338f4b5848")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Barrette:Barrette_1M_01x05")
+		(at 127 30.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c6cf16e6-adc1-4583-b001-8f21c15c781f")
+		(property "Reference" "J2"
+			(at 127 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Barrette secable 1"
+			(at 127 22.86 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connect_Barre:MA01-05"
+			(at 127 41.91 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/Barrette secable 1.pdf"
+			(at 127 19.05 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Barrette Mâle 5 Contacts, Sécable, Pas : 2,54mm"
+			(at 127 40.64 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/Barrette secable 1.jpg"
+			(at 127 17.78 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-08"
+			(at 127 43.18 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "415bc65b-8f96-4432-b27e-a1b881bda011")
+		)
+		(pin "2"
+			(uuid "f86ad83d-7f00-4284-b7f9-79b92ab1f113")
+		)
+		(pin "3"
+			(uuid "83fcbfb0-b0d2-4859-93f3-ee56959cfe8c")
+		)
+		(pin "5"
+			(uuid "58f97465-3512-4020-aad5-43506be0725d")
+		)
+		(pin "1"
+			(uuid "042e88e0-9e05-4d4c-a741-645d553595d9")
+		)
+		(instances
+			(project ""
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Jumper:Jumper_02")
+		(at 124.46 87.63 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ca007480-5752-4455-98a3-9478ae833936")
+		(property "Reference" "J21"
+			(at 125.73 86.9949 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Jumper_02"
+			(at 125.73 88.9 90)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "0IUT_Connect_Barre:MA01-02"
+			(at 133.35 87.63 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/MA01-02.jpg"
+			(at 118.11 87.63 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1 Jumper 2 Pôles, Pas : 2,54mm"
+			(at 132.08 87.63 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-08"
+			(at 134.62 87.63 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "2e310623-2242-491a-b7a0-a111ccf21936")
+		)
+		(pin "1"
+			(uuid "31530d4d-2048-491a-b679-52da3c973fae")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Barrette:Barrette_1M_01x04")
+		(at 124.46 52.07 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cf2117e0-c7bf-46b6-abce-40d3525bc3b9")
+		(property "Reference" "J3"
+			(at 124.46 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Barrette secable 1"
+			(at 124.46 46.99 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connect_Barre:MA01-04"
+			(at 124.46 63.5 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/Barrette secable 1.pdf"
+			(at 124.46 43.18 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Barrette Mâle 4 Contacts, Sécable, Pas : 2,54mm"
+			(at 124.46 62.23 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/Barrette secable 1.jpg"
+			(at 124.46 41.91 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-08"
+			(at 124.46 64.77 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "08c00430-19ff-46f5-821b-9022cd826b4c")
+		)
+		(pin "2"
+			(uuid "a9132e6c-0259-46ea-b91e-c848a26e64ce")
+		)
+		(pin "3"
+			(uuid "ead8b627-2f1b-45f1-a722-edc5dba6b4aa")
+		)
+		(pin "1"
+			(uuid "9ff9f585-12e3-4909-8956-f6132c01bc9f")
+		)
+		(instances
+			(project ""
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 44.45 91.44 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d1521c8c-c260-4a69-9499-400684a56fb6")
+		(property "Reference" "EP9"
+			(at 44.45 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 44.45 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 44.45 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 44.704 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6c262be8-f381-4e0c-ad74-457bc54f1cdc")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Cosse:Cosse_P")
+		(at 179.07 39.37 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d4679c18-e07b-4147-90c9-31031b424105")
+		(property "Reference" "J20"
+			(at 184.15 37.592 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Cosse_P"
+			(at 184.15 40.132 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connecteurs:Cosse_P"
+			(at 179.07 46.99 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/COSSE P.pdf"
+			(at 179.07 34.036 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cosse Poignard MFOM (Y71L)"
+			(at 179.07 45.72 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/COSSE P.jpg"
+			(at 179.07 32.766 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-04"
+			(at 179.07 48.26 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b3885946-605e-4be9-8389-c9786cf70b8c")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Barrette:Barrette_1M_01x04")
+		(at 24.13 49.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d48b1e45-ff61-4d32-8f7c-3186fd639b68")
+		(property "Reference" "J7"
+			(at 24.13 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Barrette secable 1"
+			(at 24.13 44.45 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connect_Barre:MA01-04"
+			(at 24.13 60.96 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/Barrette secable 1.pdf"
+			(at 24.13 40.64 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Barrette Mâle 4 Contacts, Sécable, Pas : 2,54mm"
+			(at 24.13 59.69 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/Barrette secable 1.jpg"
+			(at 24.13 39.37 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-08"
+			(at 24.13 62.23 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "c5c4217a-210d-4af3-9e25-024b55bc3e84")
+		)
+		(pin "2"
+			(uuid "cf876529-e8b5-4a5e-b021-0436422564a7")
+		)
+		(pin "3"
+			(uuid "e0b42357-c7a0-46f1-ae0f-d2388b5a0eb6")
+		)
+		(pin "1"
+			(uuid "7a084e52-8abc-47d1-b169-0c03550735e4")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Jumper:Jumper_02")
+		(at 134.62 87.63 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dd171fe1-8a86-4a0e-a5e1-304380271a2e")
+		(property "Reference" "J17"
+			(at 135.89 86.9949 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Jumper_02"
+			(at 135.89 88.9 90)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "0IUT_Connect_Barre:MA01-02"
+			(at 143.51 87.63 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/MA01-02.jpg"
+			(at 128.27 87.63 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1 Jumper 2 Pôles, Pas : 2,54mm"
+			(at 142.24 87.63 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-08"
+			(at 144.78 87.63 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "d725eee9-dfe4-415c-8cca-14a054fd81f6")
+		)
+		(pin "1"
+			(uuid "299b853f-3fb8-411f-ad16-f53eef30a28a")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Cosse:Cosse_P")
+		(at 161.29 34.29 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "dfa28f32-c788-4d9f-9088-ecea64e90b74")
+		(property "Reference" "J14"
+			(at 156.21 32.512 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Cosse_P"
+			(at 156.21 35.052 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connecteurs:Cosse_P"
+			(at 161.29 41.91 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/pdf/COSSE P.pdf"
+			(at 161.29 28.956 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Cosse Poignard MFOM (Y71L)"
+			(at 161.29 40.64 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Image" "http://geii/magasin/jpg/COSSE P.jpg"
+			(at 161.29 27.686 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "TIROCLASSE 2-04"
+			(at 161.29 43.18 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ca0765ad-7a17-4241-ad41-d90c247b2a5b")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_HE10:HE10_10D1")
+		(at 176.53 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e33459bc-38f7-4134-88fd-95e7178dc443")
+		(property "Reference" "J1"
+			(at 177.8 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "HE10_10D1"
+			(at 177.8 55.88 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Connect_HE10:09185106904"
+			(at 176.53 74.93 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/HE10-10D1.jpg"
+			(at 176.53 52.07 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Connecteur HE10 Droit Mâle avec éjecteur, 10 contacts, Pas : 2,54mm, Type 09185106904"
+			(at 176.53 73.66 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "Armoire n°3-107"
+			(at 176.53 76.2 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "09492f39-f153-40cf-841f-2de919fe9e84")
+		)
+		(pin "4"
+			(uuid "ad888be7-8997-4164-9ad1-efe6d97cd989")
+		)
+		(pin "8"
+			(uuid "92da868d-edda-4ec9-88b4-f68731b297d8")
+		)
+		(pin "1"
+			(uuid "05fe5805-a264-41f1-817f-dda3e04e3a65")
+		)
+		(pin "3"
+			(uuid "145e87e0-8e50-4d2c-8599-2909b0813e38")
+		)
+		(pin "7"
+			(uuid "2d464f93-0310-4c61-ae8f-468b987284de")
+		)
+		(pin "5"
+			(uuid "3893b3cb-9078-4c67-a04b-a72b12095838")
+		)
+		(pin "9"
+			(uuid "17afa691-0e79-4960-8e61-e42369dddc7e")
+		)
+		(pin "2"
+			(uuid "c4d01ed7-b2a1-476f-a06c-b5f2b9a6f35c")
+		)
+		(pin "10"
+			(uuid "54f63280-0c11-47fc-9ad8-316e0ae61cdc")
+		)
+		(instances
+			(project ""
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Holes:Hole_3,2mm")
+		(at 74.93 123.19 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e4924d39-1388-4bf3-b88d-44afe0d46218")
+		(property "Reference" "H4"
+			(at 77.47 122.5549 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Hole_3,2mm"
+			(at 77.47 124.46 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "0IUT_Holes:Hole_3,2mm"
+			(at 74.93 132.08 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 74.93 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Trou Non Métalisé de 3,2 mm"
+			(at 74.93 130.81 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "carte_puissance3"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Device_R:R_CMS_1206")
+		(at 119.38 77.47 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ee75e461-33ab-45d0-8765-2373e74dc1cb")
+		(property "Reference" "R12"
+			(at 119.38 75.438 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100k"
+			(at 119.38 77.47 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_Device:RCMS1206"
+			(at 133.35 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://geii/magasin/jpg/RCMS1206.jpg"
+			(at 106.68 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Résistance CMS 1206"
+			(at 132.08 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(property "Lieu" "MAG-CMS"
+			(at 134.62 77.47 0)
+			(effects
+				(font
+					(size 0.762 0.762)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cdf2ddfd-73af-45ad-a266-2681ce50947b")
+		)
+		(pin "2"
+			(uuid "de5fe25e-ff8c-4729-90b2-6e5ce92a02eb")
+		)
+		(instances
+			(project "carte_BUS_1"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 44.45 104.14 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f802a58b-94b2-44fd-811e-c56551d2da87")
+		(property "Reference" "EP15"
+			(at 44.45 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 44.45 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 44.45 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 44.704 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5c779988-dfc6-4967-96bc-c6250131d563")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "0IUT_Con_Divers:edge_pad")
+		(at 44.45 110.49 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fa636a26-d30e-4092-8a16-dd42ac79e3d5")
+		(property "Reference" "EP16"
+			(at 44.45 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "~"
+			(at 44.45 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "0IUT_DIVERS:edge_pad"
+			(at 44.45 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Edge pad for connecting two pcb"
+			(at 44.704 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f856f103-53c8-490d-b3a9-388ea785ce6c")
+		)
+		(instances
+			(project "carte_BUS_0"
+				(path "/11b4dace-c2fa-4c12-bd2a-2e00bd77a986"
+					(reference "EP16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

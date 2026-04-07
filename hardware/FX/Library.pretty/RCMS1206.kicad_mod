@@ -1,0 +1,170 @@
+(footprint "RCMS1206"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Empreinte Résistance CMS 1206")
+	(tags "résistance cms 1206")
+	(property "Reference" "REF**"
+		(at 0 -2 0)
+		(layer "F.SilkS")
+		(uuid "6394e841-e8d8-4c1f-b2b3-f0d2bf370fe9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "10k"
+		(at 0 1.6 0)
+		(layer "F.Fab")
+		(uuid "eb95b2aa-2621-4962-96f5-4df28890a5d0")
+		(effects
+			(font
+				(size 0.6 0.6)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Datasheet" "http://geii/magasin/jpg/RCMS1206.jpg"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "431330d9-70de-4439-84a9-f9f40d5129b6")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Description" "Résistance CMS 1206"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "924a63ae-98c2-4a76-873e-46e9c72e62c2")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Lieu" "MAG-CMS"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f1a47d16-fae9-493c-9672-5f1f392f911c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_rect
+		(start -2.9 -1)
+		(end 2.9 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "0aeb7896-0169-4c37-8bab-86bbaa69b961")
+	)
+	(fp_rect
+		(start -3 -1.1)
+		(end 3 1.1)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "aa5f51eb-eea5-43eb-8537-1e4aaf5bae00")
+	)
+	(fp_line
+		(start 1 -0.8)
+		(end -1 -0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "95661bfb-f392-463c-8a24-4b02fbb106db")
+	)
+	(fp_line
+		(start 1 0.8)
+		(end -1 0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "4d30da02-f56b-49ec-b9e9-63c011373fe0")
+	)
+	(fp_rect
+		(start -1.4 -0.8)
+		(end -1 0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "e13a2a9d-2ec1-4310-8ea5-31d2bb9d26b4")
+	)
+	(fp_rect
+		(start 1 -0.8)
+		(end 1.4 0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.Fab")
+		(uuid "457ef6db-06e5-460f-af4a-e2ce1221f053")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "44e948a2-fbc0-4d06-bf14-ebb7f4204101")
+		(effects
+			(font
+				(size 0.2 0.2)
+				(thickness 0.05)
+				(bold yes)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -1.8034 0)
+		(size 1.9 1.8)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0)
+		(uuid "b26ddc0e-01f0-4a93-ad93-379a5fecda4d")
+	)
+	(pad "2" smd rect
+		(at 1.8034 0)
+		(size 1.9 1.8)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0)
+		(uuid "670b1d0d-44f0-48d1-9217-0a4a22696669")
+	)
+	(embedded_fonts no)
+	(model "C:/KICAD/0IUT/3dmodels/0IUT_Device/RCMS1206.stp"
+		(offset
+			(xyz -1.55 -0.75 0.5)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 90 -0 -0)
+		)
+	)
+)

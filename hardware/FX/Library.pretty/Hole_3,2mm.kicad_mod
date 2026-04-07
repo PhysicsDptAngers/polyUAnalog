@@ -1,0 +1,156 @@
+(footprint "Hole_3,2mm"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "Trou Non Métalisé de 3,2 mm")
+	(tags "hole 3,2mm")
+	(property "Reference" "REF**"
+		(at 0.05 -2.68 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "5ad9d911-d6de-47b5-9982-9841dea89cbf")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "Hole_3,2mm"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "c7e013c7-e533-4523-b625-0d7e411fe7ab")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0f3a4cf0-5b7f-4116-8b71-94eac84704a4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Trou Non Métalisé de 3,2 mm"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "10524db2-0194-4f99-8c91-94bda634e8c8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd exclude_from_bom)
+	(fp_circle
+		(center 0 0)
+		(end 1.7 0)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "01b164b6-18ec-4547-abeb-fff55c406ab6")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 2.4 0)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "cc51615f-b713-4b3f-89bf-5e300d9e25b8")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 1.6 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "9ccb7067-f21e-484e-b0da-927f81697268")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0.05 0.22 0)
+		(layer "F.Fab")
+		(uuid "df064ce5-e408-4f59-8c9e-9a57a6037c00")
+		(effects
+			(font
+				(size 0.2 0.2)
+				(thickness 0.05)
+				(bold yes)
+			)
+		)
+	)
+	(pad "" np_thru_hole circle
+		(at 0 0)
+		(size 3.2 3.2)
+		(drill 3.2)
+		(layers "*.Cu" "*.Mask")
+		(uuid "544e6106-de19-4ad0-a18c-b14ba51a4a86")
+	)
+	(zone
+		(net 0)
+		(net_name "")
+		(layer "F.Cu")
+		(uuid "a8352b3a-09f1-4e08-8d62-fefad1e0bc59")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(filled_areas_thickness no)
+		(keepout
+			(tracks allowed)
+			(vias not_allowed)
+			(pads allowed)
+			(copperpour allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+		)
+		(polygon
+			(pts
+				(xy 2.396224 -0.134569) (xy 2.36609 -0.402015) (xy 2.306202 -0.664405) (xy 2.217311 -0.91844) (xy 2.100536 -1.160925)
+				(xy 1.957346 -1.388811) (xy 1.789541 -1.599232) (xy 1.599232 -1.789541) (xy 1.388811 -1.957346)
+				(xy 1.160925 -2.100536) (xy 0.91844 -2.217311) (xy 0.664405 -2.306202) (xy 0.402015 -2.36609) (xy 0.134569 -2.396224)
+				(xy -0.134569 -2.396224) (xy -0.402015 -2.36609) (xy -0.664405 -2.306202) (xy -0.91844 -2.217311)
+				(xy -1.160925 -2.100536) (xy -1.388811 -1.957346) (xy -1.599232 -1.789541) (xy -1.789541 -1.599232)
+				(xy -1.957346 -1.388811) (xy -2.100536 -1.160925) (xy -2.217311 -0.91844) (xy -2.306202 -0.664405)
+				(xy -2.36609 -0.402015) (xy -2.396224 -0.134569) (xy -2.396224 0.134569) (xy -2.36609 0.402015)
+				(xy -2.306202 0.664405) (xy -2.217311 0.91844) (xy -2.100536 1.160925) (xy -1.957346 1.388811) (xy -1.789541 1.599232)
+				(xy -1.599232 1.789541) (xy -1.388811 1.957346) (xy -1.160925 2.100536) (xy -0.91844 2.217311) (xy -0.664405 2.306202)
+				(xy -0.402015 2.36609) (xy -0.134569 2.396224) (xy 0.134569 2.396224) (xy 0.402015 2.36609) (xy 0.664405 2.306202)
+				(xy 0.91844 2.217311) (xy 1.160925 2.100536) (xy 1.388811 1.957346) (xy 1.599232 1.789541) (xy 1.789541 1.599232)
+				(xy 1.957346 1.388811) (xy 2.100536 1.160925) (xy 2.217311 0.91844) (xy 2.306202 0.664405) (xy 2.36609 0.402015)
+				(xy 2.396224 0.134569)
+			)
+		)
+	)
+	(embedded_fonts no)
+)
